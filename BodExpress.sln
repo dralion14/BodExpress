@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BodExpress", "BodExpress\BodExpress.csproj", "{452148A7-C5FB-43BC-AD0A-BCAD13C41473}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CORE", "CORE\CORE.csproj", "{381D347C-F478-4A6C-A6B6-853393CA99E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{452148A7-C5FB-43BC-AD0A-BCAD13C41473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452148A7-C5FB-43BC-AD0A-BCAD13C41473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452148A7-C5FB-43BC-AD0A-BCAD13C41473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452148A7-C5FB-43BC-AD0A-BCAD13C41473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{381D347C-F478-4A6C-A6B6-853393CA99E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381D347C-F478-4A6C-A6B6-853393CA99E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381D347C-F478-4A6C-A6B6-853393CA99E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{381D347C-F478-4A6C-A6B6-853393CA99E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,143 @@
+.body{
+	margin: 0px 0px 0px 0px;
+	font: Arial;
+	font-size: 12px;
+	background-color: #e2e1dd;
+}
+
+.BarraMenu{
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	background-color: #003d4d;
+	color: white;
+	
+}
+.BarraBusqueda{
+	background-color: #e2e1dd;
+	color: #003d4d;
+	
+}
+.BarraMenuIN{
+	background-color: #e2e1dd;
+	color: #003d4d;
+	cursor: pointer;
+}
+
+.BarraMenuOUT{
+	background-color: #f0f0ee;
+	color: #003d4d;
+	cursor: pointer;
+}
+
+
+.BarraMenuLF{
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	background-color: #003d4d;
+	color: white;
+	border: 1px solid white;
+	
+}
+
+.BarraMenuINLF{
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	background-color: #e2e1dd;
+	color: #003d4d;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+.BarraMenuOUTLF{
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	background-color: #f0f0ee;
+	color: #003d4d;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+.BarraMenuLF2{
+	padding-left: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	background-color: #003d4d;
+	color: white;
+	border: 1px solid white;
+	
+}
+
+.BarraMenuINLF2{
+	padding-left: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	background-color: #e2e1dd;
+	color: #003d4d;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+.BarraMenuOUTLF2{
+	padding-left: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	background-color: #f0f0ee;
+	color: #003d4d;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+
+
+.tableBody {
+	background-color: white;
+	color: #003d4d;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+input[type=text]{
+	background-color: #e0e0db;
+	border: 0px solid;
+}
+
+
+input[type=submit]{
+	background-color: #003d4d;
+	color: white;
+	border: 0px solid;
+}
+
+.SiteMap{
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+
+.modalBackground
+{
+	background-color: Gray;
+	filter: alpha(opacity=50);
+	opacity: 0.50;
+}
+
+.updateProgress
+{
+	border-width: 1px;
+	border-style: solid;
+	background-color: #FFFFFF;
+	position: absolute;
+	width: 180px;
+	height: 65px;
+}
