@@ -7,5 +7,7 @@ namespace CORE
 {
     public class MaterialCRUD
     {
+
+
     }
 }
