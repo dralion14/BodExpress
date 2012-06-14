@@ -4,6 +4,8 @@
 <%@ Register assembly="DevExpress.Web.ASPxGridView.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
 <%@ Register assembly="DevExpress.Web.ASPxEditors.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
 
+<%@ Register assembly="DevExpress.Xpo.v10.2.Web, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Xpo" tagprefix="dx" %>
+
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="ContentHead">
 </asp:Content>
 <asp:Content ID="MenuContent" runat="server" 
@@ -20,9 +22,9 @@
     <h2>
         LISTA DE MATERIALES
     </h2>
-    <p>
+    <p>        
         <dx:ASPxGridView ID="ASPxGridView2" runat="server" AutoGenerateColumns="False" 
-            ClientIDMode="AutoID" DataSourceID="SqlDataSource1" KeyFieldName="M_ID">
+            ClientIDMode="AutoID" DataSourceID="odsMATERIAL" KeyFieldName="M_ID">
             <Columns>
                 <dx:GridViewCommandColumn ButtonType="Image" Caption=" " VisibleIndex="0" 
                     Width="10%">
@@ -79,50 +81,19 @@
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataTextColumn FieldName="M_STOCK_REAL" VisibleIndex="6" 
                     Visible="False" Caption="Stock real">
-                    <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataTextColumn FieldName="M_STOCK_IDEAL" VisibleIndex="7" 
                     Visible="False" Caption="Stock ideal">
-                    <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataTextColumn FieldName="M_STOCK_BAJO" VisibleIndex="8" 
                     Visible="False" Caption="Stock bajo">
-                    <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
             </Columns>
             <Settings ShowFilterRow="True" />
         </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:BODEXPRESSConnectionString %>" 
-            SelectCommand="SELECT * FROM [MATERIAL]" 
-            DeleteCommand="DELETE FROM MATERIAL WHERE [M_ID] = @M_ID" 
-            InsertCommand="INSERT INTO MATERIAL(M_NOMBRE, M_DESCRIPCION, M_TIPO, M_MEDIDA_DISTRIBUCION, M_MEDIDA_COMPRA, M_STOCK_REAL, M_STOCK_IDEAL, M_STOCK_BAJO) VALUES (@M_NOMBRE, @M_DESCRIPCION, @M_TIPO, @M_MEDIDA_DISTRIBUCION, @M_MEDIDA_COMPRA, @M_STOCK_REAL, @M_STOCK_IDEAL, @M_STOCK_BAJO)" 
-            
-            UpdateCommand="UPDATE MATERIAL SET M_NOMBRE = @M_NOMBRE, M_DESCRIPCION = @M_DESCRIPCION, M_TIPO = @M_TIPO, M_MEDIDA_DISTRIBUCION = @M_MEDIDA_DISTRIBUCION, M_MEDIDA_COMPRA = @M_MEDIDA_COMPRA, M_STOCK_REAL = @M_STOCK_REAL, M_STOCK_IDEAL = @M_STOCK_IDEAL, M_STOCK_BAJO = @M_STOCK_BAJO WHERE [M_ID] = @M_ID">
-            <DeleteParameters>
-                <asp:Parameter Name="M_ID" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="M_NOMBRE" />
-                <asp:Parameter Name="M_DESCRIPCION" />
-                <asp:Parameter Name="M_TIPO" />
-                <asp:Parameter Name="M_MEDIDA_DISTRIBUCION" />
-                <asp:Parameter Name="M_MEDIDA_COMPRA" />
-                <asp:Parameter Name="M_STOCK_REAL" />
-                <asp:Parameter Name="M_STOCK_IDEAL" />
-                <asp:Parameter Name="M_STOCK_BAJO" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="M_NOMBRE" />
-                <asp:Parameter Name="M_DESCRIPCION" />
-                <asp:Parameter Name="M_TIPO" />
-                <asp:Parameter Name="M_MEDIDA_DISTRIBUCION" />
-                <asp:Parameter Name="M_MEDIDA_COMPRA" />
-                <asp:Parameter Name="M_STOCK_REAL" />
-                <asp:Parameter Name="M_STOCK_IDEAL" />
-                <asp:Parameter Name="M_STOCK_BAJO" />
-                <asp:Parameter Name="M_ID" />
-            </UpdateParameters>
-        </asp:SqlDataSource>
+        <asp:ObjectDataSource ID="odsMATERIAL" runat="server" 
+            DataObjectTypeName="CORE.MATERIAL" DeleteMethod="Delete" InsertMethod="Create" 
+            onselecting="ObjectDataSource1_Selecting" SelectMethod="getAll" 
+            TypeName="CORE.MaterialCRUD" UpdateMethod="Update"></asp:ObjectDataSource>
     </p>
 </asp:Content>

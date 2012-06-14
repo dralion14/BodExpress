@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BODEXPRESS" Class="BODEXDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=BODEXPRESS;Integrated Security=True" SettingsObjectName="CORE.Properties.Settings" SettingsPropertyName="BODEXPRESSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MATERIAL" Member="MATERIAL">
+    <Type Name="MATERIAL">
+      <Column Name="M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="M_NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="M_DESCRIPCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="M_TIPO" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="M_MEDIDA_DISTRIBUCION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="M_MEDIDA_COMPRA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="M_STOCK_REAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="M_STOCK_IDEAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="M_STOCK_BAJO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MATERIAL_MATERIAL_KIT" Member="MATERIAL_KIT" ThisKey="M_ID" OtherKey="M_ID" Type="MATERIAL_KIT" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MATERIAL_KIT" Member="MATERIAL_KIT">
+    <Type Name="MATERIAL_KIT">
+      <Column Name="M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAT_M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MK_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MATERIAL_MATERIAL_KIT" Member="MATERIAL" ThisKey="M_ID" OtherKey="M_ID" Type="MATERIAL" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

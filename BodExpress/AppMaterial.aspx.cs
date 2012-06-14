@@ -13,5 +13,10 @@ namespace BodExpress
         {
 
         }
+
+        protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }

@@ -22,12 +22,12 @@ namespace BodExpress {
         protected global::DevExpress.Web.ASPxGridView.ASPxGridView ASPxGridView2;
         
         /// <summary>
-        /// Control SqlDataSource1.
+        /// Control odsMATERIAL.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsMATERIAL;
     }
 }
