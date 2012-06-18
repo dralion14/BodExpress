@@ -22,7 +22,7 @@ namespace CORE
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="BODEXPRESS")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataSource")]
 	public partial class BODEXDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,6 +36,9 @@ namespace CORE
     partial void InsertMATERIAL_KIT(MATERIAL_KIT instance);
     partial void UpdateMATERIAL_KIT(MATERIAL_KIT instance);
     partial void DeleteMATERIAL_KIT(MATERIAL_KIT instance);
+    partial void InsertUNIDAD_CLINICA(UNIDAD_CLINICA instance);
+    partial void UpdateUNIDAD_CLINICA(UNIDAD_CLINICA instance);
+    partial void DeleteUNIDAD_CLINICA(UNIDAD_CLINICA instance);
     #endregion
 		
 		public BODEXDataContext() : 
@@ -76,11 +79,19 @@ namespace CORE
 			}
 		}
 		
-		public System.Data.Linq.Table<MATERIAL_KIT> Materiales_Kit
+		public System.Data.Linq.Table<MATERIAL_KIT> MATERIAL_KIT
 		{
 			get
 			{
 				return this.GetTable<MATERIAL_KIT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<UNIDAD_CLINICA> Unidades
+		{
+			get
+			{
+				return this.GetTable<UNIDAD_CLINICA>();
 			}
 		}
 	}
@@ -497,6 +508,140 @@ namespace CORE
 						this._M_ID = default(decimal);
 					}
 					this.SendPropertyChanged("MATERIAL");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UNIDAD_CLINICA")]
+	public partial class UNIDAD_CLINICA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _UC_ID;
+		
+		private string _UC_NOMBRE;
+		
+		private string _UC_ENCARGADO;
+		
+		private int _UC_PRIORIDAD;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUC_IDChanging(decimal value);
+    partial void OnUC_IDChanged();
+    partial void OnUC_NOMBREChanging(string value);
+    partial void OnUC_NOMBREChanged();
+    partial void OnUC_ENCARGADOChanging(string value);
+    partial void OnUC_ENCARGADOChanged();
+    partial void OnUC_PRIORIDADChanging(int value);
+    partial void OnUC_PRIORIDADChanged();
+    #endregion
+		
+		public UNIDAD_CLINICA()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_ID", AutoSync=AutoSync.OnInsert, DbType="Decimal(18,0) NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public decimal UC_ID
+		{
+			get
+			{
+				return this._UC_ID;
+			}
+			set
+			{
+				if ((this._UC_ID != value))
+				{
+					this.OnUC_IDChanging(value);
+					this.SendPropertyChanging();
+					this._UC_ID = value;
+					this.SendPropertyChanged("UC_ID");
+					this.OnUC_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_NOMBRE", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string UC_NOMBRE
+		{
+			get
+			{
+				return this._UC_NOMBRE;
+			}
+			set
+			{
+				if ((this._UC_NOMBRE != value))
+				{
+					this.OnUC_NOMBREChanging(value);
+					this.SendPropertyChanging();
+					this._UC_NOMBRE = value;
+					this.SendPropertyChanged("UC_NOMBRE");
+					this.OnUC_NOMBREChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_ENCARGADO", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string UC_ENCARGADO
+		{
+			get
+			{
+				return this._UC_ENCARGADO;
+			}
+			set
+			{
+				if ((this._UC_ENCARGADO != value))
+				{
+					this.OnUC_ENCARGADOChanging(value);
+					this.SendPropertyChanging();
+					this._UC_ENCARGADO = value;
+					this.SendPropertyChanged("UC_ENCARGADO");
+					this.OnUC_ENCARGADOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_PRIORIDAD", DbType="Int NOT NULL")]
+		public int UC_PRIORIDAD
+		{
+			get
+			{
+				return this._UC_PRIORIDAD;
+			}
+			set
+			{
+				if ((this._UC_PRIORIDAD != value))
+				{
+					this.OnUC_PRIORIDADChanging(value);
+					this.SendPropertyChanging();
+					this._UC_PRIORIDAD = value;
+					this.SendPropertyChanged("UC_PRIORIDAD");
+					this.OnUC_PRIORIDADChanged();
 				}
 			}
 		}

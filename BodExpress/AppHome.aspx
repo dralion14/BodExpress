@@ -7,7 +7,11 @@
             <tr>
                 <td class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';" onclick="location.href='AppMaterial.aspx'">
                     Lista de Materiales</td>
-            </tr>            
+            </tr>     
+            <tr>
+                <td class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';" onclick="location.href='About.aspx'">
+                    Lista de Unidades Clínicas</td>
+            </tr>        
         </table>
 
     </asp:Content>
