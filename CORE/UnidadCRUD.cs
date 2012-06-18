@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,10 +34,10 @@ namespace CORE
             {
                 try
                 {
-                    var material = from mat in ctx.Unidades
-                                  where mat.UC_ID.Equals(uni_id)
-                                  select mat;
-                    return material.First<UNIDAD_CLINICA>();
+                    var unidad = from uni in ctx.Unidades
+                                  where uni.UC_ID.Equals(uni_id)
+                                  select uni;
+                    return unidad.First<UNIDAD_CLINICA>();
                 }
                 catch
                 {
@@ -50,12 +50,12 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                UNIDAD_CLINICA material = (from mat in ctx.Unidades
-                                   where mat.UC_ID.Equals(uni_upd.UC_ID)
-                                   select mat).First<UNIDAD_CLINICA>();
+                UNIDAD_CLINICA unidad = (from uni in ctx.Unidades
+                                   where uni.UC_ID.Equals(uni_upd.UC_ID)
+                                   select uni).First<UNIDAD_CLINICA>();
 
-                material.UC_NOMBRE = uni_upd.UC_NOMBRE;
-                material.UC_ENCARGADO = uni_upd.UC_ENCARGADO;
+                unidad.UC_NOMBRE = uni_upd.UC_NOMBRE;
+                unidad.UC_ENCARGADO = uni_upd.UC_ENCARGADO;
                 ctx.SubmitChanges();
             }
         }
@@ -64,9 +64,9 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                UNIDAD_CLINICA borrar = (from mat in ctx.Unidades
-                                  where mat.UC_ID.Equals(uni_del.UC_ID)
-                                  select mat).First<UNIDAD_CLINICA>();
+                UNIDAD_CLINICA borrar = (from uni in ctx.Unidades
+                                  where uni.UC_ID.Equals(uni_del.UC_ID)
+                                  select uni).First<UNIDAD_CLINICA>();
 
                 ctx.Unidades.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
