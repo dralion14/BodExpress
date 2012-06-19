@@ -37,7 +37,7 @@ namespace CORE
                     var estado = from e in ctx.Estados
                                   where e.E_ID.Equals(estado_id)
                                   select e;
-                    return estado.First<MATERIAL>();
+                    return estado.First<ESTADO>();
                 }
                 catch
                 {
@@ -52,7 +52,7 @@ namespace CORE
             {
                 ESTADO estado = (from e in ctx.Estados
                                      where e.E_ID.Equals(estado_upd.E_ID)
-                                   select e).First<MATERIAL>();
+                                 select e).First<ESTADO>();
 
                 estado.E_NOMBRE = estado_upd.E_NOMBRE;
                 estado.E_DESCRIPCION = estado_upd.E_DESCRIPCION;
@@ -66,7 +66,7 @@ namespace CORE
             {
                 ESTADO borrar = (from e in ctx.Estados
                                  where e.E_ID.Equals(estado_del.E_ID)
-                                  select e).First<MATERIAL>();
+                                 select e).First<ESTADO>();
 
                 ctx.Estados.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
