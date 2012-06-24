@@ -9,11 +9,11 @@ namespace BodExpress
 {
     public partial class index : System.Web.UI.Page
     {
-        public const string URL_HOME = "~/AppHome.aspx";
+        public const string URL_HOME = "~/Home.aspx";
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect(URL_HOME, true);
-            return;
+            //Response.Redirect(URL_HOME, true);
+            //return;
         }
     }
 }

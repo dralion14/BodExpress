@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="MasterUnidadClinica.master.cs"
+    Inherits="BodExpress.MasterUnidadClinica" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentMenu" runat="server">
+    <asp:ContentPlaceHolder ID="ContentMenu" runat="server">
+        <table width="100%">
+            <tr>
+                <td class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
+                    onclick="location.href='Material.aspx'">
+                    Lista de Materiales
+                </td>
+            </tr>
+            <tr>
+                <td class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
+                    onclick="location.href='MaterialKit.aspx'">
+                    Lista de Kit de Materiales
+                </td>
+            </tr>
+            <tr>
+                <td class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
+                    onclick="location.href='UnidadClinica.aspx'">
+                    Lista de Unidades Clínicas
+                </td>
+            </tr>
+        </table>
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentMain" runat="server">
+    <asp:ContentPlaceHolder ID="ContentMain" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

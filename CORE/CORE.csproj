@@ -48,13 +48,31 @@
     </Compile>
     <Compile Include="EstadoCRUD.cs" />
     <Compile Include="MaterialCRUD.cs" />
+    <Compile Include="CRUD_CompraRecepcion.cs" />
+    <Compile Include="CRUD_DevolucionMaterial.cs" />
+    <Compile Include="CRUD_DevolucionMaterialDetalle.cs" />
+    <Compile Include="CRUD_DevolucionProveedor.cs" />
+    <Compile Include="CRUD_DevolucionProveedorDetalle.cs" />
+    <Compile Include="CRUD_EntregaMaterial.cs" />
+    <Compile Include="CRUD_EntregaMaterialDetalle.cs" />
+    <Compile Include="CRUD_Estado.cs" />
+    <Compile Include="CRUD_Kit.cs" />
+    <Compile Include="CRUD_Material.cs" />
+    <Compile Include="CRUD_RecepcionMaterial.cs" />
+    <Compile Include="CRUD_RecepcionMaterialDetalle.cs" />
+    <Compile Include="CRUD_SolicitudCompra.cs" />
+    <Compile Include="CRUD_SolicitudCompraDetalle.cs" />
+    <Compile Include="CRUD_SolicitudMaterial.cs" />
+    <Compile Include="CRUD_SolicitudMaterialDetalle.cs" />
+    <Compile Include="CRUD_UnidadStock.cs" />
+    <Compile Include="CRUD_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="UnidadCRUD.cs" />
+    <Compile Include="CRUD_UnidadClinica.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

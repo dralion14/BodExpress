@@ -5,13 +5,13 @@ using System.Text;
 
 namespace CORE
 {
-    public class UnidadCRUD
+    public class CRUD_UnidadClinica
     {
          public static List<UNIDAD_CLINICA> getAll()
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                var unidades = from uni in ctx.Unidades
+                var unidades = from uni in ctx.ListaUnidadClinica
                               orderby uni.UC_ID
                               select uni;
 
@@ -23,7 +23,7 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                ctx.Unidades.InsertOnSubmit(uni_new);
+                ctx.ListaUnidadClinica.InsertOnSubmit(uni_new);
                 ctx.SubmitChanges();
             }
         }
@@ -34,7 +34,7 @@ namespace CORE
             {
                 try
                 {
-                    var unidad = from uni in ctx.Unidades
+                    var unidad = from uni in ctx.ListaUnidadClinica
                                   where uni.UC_ID.Equals(uni_id)
                                   select uni;
                     return unidad.First<UNIDAD_CLINICA>();
@@ -50,7 +50,7 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                UNIDAD_CLINICA unidad = (from uni in ctx.Unidades
+                UNIDAD_CLINICA unidad = (from uni in ctx.ListaUnidadClinica
                                    where uni.UC_ID.Equals(uni_upd.UC_ID)
                                    select uni).First<UNIDAD_CLINICA>();
 
@@ -64,11 +64,11 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                UNIDAD_CLINICA borrar = (from uni in ctx.Unidades
+                UNIDAD_CLINICA borrar = (from uni in ctx.ListaUnidadClinica
                                   where uni.UC_ID.Equals(uni_del.UC_ID)
                                   select uni).First<UNIDAD_CLINICA>();
 
-                ctx.Unidades.DeleteOnSubmit(borrar);
+                ctx.ListaUnidadClinica.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
             }
         }

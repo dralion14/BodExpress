@@ -1,25 +1,127 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BODEX">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 8.75" name="BODEX">
   <DataContextMoniker Name="/BODEXDataContext" />
   <nestedChildShapes>
-    <classShape Id="2eab165a-22fe-4973-b135-c884ff04ccda" absoluteBounds="1.5, 1.25, 2, 2.24658447265625">
+    <classShape Id="2eab165a-22fe-4973-b135-c884ff04ccda" absoluteBounds="0.5, 0.5, 2, 2.24658447265625">
       <DataClassMoniker Name="/BODEXDataContext/MATERIAL" />
       <nestedChildShapes>
-        <elementListCompartment Id="f70814b6-5480-4a85-a9ff-ac1df09d8341" absoluteBounds="1.5150000000000001, 1.71, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f70814b6-5480-4a85-a9ff-ac1df09d8341" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="333f007c-afd8-44da-a772-4ba1c91ee514" absoluteBounds="5, 1.5, 2, 1.26050048828125">
+    <classShape Id="333f007c-afd8-44da-a772-4ba1c91ee514" absoluteBounds="2.75, 0.5, 2, 1.26050048828125">
       <DataClassMoniker Name="/BODEXDataContext/MATERIAL_KIT" />
       <nestedChildShapes>
-        <elementListCompartment Id="163323df-e25c-4b0e-8b4a-1111eaabadde" absoluteBounds="5.015, 1.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="163323df-e25c-4b0e-8b4a-1111eaabadde" absoluteBounds="2.7649999999999997, 0.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.5 : 2.13025024414063); (5 : 2.13025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.5 : 1.13025024414063); (2.75 : 1.13025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BODEXDataContext/MATERIAL/MATERIAL_MATERIAL_KIT" />
       <nodes>
         <classShapeMoniker Id="2eab165a-22fe-4973-b135-c884ff04ccda" />
         <classShapeMoniker Id="333f007c-afd8-44da-a772-4ba1c91ee514" />
       </nodes>
     </associationConnector>
+    <classShape Id="fa1aef3f-a7a7-4fad-9aa6-9af2e0329d9e" absoluteBounds="0.5, 2.875, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/BODEXDataContext/DETALLE_DEVOLUCION_A_PROVEEDOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84b66956-9cad-4d6f-8dd1-d5277cd8aebc" absoluteBounds="0.51500000000000012, 3.335, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d6c71e1-3168-4113-9d64-eeb636dd0b50" absoluteBounds="2.75, 2.875, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/BODEXDataContext/DETALLE_DEVOLUCION_MATERIAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3412931-81e3-4c76-a303-7e4adde7188a" absoluteBounds="2.765, 3.335, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c003239-0782-4b41-897b-d3ab7cc29327" absoluteBounds="5, 2.875, 2, 1.26050048828125">
+      <DataClassMoniker Name="/BODEXDataContext/DETALLE_ENTREGA_MATERIAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da95e206-3e25-4282-8d6b-1bfe104f6c8e" absoluteBounds="5.015, 3.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93007639-27fb-4ccb-8381-3d840309ef89" absoluteBounds="7.375, 2.875, 2, 1.26050048828125">
+      <DataClassMoniker Name="/BODEXDataContext/DETALLE_RECEPCION_MATERIAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6564805-b8a5-465b-8c5e-ee578e89d2cb" absoluteBounds="7.3900000000000006, 3.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="732daa2a-548a-4176-a943-e444d3eb77c1" absoluteBounds="9.75, 2.875, 2, 1.26050048828125">
+      <DataClassMoniker Name="/BODEXDataContext/DETALLE_SOLICITUD_COMPRA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8feaab0e-b300-43fa-b8c4-1a9a0c053270" absoluteBounds="9.765, 3.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="08ff1fa0-5098-4c0f-a56a-501a538b09c8" absoluteBounds="12, 2.875, 2, 1.26050048828125">
+      <DataClassMoniker Name="/BODEXDataContext/DETALLE_SOLICITUD_MATERIAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="146b50b2-bced-4a46-9c12-bb414de0d9f7" absoluteBounds="12.015, 3.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="968b93d4-d294-4cc7-be88-fc0841853d87" absoluteBounds="0.5, 4.5, 2, 1.0961531575520833">
+      <DataClassMoniker Name="/BODEXDataContext/DEVOLUCION_A_PROVEEDOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="863283d6-6249-47a8-ae61-29c34d9ecb41" absoluteBounds="0.51500000000000012, 4.96, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebabc82e-8302-469e-83e8-050ec9cde2a3" absoluteBounds="2.75, 4.5, 2, 1.26050048828125">
+      <DataClassMoniker Name="/BODEXDataContext/DEVOLUCION_MATERIAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="631494ea-4ad7-4251-8ef1-4e2f203b9331" absoluteBounds="2.765, 4.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="834d9e5a-cbea-4480-8b18-6a29a275b843" absoluteBounds="5, 4.5, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/BODEXDataContext/ENTREGA_MATERIAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5715b01d-6805-4cb7-bbbd-9e5c341fcd9e" absoluteBounds="5.015, 4.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="09635480-1e16-4fde-97d2-f20bf4be9f93" absoluteBounds="7.375, 4.5, 2, 1.26050048828125">
+      <DataClassMoniker Name="/BODEXDataContext/RECEPCION_MATERIAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63c03315-8c11-4846-b7a6-d9891f4ee318" absoluteBounds="7.3900000000000006, 4.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="968d7d1e-e4c4-451d-b778-4184bded605f" absoluteBounds="9.75, 4.5, 2, 1.26050048828125">
+      <DataClassMoniker Name="/BODEXDataContext/SOLICITUD_COMPRA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="383d3bab-891f-45fd-baac-af4f05fbc115" absoluteBounds="9.765, 4.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="606310b8-35c1-4a9d-a826-6a10ed1603c1" absoluteBounds="12, 4.5, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/BODEXDataContext/SOLICITUD_MATERIAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7c41fbd-2e81-4c97-9cda-20ce82216934" absoluteBounds="12.015, 4.96, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59f1ae16-e9c8-45c5-b492-30b78843ad23" absoluteBounds="5.125, 0.5, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/BODEXDataContext/STOCK_MATERIAL_UNIDAD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="129f83b6-d804-48ed-a19d-579a254bd049" absoluteBounds="5.14, 0.96, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4d835be-648f-4ef9-9da2-0064ad298211" absoluteBounds="7.375, 0.5, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/BODEXDataContext/UNIDAD_CLINICA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ce0c6e9-4d5c-4549-b2df-cafa38ecbbfd" absoluteBounds="7.3900000000000006, 0.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e3d9008c-7fa1-4431-9d21-3ead56119080" absoluteBounds="0.5, 7.25, 2, 1.26050048828125">
+      <DataClassMoniker Name="/BODEXDataContext/ESTADO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4aad2ed7-e10c-4090-ae9d-1cce02cefb24" absoluteBounds="0.51500000000000012, 7.7100000000000009, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4fb34cf-a4a3-431c-b0ca-94fc78d5bb52" absoluteBounds="2.75, 7.25, 2, 1.26050048828125">
+      <DataClassMoniker Name="/BODEXDataContext/USUARIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dea80c53-4c66-435b-9931-ef771ebf9bea" absoluteBounds="2.765, 7.7100000000000009, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6b5c5b74-3cbd-4990-9551-df5ea848503b" absoluteBounds="5, 7.25, 2, 1.0961531575520833">
+      <DataClassMoniker Name="/BODEXDataContext/COMPRA_RECEPCION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="999a7bfc-44ed-4a0e-aa55-79bf1d2ec662" absoluteBounds="5.015, 7.7100000000000009, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

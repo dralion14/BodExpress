@@ -5,13 +5,14 @@ using System.Text;
 
 namespace CORE
 {
-    public class MaterialCRUD
+    public class CRUD_Material
     {
         public static List<MATERIAL> getAll()
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                var material = from mat in ctx.Materiales
+                var material = from mat in ctx.ListaMaterial
+                               where !mat.M_TIPO.Equals("Kit")
                               orderby mat.M_ID
                               select mat;
 
@@ -23,7 +24,7 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                ctx.Materiales.InsertOnSubmit(mat_new);
+                ctx.ListaMaterial.InsertOnSubmit(mat_new);
                 ctx.SubmitChanges();
             }
         }
@@ -34,7 +35,7 @@ namespace CORE
             {
                 try
                 {
-                    var material = from mat in ctx.Materiales
+                    var material = from mat in ctx.ListaMaterial
                                   where mat.M_ID.Equals(mat_id)
                                   select mat;
                     return material.First<MATERIAL>();
@@ -50,12 +51,16 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                MATERIAL material = (from mat in ctx.Materiales
+                MATERIAL material = (from mat in ctx.ListaMaterial
                                    where mat.M_ID.Equals(mat_upd.M_ID)
                                    select mat).First<MATERIAL>();
 
                 material.M_NOMBRE = mat_upd.M_NOMBRE;
                 material.M_DESCRIPCION = mat_upd.M_DESCRIPCION;
+                material.M_TIPO = mat_upd.M_TIPO;
+                material.M_MEDIDA_DISTRIBUCION = mat_upd.M_MEDIDA_DISTRIBUCION;
+                material.M_MEDIDA_COMPRA = mat_upd.M_MEDIDA_COMPRA;
+
                 ctx.SubmitChanges();
             }
         }
@@ -64,11 +69,11 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                MATERIAL borrar = (from mat in ctx.Materiales
+                MATERIAL borrar = (from mat in ctx.ListaMaterial
                                   where mat.M_ID.Equals(mat_del.M_ID)
                                   select mat).First<MATERIAL>();
 
-                ctx.Materiales.DeleteOnSubmit(borrar);
+                ctx.ListaMaterial.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
             }
         }

@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BODEXPRESS" Class="BODEXDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=BODEXPRESS;Integrated Security=True" SettingsObjectName="CORE.Properties.Settings" SettingsPropertyName="BODEXPRESSConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DataSource" Class="BODEXDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=BODEXPRESS.mssql.somee.com;Persist Security Info=True;User ID=bodex" SettingsObjectName="CORE.Properties.Settings" SettingsPropertyName="DataSourceConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.MATERIAL" Member="MATERIAL">
     <Type Name="MATERIAL">
       <Column Name="M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -20,6 +20,133 @@
       <Column Name="MAT_M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MK_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="MATERIAL_MATERIAL_KIT" Member="MATERIAL" ThisKey="M_ID" OtherKey="M_ID" Type="MATERIAL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DETALLE_DEVOLUCION_A_PROVEEDOR" Member="DETALLE_DEVOLUCION_A_PROVEEDOR">
+    <Type Name="DETALLE_DEVOLUCION_A_PROVEEDOR">
+      <Column Name="DP_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DDP_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DDP_MOTIVO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DETALLE_DEVOLUCION_MATERIAL" Member="DETALLE_DEVOLUCION_MATERIAL">
+    <Type Name="DETALLE_DEVOLUCION_MATERIAL">
+      <Column Name="DM_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DDM_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DDM_MOTIVO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DETALLE_ENTREGA_MATERIAL" Member="DETALLE_ENTREGA_MATERIAL">
+    <Type Name="DETALLE_ENTREGA_MATERIAL">
+      <Column Name="EM_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DEM_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DETALLE_RECEPCION_MATERIAL" Member="DETALLE_RECEPCION_MATERIAL">
+    <Type Name="DETALLE_RECEPCION_MATERIAL">
+      <Column Name="RM_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DRM_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DETALLE_SOLICITUD_COMPRA" Member="DETALLE_SOLICITUD_COMPRA">
+    <Type Name="DETALLE_SOLICITUD_COMPRA">
+      <Column Name="SC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DSC_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DETALLE_SOLICITUD_MATERIAL" Member="DETALLE_SOLICITUD_MATERIAL">
+    <Type Name="DETALLE_SOLICITUD_MATERIAL">
+      <Column Name="SM_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DSM_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DEVOLUCION_A_PROVEEDOR" Member="DEVOLUCION_A_PROVEEDOR">
+    <Type Name="DEVOLUCION_A_PROVEEDOR">
+      <Column Name="DP_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DP_FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DEVOLUCION_MATERIAL" Member="DEVOLUCION_MATERIAL">
+    <Type Name="DEVOLUCION_MATERIAL">
+      <Column Name="DM_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DM_FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENTREGA_MATERIAL" Member="ENTREGA_MATERIAL">
+    <Type Name="ENTREGA_MATERIAL">
+      <Column Name="EM_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SM_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="EM_ENCARGADO_ENTREGA" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="EM_FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RECEPCION_MATERIAL" Member="RECEPCION_MATERIAL">
+    <Type Name="RECEPCION_MATERIAL">
+      <Column Name="RM_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RM_ENCARGADO_RECEPCION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="RM_FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SOLICITUD_COMPRA" Member="SOLICITUD_COMPRA">
+    <Type Name="SOLICITUD_COMPRA">
+      <Column Name="SC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="E_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SC_FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SOLICITUD_MATERIAL" Member="SOLICITUD_MATERIAL">
+    <Type Name="SOLICITUD_MATERIAL">
+      <Column Name="SM_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="E_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="UNI_UC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SM_TIPO" Type="System.String" DbType="VarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="SM_FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SM_ID_RECTIFICADA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STOCK_MATERIAL_UNIDAD" Member="STOCK_MATERIAL_UNIDAD">
+    <Type Name="STOCK_MATERIAL_UNIDAD">
+      <Column Name="UC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="M_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SMU_STOCK_REAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SMU_STOCK_IDEAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SMU_STOCK_BAJO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UNIDAD_CLINICA" Member="UNIDAD_CLINICA">
+    <Type Name="UNIDAD_CLINICA">
+      <Column Name="UC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UC_NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UC_ENCARGADO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UC_PRIORIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ESTADO" Member="ESTADO">
+    <Type Name="ESTADO">
+      <Column Name="E_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="E_NOMBRE" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="E_DESCRIPCION" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USUARIO" Member="USUARIO">
+    <Type Name="USUARIO">
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pass" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="area" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COMPRA_RECEPCION" Member="COMPRA_RECEPCION">
+    <Type Name="COMPRA_RECEPCION">
+      <Column Name="RM_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

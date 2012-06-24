@@ -36,13 +36,61 @@ namespace CORE
     partial void InsertMATERIAL_KIT(MATERIAL_KIT instance);
     partial void UpdateMATERIAL_KIT(MATERIAL_KIT instance);
     partial void DeleteMATERIAL_KIT(MATERIAL_KIT instance);
+    partial void InsertDETALLE_DEVOLUCION_A_PROVEEDOR(DETALLE_DEVOLUCION_A_PROVEEDOR instance);
+    partial void UpdateDETALLE_DEVOLUCION_A_PROVEEDOR(DETALLE_DEVOLUCION_A_PROVEEDOR instance);
+    partial void DeleteDETALLE_DEVOLUCION_A_PROVEEDOR(DETALLE_DEVOLUCION_A_PROVEEDOR instance);
+    partial void InsertDETALLE_DEVOLUCION_MATERIAL(DETALLE_DEVOLUCION_MATERIAL instance);
+    partial void UpdateDETALLE_DEVOLUCION_MATERIAL(DETALLE_DEVOLUCION_MATERIAL instance);
+    partial void DeleteDETALLE_DEVOLUCION_MATERIAL(DETALLE_DEVOLUCION_MATERIAL instance);
+    partial void InsertDETALLE_ENTREGA_MATERIAL(DETALLE_ENTREGA_MATERIAL instance);
+    partial void UpdateDETALLE_ENTREGA_MATERIAL(DETALLE_ENTREGA_MATERIAL instance);
+    partial void DeleteDETALLE_ENTREGA_MATERIAL(DETALLE_ENTREGA_MATERIAL instance);
+    partial void InsertDETALLE_RECEPCION_MATERIAL(DETALLE_RECEPCION_MATERIAL instance);
+    partial void UpdateDETALLE_RECEPCION_MATERIAL(DETALLE_RECEPCION_MATERIAL instance);
+    partial void DeleteDETALLE_RECEPCION_MATERIAL(DETALLE_RECEPCION_MATERIAL instance);
+    partial void InsertDETALLE_SOLICITUD_COMPRA(DETALLE_SOLICITUD_COMPRA instance);
+    partial void UpdateDETALLE_SOLICITUD_COMPRA(DETALLE_SOLICITUD_COMPRA instance);
+    partial void DeleteDETALLE_SOLICITUD_COMPRA(DETALLE_SOLICITUD_COMPRA instance);
+    partial void InsertDETALLE_SOLICITUD_MATERIAL(DETALLE_SOLICITUD_MATERIAL instance);
+    partial void UpdateDETALLE_SOLICITUD_MATERIAL(DETALLE_SOLICITUD_MATERIAL instance);
+    partial void DeleteDETALLE_SOLICITUD_MATERIAL(DETALLE_SOLICITUD_MATERIAL instance);
+    partial void InsertDEVOLUCION_A_PROVEEDOR(DEVOLUCION_A_PROVEEDOR instance);
+    partial void UpdateDEVOLUCION_A_PROVEEDOR(DEVOLUCION_A_PROVEEDOR instance);
+    partial void DeleteDEVOLUCION_A_PROVEEDOR(DEVOLUCION_A_PROVEEDOR instance);
+    partial void InsertDEVOLUCION_MATERIAL(DEVOLUCION_MATERIAL instance);
+    partial void UpdateDEVOLUCION_MATERIAL(DEVOLUCION_MATERIAL instance);
+    partial void DeleteDEVOLUCION_MATERIAL(DEVOLUCION_MATERIAL instance);
+    partial void InsertENTREGA_MATERIAL(ENTREGA_MATERIAL instance);
+    partial void UpdateENTREGA_MATERIAL(ENTREGA_MATERIAL instance);
+    partial void DeleteENTREGA_MATERIAL(ENTREGA_MATERIAL instance);
+    partial void InsertRECEPCION_MATERIAL(RECEPCION_MATERIAL instance);
+    partial void UpdateRECEPCION_MATERIAL(RECEPCION_MATERIAL instance);
+    partial void DeleteRECEPCION_MATERIAL(RECEPCION_MATERIAL instance);
+    partial void InsertSOLICITUD_COMPRA(SOLICITUD_COMPRA instance);
+    partial void UpdateSOLICITUD_COMPRA(SOLICITUD_COMPRA instance);
+    partial void DeleteSOLICITUD_COMPRA(SOLICITUD_COMPRA instance);
+    partial void InsertSOLICITUD_MATERIAL(SOLICITUD_MATERIAL instance);
+    partial void UpdateSOLICITUD_MATERIAL(SOLICITUD_MATERIAL instance);
+    partial void DeleteSOLICITUD_MATERIAL(SOLICITUD_MATERIAL instance);
+    partial void InsertSTOCK_MATERIAL_UNIDAD(STOCK_MATERIAL_UNIDAD instance);
+    partial void UpdateSTOCK_MATERIAL_UNIDAD(STOCK_MATERIAL_UNIDAD instance);
+    partial void DeleteSTOCK_MATERIAL_UNIDAD(STOCK_MATERIAL_UNIDAD instance);
     partial void InsertUNIDAD_CLINICA(UNIDAD_CLINICA instance);
     partial void UpdateUNIDAD_CLINICA(UNIDAD_CLINICA instance);
     partial void DeleteUNIDAD_CLINICA(UNIDAD_CLINICA instance);
+    partial void InsertESTADO(ESTADO instance);
+    partial void UpdateESTADO(ESTADO instance);
+    partial void DeleteESTADO(ESTADO instance);
+    partial void InsertUSUARIO(USUARIO instance);
+    partial void UpdateUSUARIO(USUARIO instance);
+    partial void DeleteUSUARIO(USUARIO instance);
+    partial void InsertCOMPRA_RECEPCION(COMPRA_RECEPCION instance);
+    partial void UpdateCOMPRA_RECEPCION(COMPRA_RECEPCION instance);
+    partial void DeleteCOMPRA_RECEPCION(COMPRA_RECEPCION instance);
     #endregion
 		
 		public BODEXDataContext() : 
-				base(global::CORE.Properties.Settings.Default.BODEXPRESSConnectionString, mappingSource)
+				base(global::CORE.Properties.Settings.Default.DataSourceConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -71,7 +119,7 @@ namespace CORE
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<MATERIAL> Materiales
+		public System.Data.Linq.Table<MATERIAL> ListaMaterial
 		{
 			get
 			{
@@ -79,7 +127,7 @@ namespace CORE
 			}
 		}
 		
-		public System.Data.Linq.Table<MATERIAL_KIT> MATERIAL_KIT
+		public System.Data.Linq.Table<MATERIAL_KIT> ListaMaterialKit
 		{
 			get
 			{
@@ -87,11 +135,139 @@ namespace CORE
 			}
 		}
 		
-		public System.Data.Linq.Table<UNIDAD_CLINICA> Unidades
+		public System.Data.Linq.Table<DETALLE_DEVOLUCION_A_PROVEEDOR> ListaDevolucionProveedorDetalle
+		{
+			get
+			{
+				return this.GetTable<DETALLE_DEVOLUCION_A_PROVEEDOR>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DETALLE_DEVOLUCION_MATERIAL> ListaDevolucionMaterialDetalle
+		{
+			get
+			{
+				return this.GetTable<DETALLE_DEVOLUCION_MATERIAL>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DETALLE_ENTREGA_MATERIAL> ListaEntregaMaterialDetalle
+		{
+			get
+			{
+				return this.GetTable<DETALLE_ENTREGA_MATERIAL>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DETALLE_RECEPCION_MATERIAL> ListaRecepcionMaterialDetalle
+		{
+			get
+			{
+				return this.GetTable<DETALLE_RECEPCION_MATERIAL>();
+			}
+		}
+
+        public System.Data.Linq.Table<DETALLE_SOLICITUD_COMPRA> ListaSolicitudCompraDetalle
+		{
+			get
+			{
+				return this.GetTable<DETALLE_SOLICITUD_COMPRA>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DETALLE_SOLICITUD_MATERIAL> ListaSolicitudMaterialDetalle
+		{
+			get
+			{
+				return this.GetTable<DETALLE_SOLICITUD_MATERIAL>();
+			}
+		}
+
+        public System.Data.Linq.Table<DEVOLUCION_A_PROVEEDOR> ListaDevolucionProveedor
+		{
+			get
+			{
+				return this.GetTable<DEVOLUCION_A_PROVEEDOR>();
+			}
+		}
+
+        public System.Data.Linq.Table<DEVOLUCION_MATERIAL> ListaDevolucionMaterial
+		{
+			get
+			{
+				return this.GetTable<DEVOLUCION_MATERIAL>();
+			}
+		}
+
+        public System.Data.Linq.Table<ENTREGA_MATERIAL> ListaEntregaMaterial
+		{
+			get
+			{
+				return this.GetTable<ENTREGA_MATERIAL>();
+			}
+		}
+
+        public System.Data.Linq.Table<RECEPCION_MATERIAL> ListaRecepcionMaterial
+		{
+			get
+			{
+				return this.GetTable<RECEPCION_MATERIAL>();
+			}
+		}
+
+        public System.Data.Linq.Table<SOLICITUD_COMPRA> ListaSolicitudCompra
+		{
+			get
+			{
+				return this.GetTable<SOLICITUD_COMPRA>();
+			}
+		}
+
+        public System.Data.Linq.Table<SOLICITUD_MATERIAL> ListaSolicitudMaterial
+		{
+			get
+			{
+				return this.GetTable<SOLICITUD_MATERIAL>();
+			}
+		}
+
+        public System.Data.Linq.Table<STOCK_MATERIAL_UNIDAD> ListaStockMaterialUnidad
+		{
+			get
+			{
+				return this.GetTable<STOCK_MATERIAL_UNIDAD>();
+			}
+		}
+
+        public System.Data.Linq.Table<UNIDAD_CLINICA> ListaUnidadClinica
 		{
 			get
 			{
 				return this.GetTable<UNIDAD_CLINICA>();
+			}
+		}
+
+        public System.Data.Linq.Table<ESTADO> ListaEstado
+		{
+			get
+			{
+				return this.GetTable<ESTADO>();
+			}
+		}
+
+        public System.Data.Linq.Table<USUARIO> ListaUsuario
+		{
+			get
+			{
+				return this.GetTable<USUARIO>();
+			}
+		}
+
+        public System.Data.Linq.Table<COMPRA_RECEPCION> ListaCompraRecepcion
+		{
+			get
+			{
+				return this.GetTable<COMPRA_RECEPCION>();
 			}
 		}
 	}
@@ -172,7 +348,7 @@ namespace CORE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_NOMBRE", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_NOMBRE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string M_NOMBRE
 		{
 			get
@@ -533,6 +709,1628 @@ namespace CORE
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DETALLE_DEVOLUCION_A_PROVEEDOR")]
+	public partial class DETALLE_DEVOLUCION_A_PROVEEDOR : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _DP_ID;
+		
+		private decimal _M_ID;
+		
+		private int _DDP_CANTIDAD;
+		
+		private string _DDP_MOTIVO;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDP_IDChanging(decimal value);
+    partial void OnDP_IDChanged();
+    partial void OnM_IDChanging(decimal value);
+    partial void OnM_IDChanged();
+    partial void OnDDP_CANTIDADChanging(int value);
+    partial void OnDDP_CANTIDADChanged();
+    partial void OnDDP_MOTIVOChanging(string value);
+    partial void OnDDP_MOTIVOChanged();
+    #endregion
+		
+		public DETALLE_DEVOLUCION_A_PROVEEDOR()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DP_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal DP_ID
+		{
+			get
+			{
+				return this._DP_ID;
+			}
+			set
+			{
+				if ((this._DP_ID != value))
+				{
+					this.OnDP_IDChanging(value);
+					this.SendPropertyChanging();
+					this._DP_ID = value;
+					this.SendPropertyChanged("DP_ID");
+					this.OnDP_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_ID", DbType="Decimal(18,0) NOT NULL")]
+		public decimal M_ID
+		{
+			get
+			{
+				return this._M_ID;
+			}
+			set
+			{
+				if ((this._M_ID != value))
+				{
+					this.OnM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._M_ID = value;
+					this.SendPropertyChanged("M_ID");
+					this.OnM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DDP_CANTIDAD", DbType="Int NOT NULL")]
+		public int DDP_CANTIDAD
+		{
+			get
+			{
+				return this._DDP_CANTIDAD;
+			}
+			set
+			{
+				if ((this._DDP_CANTIDAD != value))
+				{
+					this.OnDDP_CANTIDADChanging(value);
+					this.SendPropertyChanging();
+					this._DDP_CANTIDAD = value;
+					this.SendPropertyChanged("DDP_CANTIDAD");
+					this.OnDDP_CANTIDADChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DDP_MOTIVO", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string DDP_MOTIVO
+		{
+			get
+			{
+				return this._DDP_MOTIVO;
+			}
+			set
+			{
+				if ((this._DDP_MOTIVO != value))
+				{
+					this.OnDDP_MOTIVOChanging(value);
+					this.SendPropertyChanging();
+					this._DDP_MOTIVO = value;
+					this.SendPropertyChanged("DDP_MOTIVO");
+					this.OnDDP_MOTIVOChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DETALLE_DEVOLUCION_MATERIAL")]
+	public partial class DETALLE_DEVOLUCION_MATERIAL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _DM_ID;
+		
+		private decimal _M_ID;
+		
+		private int _DDM_CANTIDAD;
+		
+		private string _DDM_MOTIVO;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDM_IDChanging(decimal value);
+    partial void OnDM_IDChanged();
+    partial void OnM_IDChanging(decimal value);
+    partial void OnM_IDChanged();
+    partial void OnDDM_CANTIDADChanging(int value);
+    partial void OnDDM_CANTIDADChanged();
+    partial void OnDDM_MOTIVOChanging(string value);
+    partial void OnDDM_MOTIVOChanged();
+    #endregion
+		
+		public DETALLE_DEVOLUCION_MATERIAL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DM_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal DM_ID
+		{
+			get
+			{
+				return this._DM_ID;
+			}
+			set
+			{
+				if ((this._DM_ID != value))
+				{
+					this.OnDM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._DM_ID = value;
+					this.SendPropertyChanged("DM_ID");
+					this.OnDM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal M_ID
+		{
+			get
+			{
+				return this._M_ID;
+			}
+			set
+			{
+				if ((this._M_ID != value))
+				{
+					this.OnM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._M_ID = value;
+					this.SendPropertyChanged("M_ID");
+					this.OnM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DDM_CANTIDAD", DbType="Int NOT NULL")]
+		public int DDM_CANTIDAD
+		{
+			get
+			{
+				return this._DDM_CANTIDAD;
+			}
+			set
+			{
+				if ((this._DDM_CANTIDAD != value))
+				{
+					this.OnDDM_CANTIDADChanging(value);
+					this.SendPropertyChanging();
+					this._DDM_CANTIDAD = value;
+					this.SendPropertyChanged("DDM_CANTIDAD");
+					this.OnDDM_CANTIDADChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DDM_MOTIVO", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string DDM_MOTIVO
+		{
+			get
+			{
+				return this._DDM_MOTIVO;
+			}
+			set
+			{
+				if ((this._DDM_MOTIVO != value))
+				{
+					this.OnDDM_MOTIVOChanging(value);
+					this.SendPropertyChanging();
+					this._DDM_MOTIVO = value;
+					this.SendPropertyChanged("DDM_MOTIVO");
+					this.OnDDM_MOTIVOChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DETALLE_ENTREGA_MATERIAL")]
+	public partial class DETALLE_ENTREGA_MATERIAL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _EM_ID;
+		
+		private decimal _M_ID;
+		
+		private int _DEM_CANTIDAD;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEM_IDChanging(decimal value);
+    partial void OnEM_IDChanged();
+    partial void OnM_IDChanging(decimal value);
+    partial void OnM_IDChanged();
+    partial void OnDEM_CANTIDADChanging(int value);
+    partial void OnDEM_CANTIDADChanged();
+    #endregion
+		
+		public DETALLE_ENTREGA_MATERIAL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EM_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal EM_ID
+		{
+			get
+			{
+				return this._EM_ID;
+			}
+			set
+			{
+				if ((this._EM_ID != value))
+				{
+					this.OnEM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._EM_ID = value;
+					this.SendPropertyChanged("EM_ID");
+					this.OnEM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal M_ID
+		{
+			get
+			{
+				return this._M_ID;
+			}
+			set
+			{
+				if ((this._M_ID != value))
+				{
+					this.OnM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._M_ID = value;
+					this.SendPropertyChanged("M_ID");
+					this.OnM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEM_CANTIDAD", DbType="Int NOT NULL")]
+		public int DEM_CANTIDAD
+		{
+			get
+			{
+				return this._DEM_CANTIDAD;
+			}
+			set
+			{
+				if ((this._DEM_CANTIDAD != value))
+				{
+					this.OnDEM_CANTIDADChanging(value);
+					this.SendPropertyChanging();
+					this._DEM_CANTIDAD = value;
+					this.SendPropertyChanged("DEM_CANTIDAD");
+					this.OnDEM_CANTIDADChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DETALLE_RECEPCION_MATERIAL")]
+	public partial class DETALLE_RECEPCION_MATERIAL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _RM_ID;
+		
+		private decimal _M_ID;
+		
+		private int _DRM_CANTIDAD;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRM_IDChanging(decimal value);
+    partial void OnRM_IDChanged();
+    partial void OnM_IDChanging(decimal value);
+    partial void OnM_IDChanged();
+    partial void OnDRM_CANTIDADChanging(int value);
+    partial void OnDRM_CANTIDADChanged();
+    #endregion
+		
+		public DETALLE_RECEPCION_MATERIAL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RM_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal RM_ID
+		{
+			get
+			{
+				return this._RM_ID;
+			}
+			set
+			{
+				if ((this._RM_ID != value))
+				{
+					this.OnRM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._RM_ID = value;
+					this.SendPropertyChanged("RM_ID");
+					this.OnRM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal M_ID
+		{
+			get
+			{
+				return this._M_ID;
+			}
+			set
+			{
+				if ((this._M_ID != value))
+				{
+					this.OnM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._M_ID = value;
+					this.SendPropertyChanged("M_ID");
+					this.OnM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DRM_CANTIDAD", DbType="Int NOT NULL")]
+		public int DRM_CANTIDAD
+		{
+			get
+			{
+				return this._DRM_CANTIDAD;
+			}
+			set
+			{
+				if ((this._DRM_CANTIDAD != value))
+				{
+					this.OnDRM_CANTIDADChanging(value);
+					this.SendPropertyChanging();
+					this._DRM_CANTIDAD = value;
+					this.SendPropertyChanged("DRM_CANTIDAD");
+					this.OnDRM_CANTIDADChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DETALLE_SOLICITUD_COMPRA")]
+	public partial class DETALLE_SOLICITUD_COMPRA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _SC_ID;
+		
+		private decimal _M_ID;
+		
+		private int _DSC_CANTIDAD;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSC_IDChanging(decimal value);
+    partial void OnSC_IDChanged();
+    partial void OnM_IDChanging(decimal value);
+    partial void OnM_IDChanged();
+    partial void OnDSC_CANTIDADChanging(int value);
+    partial void OnDSC_CANTIDADChanged();
+    #endregion
+		
+		public DETALLE_SOLICITUD_COMPRA()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SC_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal SC_ID
+		{
+			get
+			{
+				return this._SC_ID;
+			}
+			set
+			{
+				if ((this._SC_ID != value))
+				{
+					this.OnSC_IDChanging(value);
+					this.SendPropertyChanging();
+					this._SC_ID = value;
+					this.SendPropertyChanged("SC_ID");
+					this.OnSC_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal M_ID
+		{
+			get
+			{
+				return this._M_ID;
+			}
+			set
+			{
+				if ((this._M_ID != value))
+				{
+					this.OnM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._M_ID = value;
+					this.SendPropertyChanged("M_ID");
+					this.OnM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSC_CANTIDAD", DbType="Int NOT NULL")]
+		public int DSC_CANTIDAD
+		{
+			get
+			{
+				return this._DSC_CANTIDAD;
+			}
+			set
+			{
+				if ((this._DSC_CANTIDAD != value))
+				{
+					this.OnDSC_CANTIDADChanging(value);
+					this.SendPropertyChanging();
+					this._DSC_CANTIDAD = value;
+					this.SendPropertyChanged("DSC_CANTIDAD");
+					this.OnDSC_CANTIDADChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DETALLE_SOLICITUD_MATERIAL")]
+	public partial class DETALLE_SOLICITUD_MATERIAL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _SM_ID;
+		
+		private decimal _M_ID;
+		
+		private int _DSM_CANTIDAD;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSM_IDChanging(decimal value);
+    partial void OnSM_IDChanged();
+    partial void OnM_IDChanging(decimal value);
+    partial void OnM_IDChanged();
+    partial void OnDSM_CANTIDADChanging(int value);
+    partial void OnDSM_CANTIDADChanged();
+    #endregion
+		
+		public DETALLE_SOLICITUD_MATERIAL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SM_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal SM_ID
+		{
+			get
+			{
+				return this._SM_ID;
+			}
+			set
+			{
+				if ((this._SM_ID != value))
+				{
+					this.OnSM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._SM_ID = value;
+					this.SendPropertyChanged("SM_ID");
+					this.OnSM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal M_ID
+		{
+			get
+			{
+				return this._M_ID;
+			}
+			set
+			{
+				if ((this._M_ID != value))
+				{
+					this.OnM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._M_ID = value;
+					this.SendPropertyChanged("M_ID");
+					this.OnM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSM_CANTIDAD", DbType="Int NOT NULL")]
+		public int DSM_CANTIDAD
+		{
+			get
+			{
+				return this._DSM_CANTIDAD;
+			}
+			set
+			{
+				if ((this._DSM_CANTIDAD != value))
+				{
+					this.OnDSM_CANTIDADChanging(value);
+					this.SendPropertyChanging();
+					this._DSM_CANTIDAD = value;
+					this.SendPropertyChanged("DSM_CANTIDAD");
+					this.OnDSM_CANTIDADChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DEVOLUCION_A_PROVEEDOR")]
+	public partial class DEVOLUCION_A_PROVEEDOR : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _DP_ID;
+		
+		private System.DateTime _DP_FECHA;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDP_IDChanging(decimal value);
+    partial void OnDP_IDChanged();
+    partial void OnDP_FECHAChanging(System.DateTime value);
+    partial void OnDP_FECHAChanged();
+    #endregion
+		
+		public DEVOLUCION_A_PROVEEDOR()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DP_ID", AutoSync=AutoSync.OnInsert, DbType="Decimal(18,0) NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public decimal DP_ID
+		{
+			get
+			{
+				return this._DP_ID;
+			}
+			set
+			{
+				if ((this._DP_ID != value))
+				{
+					this.OnDP_IDChanging(value);
+					this.SendPropertyChanging();
+					this._DP_ID = value;
+					this.SendPropertyChanged("DP_ID");
+					this.OnDP_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DP_FECHA", DbType="DateTime NOT NULL")]
+		public System.DateTime DP_FECHA
+		{
+			get
+			{
+				return this._DP_FECHA;
+			}
+			set
+			{
+				if ((this._DP_FECHA != value))
+				{
+					this.OnDP_FECHAChanging(value);
+					this.SendPropertyChanging();
+					this._DP_FECHA = value;
+					this.SendPropertyChanged("DP_FECHA");
+					this.OnDP_FECHAChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DEVOLUCION_MATERIAL")]
+	public partial class DEVOLUCION_MATERIAL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _DM_ID;
+		
+		private decimal _UC_ID;
+		
+		private System.DateTime _DM_FECHA;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDM_IDChanging(decimal value);
+    partial void OnDM_IDChanged();
+    partial void OnUC_IDChanging(decimal value);
+    partial void OnUC_IDChanged();
+    partial void OnDM_FECHAChanging(System.DateTime value);
+    partial void OnDM_FECHAChanged();
+    #endregion
+		
+		public DEVOLUCION_MATERIAL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DM_ID", AutoSync=AutoSync.OnInsert, DbType="Decimal(18,0) NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public decimal DM_ID
+		{
+			get
+			{
+				return this._DM_ID;
+			}
+			set
+			{
+				if ((this._DM_ID != value))
+				{
+					this.OnDM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._DM_ID = value;
+					this.SendPropertyChanged("DM_ID");
+					this.OnDM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_ID", DbType="Decimal(18,0) NOT NULL")]
+		public decimal UC_ID
+		{
+			get
+			{
+				return this._UC_ID;
+			}
+			set
+			{
+				if ((this._UC_ID != value))
+				{
+					this.OnUC_IDChanging(value);
+					this.SendPropertyChanging();
+					this._UC_ID = value;
+					this.SendPropertyChanged("UC_ID");
+					this.OnUC_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DM_FECHA", DbType="DateTime NOT NULL")]
+		public System.DateTime DM_FECHA
+		{
+			get
+			{
+				return this._DM_FECHA;
+			}
+			set
+			{
+				if ((this._DM_FECHA != value))
+				{
+					this.OnDM_FECHAChanging(value);
+					this.SendPropertyChanging();
+					this._DM_FECHA = value;
+					this.SendPropertyChanged("DM_FECHA");
+					this.OnDM_FECHAChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ENTREGA_MATERIAL")]
+	public partial class ENTREGA_MATERIAL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _EM_ID;
+		
+		private decimal _SM_ID;
+		
+		private string _EM_ENCARGADO_ENTREGA;
+		
+		private System.DateTime _EM_FECHA;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEM_IDChanging(decimal value);
+    partial void OnEM_IDChanged();
+    partial void OnSM_IDChanging(decimal value);
+    partial void OnSM_IDChanged();
+    partial void OnEM_ENCARGADO_ENTREGAChanging(string value);
+    partial void OnEM_ENCARGADO_ENTREGAChanged();
+    partial void OnEM_FECHAChanging(System.DateTime value);
+    partial void OnEM_FECHAChanged();
+    #endregion
+		
+		public ENTREGA_MATERIAL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EM_ID", AutoSync=AutoSync.OnInsert, DbType="Decimal(18,0) NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public decimal EM_ID
+		{
+			get
+			{
+				return this._EM_ID;
+			}
+			set
+			{
+				if ((this._EM_ID != value))
+				{
+					this.OnEM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._EM_ID = value;
+					this.SendPropertyChanged("EM_ID");
+					this.OnEM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SM_ID", DbType="Decimal(18,0) NOT NULL")]
+		public decimal SM_ID
+		{
+			get
+			{
+				return this._SM_ID;
+			}
+			set
+			{
+				if ((this._SM_ID != value))
+				{
+					this.OnSM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._SM_ID = value;
+					this.SendPropertyChanged("SM_ID");
+					this.OnSM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EM_ENCARGADO_ENTREGA", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string EM_ENCARGADO_ENTREGA
+		{
+			get
+			{
+				return this._EM_ENCARGADO_ENTREGA;
+			}
+			set
+			{
+				if ((this._EM_ENCARGADO_ENTREGA != value))
+				{
+					this.OnEM_ENCARGADO_ENTREGAChanging(value);
+					this.SendPropertyChanging();
+					this._EM_ENCARGADO_ENTREGA = value;
+					this.SendPropertyChanged("EM_ENCARGADO_ENTREGA");
+					this.OnEM_ENCARGADO_ENTREGAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EM_FECHA", DbType="DateTime NOT NULL")]
+		public System.DateTime EM_FECHA
+		{
+			get
+			{
+				return this._EM_FECHA;
+			}
+			set
+			{
+				if ((this._EM_FECHA != value))
+				{
+					this.OnEM_FECHAChanging(value);
+					this.SendPropertyChanging();
+					this._EM_FECHA = value;
+					this.SendPropertyChanged("EM_FECHA");
+					this.OnEM_FECHAChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RECEPCION_MATERIAL")]
+	public partial class RECEPCION_MATERIAL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _RM_ID;
+		
+		private string _RM_ENCARGADO_RECEPCION;
+		
+		private System.DateTime _RM_FECHA;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRM_IDChanging(decimal value);
+    partial void OnRM_IDChanged();
+    partial void OnRM_ENCARGADO_RECEPCIONChanging(string value);
+    partial void OnRM_ENCARGADO_RECEPCIONChanged();
+    partial void OnRM_FECHAChanging(System.DateTime value);
+    partial void OnRM_FECHAChanged();
+    #endregion
+		
+		public RECEPCION_MATERIAL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RM_ID", AutoSync=AutoSync.OnInsert, DbType="Decimal(18,0) NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public decimal RM_ID
+		{
+			get
+			{
+				return this._RM_ID;
+			}
+			set
+			{
+				if ((this._RM_ID != value))
+				{
+					this.OnRM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._RM_ID = value;
+					this.SendPropertyChanged("RM_ID");
+					this.OnRM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RM_ENCARGADO_RECEPCION", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string RM_ENCARGADO_RECEPCION
+		{
+			get
+			{
+				return this._RM_ENCARGADO_RECEPCION;
+			}
+			set
+			{
+				if ((this._RM_ENCARGADO_RECEPCION != value))
+				{
+					this.OnRM_ENCARGADO_RECEPCIONChanging(value);
+					this.SendPropertyChanging();
+					this._RM_ENCARGADO_RECEPCION = value;
+					this.SendPropertyChanged("RM_ENCARGADO_RECEPCION");
+					this.OnRM_ENCARGADO_RECEPCIONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RM_FECHA", DbType="DateTime NOT NULL")]
+		public System.DateTime RM_FECHA
+		{
+			get
+			{
+				return this._RM_FECHA;
+			}
+			set
+			{
+				if ((this._RM_FECHA != value))
+				{
+					this.OnRM_FECHAChanging(value);
+					this.SendPropertyChanging();
+					this._RM_FECHA = value;
+					this.SendPropertyChanged("RM_FECHA");
+					this.OnRM_FECHAChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SOLICITUD_COMPRA")]
+	public partial class SOLICITUD_COMPRA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _SC_ID;
+		
+		private decimal _E_ID;
+		
+		private System.DateTime _SC_FECHA;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSC_IDChanging(decimal value);
+    partial void OnSC_IDChanged();
+    partial void OnE_IDChanging(decimal value);
+    partial void OnE_IDChanged();
+    partial void OnSC_FECHAChanging(System.DateTime value);
+    partial void OnSC_FECHAChanged();
+    #endregion
+		
+		public SOLICITUD_COMPRA()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SC_ID", AutoSync=AutoSync.OnInsert, DbType="Decimal(18,0) NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public decimal SC_ID
+		{
+			get
+			{
+				return this._SC_ID;
+			}
+			set
+			{
+				if ((this._SC_ID != value))
+				{
+					this.OnSC_IDChanging(value);
+					this.SendPropertyChanging();
+					this._SC_ID = value;
+					this.SendPropertyChanged("SC_ID");
+					this.OnSC_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_ID", DbType="Decimal(18,0) NOT NULL")]
+		public decimal E_ID
+		{
+			get
+			{
+				return this._E_ID;
+			}
+			set
+			{
+				if ((this._E_ID != value))
+				{
+					this.OnE_IDChanging(value);
+					this.SendPropertyChanging();
+					this._E_ID = value;
+					this.SendPropertyChanged("E_ID");
+					this.OnE_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SC_FECHA", DbType="DateTime NOT NULL")]
+		public System.DateTime SC_FECHA
+		{
+			get
+			{
+				return this._SC_FECHA;
+			}
+			set
+			{
+				if ((this._SC_FECHA != value))
+				{
+					this.OnSC_FECHAChanging(value);
+					this.SendPropertyChanging();
+					this._SC_FECHA = value;
+					this.SendPropertyChanged("SC_FECHA");
+					this.OnSC_FECHAChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SOLICITUD_MATERIAL")]
+	public partial class SOLICITUD_MATERIAL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _SM_ID;
+		
+		private decimal _UC_ID;
+		
+		private decimal _E_ID;
+		
+		private decimal _UNI_UC_ID;
+		
+		private string _SM_TIPO;
+		
+		private System.DateTime _SM_FECHA;
+		
+		private System.Nullable<int> _SM_ID_RECTIFICADA;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSM_IDChanging(decimal value);
+    partial void OnSM_IDChanged();
+    partial void OnUC_IDChanging(decimal value);
+    partial void OnUC_IDChanged();
+    partial void OnE_IDChanging(decimal value);
+    partial void OnE_IDChanged();
+    partial void OnUNI_UC_IDChanging(decimal value);
+    partial void OnUNI_UC_IDChanged();
+    partial void OnSM_TIPOChanging(string value);
+    partial void OnSM_TIPOChanged();
+    partial void OnSM_FECHAChanging(System.DateTime value);
+    partial void OnSM_FECHAChanged();
+    partial void OnSM_ID_RECTIFICADAChanging(System.Nullable<int> value);
+    partial void OnSM_ID_RECTIFICADAChanged();
+    #endregion
+		
+		public SOLICITUD_MATERIAL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SM_ID", AutoSync=AutoSync.OnInsert, DbType="Decimal(18,0) NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public decimal SM_ID
+		{
+			get
+			{
+				return this._SM_ID;
+			}
+			set
+			{
+				if ((this._SM_ID != value))
+				{
+					this.OnSM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._SM_ID = value;
+					this.SendPropertyChanged("SM_ID");
+					this.OnSM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_ID", DbType="Decimal(18,0) NOT NULL")]
+		public decimal UC_ID
+		{
+			get
+			{
+				return this._UC_ID;
+			}
+			set
+			{
+				if ((this._UC_ID != value))
+				{
+					this.OnUC_IDChanging(value);
+					this.SendPropertyChanging();
+					this._UC_ID = value;
+					this.SendPropertyChanged("UC_ID");
+					this.OnUC_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_ID", DbType="Decimal(18,0) NOT NULL")]
+		public decimal E_ID
+		{
+			get
+			{
+				return this._E_ID;
+			}
+			set
+			{
+				if ((this._E_ID != value))
+				{
+					this.OnE_IDChanging(value);
+					this.SendPropertyChanging();
+					this._E_ID = value;
+					this.SendPropertyChanged("E_ID");
+					this.OnE_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UNI_UC_ID", DbType="Decimal(18,0) NOT NULL")]
+		public decimal UNI_UC_ID
+		{
+			get
+			{
+				return this._UNI_UC_ID;
+			}
+			set
+			{
+				if ((this._UNI_UC_ID != value))
+				{
+					this.OnUNI_UC_IDChanging(value);
+					this.SendPropertyChanging();
+					this._UNI_UC_ID = value;
+					this.SendPropertyChanged("UNI_UC_ID");
+					this.OnUNI_UC_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SM_TIPO", DbType="VarChar(1024) NOT NULL", CanBeNull=false)]
+		public string SM_TIPO
+		{
+			get
+			{
+				return this._SM_TIPO;
+			}
+			set
+			{
+				if ((this._SM_TIPO != value))
+				{
+					this.OnSM_TIPOChanging(value);
+					this.SendPropertyChanging();
+					this._SM_TIPO = value;
+					this.SendPropertyChanged("SM_TIPO");
+					this.OnSM_TIPOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SM_FECHA", DbType="DateTime NOT NULL")]
+		public System.DateTime SM_FECHA
+		{
+			get
+			{
+				return this._SM_FECHA;
+			}
+			set
+			{
+				if ((this._SM_FECHA != value))
+				{
+					this.OnSM_FECHAChanging(value);
+					this.SendPropertyChanging();
+					this._SM_FECHA = value;
+					this.SendPropertyChanged("SM_FECHA");
+					this.OnSM_FECHAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SM_ID_RECTIFICADA", DbType="Int")]
+		public System.Nullable<int> SM_ID_RECTIFICADA
+		{
+			get
+			{
+				return this._SM_ID_RECTIFICADA;
+			}
+			set
+			{
+				if ((this._SM_ID_RECTIFICADA != value))
+				{
+					this.OnSM_ID_RECTIFICADAChanging(value);
+					this.SendPropertyChanging();
+					this._SM_ID_RECTIFICADA = value;
+					this.SendPropertyChanged("SM_ID_RECTIFICADA");
+					this.OnSM_ID_RECTIFICADAChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.STOCK_MATERIAL_UNIDAD")]
+	public partial class STOCK_MATERIAL_UNIDAD : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _UC_ID;
+		
+		private decimal _M_ID;
+		
+		private int _SMU_STOCK_REAL;
+		
+		private int _SMU_STOCK_IDEAL;
+		
+		private int _SMU_STOCK_BAJO;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUC_IDChanging(decimal value);
+    partial void OnUC_IDChanged();
+    partial void OnM_IDChanging(decimal value);
+    partial void OnM_IDChanged();
+    partial void OnSMU_STOCK_REALChanging(int value);
+    partial void OnSMU_STOCK_REALChanged();
+    partial void OnSMU_STOCK_IDEALChanging(int value);
+    partial void OnSMU_STOCK_IDEALChanged();
+    partial void OnSMU_STOCK_BAJOChanging(int value);
+    partial void OnSMU_STOCK_BAJOChanged();
+    #endregion
+		
+		public STOCK_MATERIAL_UNIDAD()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal UC_ID
+		{
+			get
+			{
+				return this._UC_ID;
+			}
+			set
+			{
+				if ((this._UC_ID != value))
+				{
+					this.OnUC_IDChanging(value);
+					this.SendPropertyChanging();
+					this._UC_ID = value;
+					this.SendPropertyChanged("UC_ID");
+					this.OnUC_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal M_ID
+		{
+			get
+			{
+				return this._M_ID;
+			}
+			set
+			{
+				if ((this._M_ID != value))
+				{
+					this.OnM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._M_ID = value;
+					this.SendPropertyChanged("M_ID");
+					this.OnM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SMU_STOCK_REAL", DbType="Int NOT NULL")]
+		public int SMU_STOCK_REAL
+		{
+			get
+			{
+				return this._SMU_STOCK_REAL;
+			}
+			set
+			{
+				if ((this._SMU_STOCK_REAL != value))
+				{
+					this.OnSMU_STOCK_REALChanging(value);
+					this.SendPropertyChanging();
+					this._SMU_STOCK_REAL = value;
+					this.SendPropertyChanged("SMU_STOCK_REAL");
+					this.OnSMU_STOCK_REALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SMU_STOCK_IDEAL", DbType="Int NOT NULL")]
+		public int SMU_STOCK_IDEAL
+		{
+			get
+			{
+				return this._SMU_STOCK_IDEAL;
+			}
+			set
+			{
+				if ((this._SMU_STOCK_IDEAL != value))
+				{
+					this.OnSMU_STOCK_IDEALChanging(value);
+					this.SendPropertyChanging();
+					this._SMU_STOCK_IDEAL = value;
+					this.SendPropertyChanged("SMU_STOCK_IDEAL");
+					this.OnSMU_STOCK_IDEALChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SMU_STOCK_BAJO", DbType="Int NOT NULL")]
+		public int SMU_STOCK_BAJO
+		{
+			get
+			{
+				return this._SMU_STOCK_BAJO;
+			}
+			set
+			{
+				if ((this._SMU_STOCK_BAJO != value))
+				{
+					this.OnSMU_STOCK_BAJOChanging(value);
+					this.SendPropertyChanging();
+					this._SMU_STOCK_BAJO = value;
+					this.SendPropertyChanged("SMU_STOCK_BAJO");
+					this.OnSMU_STOCK_BAJOChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UNIDAD_CLINICA")]
 	public partial class UNIDAD_CLINICA : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -586,7 +2384,7 @@ namespace CORE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_NOMBRE", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_NOMBRE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string UC_NOMBRE
 		{
 			get
@@ -606,7 +2404,7 @@ namespace CORE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_ENCARGADO", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_ENCARGADO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string UC_ENCARGADO
 		{
 			get
@@ -642,6 +2440,312 @@ namespace CORE
 					this._UC_PRIORIDAD = value;
 					this.SendPropertyChanged("UC_PRIORIDAD");
 					this.OnUC_PRIORIDADChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ESTADO")]
+	public partial class ESTADO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _E_ID;
+		
+		private string _E_NOMBRE;
+		
+		private string _E_DESCRIPCION;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnE_IDChanging(decimal value);
+    partial void OnE_IDChanged();
+    partial void OnE_NOMBREChanging(string value);
+    partial void OnE_NOMBREChanged();
+    partial void OnE_DESCRIPCIONChanging(string value);
+    partial void OnE_DESCRIPCIONChanged();
+    #endregion
+		
+		public ESTADO()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_ID", AutoSync=AutoSync.OnInsert, DbType="Decimal(18,0) NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public decimal E_ID
+		{
+			get
+			{
+				return this._E_ID;
+			}
+			set
+			{
+				if ((this._E_ID != value))
+				{
+					this.OnE_IDChanging(value);
+					this.SendPropertyChanging();
+					this._E_ID = value;
+					this.SendPropertyChanged("E_ID");
+					this.OnE_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_NOMBRE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string E_NOMBRE
+		{
+			get
+			{
+				return this._E_NOMBRE;
+			}
+			set
+			{
+				if ((this._E_NOMBRE != value))
+				{
+					this.OnE_NOMBREChanging(value);
+					this.SendPropertyChanging();
+					this._E_NOMBRE = value;
+					this.SendPropertyChanged("E_NOMBRE");
+					this.OnE_NOMBREChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_DESCRIPCION", DbType="VarChar(100)")]
+		public string E_DESCRIPCION
+		{
+			get
+			{
+				return this._E_DESCRIPCION;
+			}
+			set
+			{
+				if ((this._E_DESCRIPCION != value))
+				{
+					this.OnE_DESCRIPCIONChanging(value);
+					this.SendPropertyChanging();
+					this._E_DESCRIPCION = value;
+					this.SendPropertyChanged("E_DESCRIPCION");
+					this.OnE_DESCRIPCIONChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.USUARIO")]
+	public partial class USUARIO : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _nombre;
+		
+		private string _pass;
+		
+		private string _area;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnnombreChanging(string value);
+    partial void OnnombreChanged();
+    partial void OnpassChanging(string value);
+    partial void OnpassChanged();
+    partial void OnareaChanging(string value);
+    partial void OnareaChanged();
+    #endregion
+		
+		public USUARIO()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nombre", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string nombre
+		{
+			get
+			{
+				return this._nombre;
+			}
+			set
+			{
+				if ((this._nombre != value))
+				{
+					this.OnnombreChanging(value);
+					this.SendPropertyChanging();
+					this._nombre = value;
+					this.SendPropertyChanged("nombre");
+					this.OnnombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pass", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string pass
+		{
+			get
+			{
+				return this._pass;
+			}
+			set
+			{
+				if ((this._pass != value))
+				{
+					this.OnpassChanging(value);
+					this.SendPropertyChanging();
+					this._pass = value;
+					this.SendPropertyChanged("pass");
+					this.OnpassChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_area", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string area
+		{
+			get
+			{
+				return this._area;
+			}
+			set
+			{
+				if ((this._area != value))
+				{
+					this.OnareaChanging(value);
+					this.SendPropertyChanging();
+					this._area = value;
+					this.SendPropertyChanged("area");
+					this.OnareaChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.COMPRA_RECEPCION")]
+	public partial class COMPRA_RECEPCION : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private decimal _RM_ID;
+		
+		private decimal _SC_ID;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRM_IDChanging(decimal value);
+    partial void OnRM_IDChanged();
+    partial void OnSC_IDChanging(decimal value);
+    partial void OnSC_IDChanged();
+    #endregion
+		
+		public COMPRA_RECEPCION()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RM_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal RM_ID
+		{
+			get
+			{
+				return this._RM_ID;
+			}
+			set
+			{
+				if ((this._RM_ID != value))
+				{
+					this.OnRM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._RM_ID = value;
+					this.SendPropertyChanged("RM_ID");
+					this.OnRM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SC_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		public decimal SC_ID
+		{
+			get
+			{
+				return this._SC_ID;
+			}
+			set
+			{
+				if ((this._SC_ID != value))
+				{
+					this.OnSC_IDChanging(value);
+					this.SendPropertyChanging();
+					this._SC_ID = value;
+					this.SendPropertyChanged("SC_ID");
+					this.OnSC_IDChanged();
 				}
 			}
 		}

@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.Master.cs" Inherits="BodExpress.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            height: 30px;
+        }
+        .style3
+        {
+            width: 200px;
+            height: 30px;
+        }
+        .style4
+        {
+            height: 30px;
+            width: 1250px;
+        }
+    </style>
+</head>
+<body class="body">
+    <form id="form1" runat="server">
+    <center>
+        <table width="960" class="tableBody">
+            <tr>
+                <td valign="bottom" align="left" style="text-align: left; vertical-align: bottom;
+                    padding-left: 20px;" class="style4">
+                    <h2>
+                        <img src="images/logo_hrrio.png" alt="" style="height: 50px; width: 60px" />
+                        Hospital de Niños Roberto del Río
+                    </h2>
+                </td>
+                <td valign="bottom" align="right" style="text-align: right; vertical-align: bottom;
+                    padding-left: 20px;" class="style1">
+                    <img src="images/logo_bodex.png" alt="" style="height: 70px; width: 150px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="style3" style="margin-left: 40px;" onclick="location.href=''" align="left">
+                </td>
+                <td class="style3" style="margin-left: 40px;" onclick="location.href=''" align="right">
+                    <asp:Label ID="lblUsuario" runat="server" Text="Usuario (Salir)"></asp:Label>&nbsp;&nbsp;
+                </td>
+                <td class="style3">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="style1" style="" colspan="3">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" valign="top" style="vertical-align: top;">
+                    <table>
+                        <tr>
+                            <td style="width: 220px; padding-left: 20px; vertical-align: top;" valign="top">
+                                <asp:ContentPlaceHolder ID="ContentMenu" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                            <td style="width: 740px; vertical-align: top; padding-left: 10px;" valign="top">
+                                <asp:ContentPlaceHolder ID="ContentMain" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="style1" colspan="2" style="">
+                </td>
+            </tr>
+        </table>
+    </center>
+    </form>
+</body>
+</html>
