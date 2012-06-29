@@ -12,9 +12,9 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                var DevolucionMaterial = from dev_met in ctx.ListaDevolucionMaterial
-                                         orderby dev_met.DM_ID
-                                         select dev_met;
+                var DevolucionMaterial = from dev_mat in ctx.ListaDevolucionMaterial
+                                         orderby dev_mat.DM_ID
+                                         select dev_mat;
                 return DevolucionMaterial.ToList<DEVOLUCION_MATERIAL>();
             }
         }
@@ -51,7 +51,6 @@ namespace CORE
                                                           where dev_mat.DM_ID.Equals(dev_mat_upd.DM_ID)
                                                           select dev_mat).First<DEVOLUCION_MATERIAL>();
 
-                DevolucionMaterial.DM_ID = dev_mat_upd.DM_ID;
                 DevolucionMaterial.UC_ID = dev_mat_upd.UC_ID;
                 DevolucionMaterial.DM_FECHA = dev_mat_upd.DM_FECHA;
 

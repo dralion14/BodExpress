@@ -18,7 +18,6 @@ namespace CORE
             }
 
         }
-
         public static void Create(COMPRA_RECEPCION c_r)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -43,20 +42,6 @@ namespace CORE
                 {
                     return null;
                 }
-            }
-        }
-
-        public static void Update(COMPRA_RECEPCION cr_upd)
-        {
-            using (BODEXDataContext ctx = new BODEXDataContext())
-            {
-                COMPRA_RECEPCION CompraRecepcion = (from c_r in ctx.ListaCompraRecepcion
-                                                    where (c_r.SC_ID.Equals(cr_upd.SC_ID) && c_r.RM_ID.Equals(cr_upd.RM_ID))
-                                                    select c_r).First<COMPRA_RECEPCION>();
-
-                CompraRecepcion.SC_ID = cr_upd.SC_ID;
-                CompraRecepcion.RM_ID = cr_upd.RM_ID;
-                ctx.SubmitChanges();
             }
         }
 
