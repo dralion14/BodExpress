@@ -7,7 +7,6 @@ namespace CORE
 {
     public class CRUD_Usuario
     {
-
         public static List<USUARIO> getAll()
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -20,6 +19,10 @@ namespace CORE
                 return usuario.ToList<USUARIO>();
             }
         }
+
+
+
+
 
         public static void Delete(USUARIO usuario)
         {
