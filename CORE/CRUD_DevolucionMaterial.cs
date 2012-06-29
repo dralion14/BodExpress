@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CORE
 {
-    public class CRUD_DevolucionProveedorDetalle
+    public class CRUD_DevolucionMaterial
     {
 
         public static List<DEVOLUCION_MATERIAL> getAll()
@@ -33,7 +33,7 @@ namespace CORE
                 try
                 {
                     var DevolucionMaterial = from dev_mat in ctx.ListaDevolucionMaterial
-                                             where dev_mat.DM_ID.Equals(det_dev_p_id)
+                                             where dev_mat.DM_ID.Equals(dev_mat_id)
                                              select dev_mat;
                     return DevolucionMaterial.First<DEVOLUCION_MATERIAL>();
                 }

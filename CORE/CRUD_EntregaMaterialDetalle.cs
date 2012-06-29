@@ -7,10 +7,6 @@ namespace CORE
 {
     public class CRUD_EntregaMaterialDetalle
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d5fc1f58137ca18e34f1e00b8eb8947c0ee191ee
         public static List<DETALLE_ENTREGA_MATERIAL> getAll()
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -49,11 +45,7 @@ namespace CORE
                 }
             }
         }
-<<<<<<< HEAD
-
-=======
-        //as
->>>>>>> d5fc1f58137ca18e34f1e00b8eb8947c0ee191ee
+		
         public static void Update(DETALLE_ENTREGA_MATERIAL det_entr_mat_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -79,11 +71,6 @@ namespace CORE
                 ctx.SubmitChanges();
             }
         }
-<<<<<<< HEAD
-=======
->>>>>>> parent of 8fbeed8... Crud Detalle Entrega Material
-=======
->>>>>>> d5fc1f58137ca18e34f1e00b8eb8947c0ee191ee
     }
 
 }
