@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CORE
 {
-    public class CRUD_EntregaMaterialDetalle
+    public class CRUD_RecepcionMaterial
     {
         public static List<DETALLE_ENTREGA_MATERIAL> getAll()
         {

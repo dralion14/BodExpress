@@ -45,7 +45,7 @@ namespace CORE
                 }
             }
         }
-
+        //as
         public static void Update(DETALLE_ENTREGA_MATERIAL det_entr_mat_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
