@@ -12,7 +12,7 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var EntregaMaterialDetalle = from det_entr_mat in ctx.ListaEntregaMaterialDetalle
-                                             orderby det_entr_mat.M_ID
+                                             orderby det_entr_mat.EM_ID, det_entr_mat.M_ID
                                              select det_entr_mat;
 
                 return EntregaMaterialDetalle.ToList<DETALLE_ENTREGA_MATERIAL>();
@@ -35,7 +35,7 @@ namespace CORE
                 try
                 {
                     var EntregaMaterialDetalle = from det_entr_mat in ctx.ListaEntregaMaterialDetalle
-                                                 where det_entr_mat.M_ID.Equals(det_entr_mat_id)
+                                                 where det_entr_mat.EM_ID.Equals(det_entr_mat_id) && det_entr_mat.M_ID.Equals(det_entr_mat_id)
                                                  select det_entr_mat;
                     return EntregaMaterialDetalle.First<DETALLE_ENTREGA_MATERIAL>();
                 }
@@ -51,7 +51,7 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 DETALLE_ENTREGA_MATERIAL EntregaMaterialDetalle = (from det_entr_mat in ctx.ListaEntregaMaterialDetalle
-                                                                   where det_entr_mat.M_ID.Equals(det_entr_mat_upd.M_ID)
+                                                                   where det_entr_mat.EM_ID.Equals(det_entr_mat_upd.EM_ID) && det_entr_mat.M_ID.Equals(det_entr_mat_upd.M_ID)
                                                                    select det_entr_mat).First<DETALLE_ENTREGA_MATERIAL>();
 
                 EntregaMaterialDetalle.DEM_CANTIDAD = det_entr_mat_upd.DEM_CANTIDAD;
@@ -64,7 +64,7 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 DETALLE_ENTREGA_MATERIAL borrar = (from det_entr_mat in ctx.ListaEntregaMaterialDetalle
-                                                   where det_entr_mat.M_ID.Equals(det_entr_mat_del.M_ID)
+                                                   where det_entr_mat.EM_ID.Equals(det_entr_mat_del.EM_ID) && det_entr_mat.M_ID.Equals(det_entr_mat_del.M_ID)
                                                    select det_entr_mat).First<DETALLE_ENTREGA_MATERIAL>();
 
                 ctx.ListaEntregaMaterialDetalle.DeleteOnSubmit(borrar);

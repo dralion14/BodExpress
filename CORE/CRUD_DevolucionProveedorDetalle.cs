@@ -13,8 +13,8 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var DevolucionProveedorDetalle = from det_dev_p in ctx.ListaDevolucionProveedorDetalle
-                                         orderby det_dev_p.DP_ID
-                                         select det_dev_p;
+                                                 orderby det_dev_p.M_ID, det_dev_p.DP_ID 
+                                                 select det_dev_p;
                 return DevolucionProveedorDetalle.ToList<DETALLE_DEVOLUCION_A_PROVEEDOR>();
             }
         }
@@ -33,7 +33,7 @@ namespace CORE
                 try
                 {
                     var DevolucionProveedorDetalle = from det_dev_p in ctx.ListaDevolucionProveedorDetalle
-                                                     where det_dev_p.DP_ID.Equals(det_dev_p_id)
+                                                     where det_dev_p.DP_ID.Equals(det_dev_p_id) && det_dev_p.M_ID.Equals(det_dev_p_id)
                                                      select det_dev_p;
                     return DevolucionProveedorDetalle.First<DETALLE_DEVOLUCION_A_PROVEEDOR>();
                 }
@@ -47,22 +47,22 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                DETALLE_DEVOLUCION_A_PROVEEDOR DevolucionProveedorDetalle = (from dev_mat in ctx.ListaDevolucionProveedorDetalle
-                                                          where dev_mat.DP_ID.Equals(det_dev_p_upd.DP_ID)
-                                                          select dev_mat).First<DETALLE_DEVOLUCION_A_PROVEEDOR>();
+                DETALLE_DEVOLUCION_A_PROVEEDOR DevolucionProveedorDetalle = (from det_dev_p in ctx.ListaDevolucionProveedorDetalle
+                                                                             where det_dev_p.DP_ID.Equals(det_dev_p_upd.DP_ID) && det_dev_p.DP_ID.Equals(det_dev_p_upd.M_ID)
+                                                                             select det_dev_p).First<DETALLE_DEVOLUCION_A_PROVEEDOR>();
 
                 DevolucionProveedorDetalle.DDP_CANTIDAD = det_dev_p_upd.DDP_CANTIDAD;
                 DevolucionProveedorDetalle.DDP_MOTIVO = det_dev_p_upd.DDP_MOTIVO;
                 ctx.SubmitChanges();
             }
         }
-        public static void Delete(DETALLE_DEVOLUCION_A_PROVEEDOR dev_mat_del)
+        public static void Delete(DETALLE_DEVOLUCION_A_PROVEEDOR det_dev_p_del)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                DETALLE_DEVOLUCION_A_PROVEEDOR borrar = (from dev_mat in ctx.ListaDevolucionProveedorDetalle
-                                              where dev_mat.DP_ID.Equals(dev_mat_del.DP_ID)
-                                              select dev_mat).First<DETALLE_DEVOLUCION_A_PROVEEDOR>();
+                DETALLE_DEVOLUCION_A_PROVEEDOR borrar = (from det_dev_p in ctx.ListaDevolucionProveedorDetalle
+                                                         where det_dev_p.DP_ID.Equals(det_dev_p_del.DP_ID)
+                                                         select det_dev_p).First<DETALLE_DEVOLUCION_A_PROVEEDOR>();
 
                 ctx.ListaDevolucionProveedorDetalle.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
