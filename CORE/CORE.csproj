@@ -46,8 +46,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BODEX.dbml</DependentUpon>
     </Compile>
-    <Compile Include="EstadoCRUD.cs" />
-    <Compile Include="MaterialCRUD.cs" />
     <Compile Include="CRUD_CompraRecepcion.cs" />
     <Compile Include="CRUD_DevolucionMaterial.cs" />
     <Compile Include="CRUD_DevolucionMaterialDetalle.cs" />
