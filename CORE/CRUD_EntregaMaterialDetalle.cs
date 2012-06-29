@@ -1,44 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Web;
 
 namespace CORE
 {
     public class CRUD_EntregaMaterialDetalle
     {
-        public static List<MATERIAL> getAll()
+        public static List<DETALLE_ENTREGA_MATERIAL> getAll()
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                var material = from mat in ctx.ListaMaterial
-                               where !mat.M_TIPO.Equals("Kit")
-                               orderby mat.M_ID
-                               select mat;
+                var EntregaMaterialDetalle = from det_entr_mat in ctx.ListaEntregaMaterialDetalle
+                                             orderby det_entr_mat.M_ID
+                                             select det_entr_mat;
 
-                return material.ToList<MATERIAL>();
+                return EntregaMaterialDetalle.ToList<DETALLE_ENTREGA_MATERIAL>();
             }
         }
 
-        public static void Create(MATERIAL mat_new)
+        public static void Create(DETALLE_ENTREGA_MATERIAL det_entr_mat_new)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                ctx.ListaMaterial.InsertOnSubmit(mat_new);
+                ctx.ListaEntregaMaterialDetalle.InsertOnSubmit(det_entr_mat_new);
                 ctx.SubmitChanges();
             }
         }
 
-        public static MATERIAL Read(int mat_id)
+        public static DETALLE_ENTREGA_MATERIAL Read(int det_entr_mat_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 try
                 {
-                    var material = from mat in ctx.ListaMaterial
-                                   where mat.M_ID.Equals(mat_id)
-                                   select mat;
-                    return material.First<MATERIAL>();
+                    var EntregaMaterialDetalle = from det_entr_mat in ctx.ListaEntregaMaterialDetalle
+                                                 where det_entr_mat.M_ID.Equals(det_entr_mat_id)
+                                                 select det_entr_mat;
+                    return EntregaMaterialDetalle.First<DETALLE_ENTREGA_MATERIAL>();
                 }
                 catch
                 {
@@ -47,33 +46,28 @@ namespace CORE
             }
         }
 
-        public static void Update(MATERIAL mat_upd)
+        public static void Update(DETALLE_ENTREGA_MATERIAL det_entr_mat_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                MATERIAL material = (from mat in ctx.ListaMaterial
-                                     where mat.M_ID.Equals(mat_upd.M_ID)
-                                     select mat).First<MATERIAL>();
+                DETALLE_ENTREGA_MATERIAL EntregaMaterialDetalle = (from det_entr_mat in ctx.ListaEntregaMaterialDetalle
+                                                                   where det_entr_mat.M_ID.Equals(det_entr_mat_upd.M_ID)
+                                                                   select det_entr_mat).First<DETALLE_ENTREGA_MATERIAL>();
 
-                material.M_NOMBRE = mat_upd.M_NOMBRE;
-                material.M_DESCRIPCION = mat_upd.M_DESCRIPCION;
-                material.M_TIPO = mat_upd.M_TIPO;
-                material.M_MEDIDA_DISTRIBUCION = mat_upd.M_MEDIDA_DISTRIBUCION;
-                material.M_MEDIDA_COMPRA = mat_upd.M_MEDIDA_COMPRA;
-
+                EntregaMaterialDetalle.DEM_CANTIDAD = det_entr_mat_upd.DEM_CANTIDAD;
                 ctx.SubmitChanges();
             }
         }
 
-        public static void Delete(MATERIAL mat_del)
+        public static void Delete(DETALLE_ENTREGA_MATERIAL det_entr_mat_del)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                MATERIAL borrar = (from mat in ctx.ListaMaterial
-                                   where mat.M_ID.Equals(mat_del.M_ID)
-                                   select mat).First<MATERIAL>();
+                DETALLE_ENTREGA_MATERIAL borrar = (from det_entr_mat in ctx.ListaEntregaMaterialDetalle
+                                                   where det_entr_mat.M_ID.Equals(det_entr_mat_del.M_ID)
+                                                   select det_entr_mat).First<DETALLE_ENTREGA_MATERIAL>();
 
-                ctx.ListaMaterial.DeleteOnSubmit(borrar);
+                ctx.ListaEntregaMaterialDetalle.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
             }
         }
