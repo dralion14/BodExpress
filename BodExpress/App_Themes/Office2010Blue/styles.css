@@ -1,7 +1,7 @@
 .body{
-	margin: 0px 0px 0px 0px;
-	font: Arial;
-	font-size: 12px;
+	margin: 0px 0px 0px 0px
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
 	background-color: #e2e1dd;
 }
 
@@ -44,25 +44,29 @@
 }
 
 .BarraMenuINLF{
-	padding-left: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-right: 10px;
-	background-color: #e2e1dd;
-	color: #003d4d;
-	border: 1px solid white;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+	background-color: #fff;
+    color: #034af3;
 	cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
 }
 
 .BarraMenuOUTLF{
-	padding-left: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-right: 10px;
-	background-color: #f0f0ee;
-	color: #003d4d;
-	border: 1px solid white;
+	padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #e8eef4;
+    color: #034af3;
 	cursor: pointer;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
 }
 
 .BarraMenuLF2{
