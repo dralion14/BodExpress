@@ -12,7 +12,6 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var usuario = from usu in ctx.ListaUsuario
-                              
                                orderby usu.nombre
                                select usu;
 
