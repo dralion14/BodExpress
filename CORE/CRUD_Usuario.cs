@@ -59,12 +59,6 @@ namespace CORE
                 ctx.SubmitChanges();
             }
         }
-
-
-
-
-
-
         public static void Delete(USUARIO usuario)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
