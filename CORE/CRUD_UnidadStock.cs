@@ -14,7 +14,7 @@ namespace CORE
             {
                 var stock_unidad = from stock_un in ctx.ListaStockMaterialUnidad
                             
-                               orderby stock_un.M_ID
+                               orderby stock_un.M_ID, stock_un.UC_ID
                                select stock_un;
 
                 return stock_unidad.ToList<STOCK_MATERIAL_UNIDAD>();
