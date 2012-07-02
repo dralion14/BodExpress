@@ -18,16 +18,14 @@ namespace CORE
                 return entrega_material.ToList<ENTREGA_MATERIAL>();
             }
         }
-
-        public static void Create(ENTREGA_MATERIAL entrg_mat)
+        public static void Create(ENTREGA_MATERIAL entrg_mat_new)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                ctx.ListaEntregaMaterial.InsertOnSubmit(entrg_mat);
+                ctx.ListaEntregaMaterial.InsertOnSubmit(entrg_mat_new);
                 ctx.SubmitChanges();
             }
         }
-
         public static ENTREGA_MATERIAL Read(int entrg_mat_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -45,7 +43,6 @@ namespace CORE
                 }
             }
         }
-
         public static void Update(ENTREGA_MATERIAL entrg_mat_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -62,7 +59,6 @@ namespace CORE
                 ctx.SubmitChanges();
             }
         }
-
         public static void Delete(ENTREGA_MATERIAL entrg_mat_del)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())

@@ -7,6 +7,7 @@ namespace CORE
 {
     public class CRUD_EntregaMaterialDetalle
     {
+
         public static List<DETALLE_ENTREGA_MATERIAL> getAll()
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -18,7 +19,6 @@ namespace CORE
                 return EntregaMaterialDetalle.ToList<DETALLE_ENTREGA_MATERIAL>();
             }
         }
-
         public static void Create(DETALLE_ENTREGA_MATERIAL det_entr_mat_new)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -27,15 +27,14 @@ namespace CORE
                 ctx.SubmitChanges();
             }
         }
-
-        public static DETALLE_ENTREGA_MATERIAL Read(int det_entr_mat_id)
+        public static DETALLE_ENTREGA_MATERIAL Read(int entr_mat_id, int mat_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 try
                 {
                     var EntregaMaterialDetalle = from det_entr_mat in ctx.ListaEntregaMaterialDetalle
-                                                 where det_entr_mat.EM_ID.Equals(det_entr_mat_id) && det_entr_mat.M_ID.Equals(det_entr_mat_id)
+                                                 where det_entr_mat.EM_ID.Equals(entr_mat_id) && det_entr_mat.M_ID.Equals(mat_id)
                                                  select det_entr_mat;
                     return EntregaMaterialDetalle.First<DETALLE_ENTREGA_MATERIAL>();
                 }
@@ -45,7 +44,6 @@ namespace CORE
                 }
             }
         }
-		
         public static void Update(DETALLE_ENTREGA_MATERIAL det_entr_mat_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -58,7 +56,6 @@ namespace CORE
                 ctx.SubmitChanges();
             }
         }
-
         public static void Delete(DETALLE_ENTREGA_MATERIAL det_entr_mat_del)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -71,6 +68,6 @@ namespace CORE
                 ctx.SubmitChanges();
             }
         }
-    }
 
+    }
 }

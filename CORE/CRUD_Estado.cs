@@ -18,7 +18,6 @@ namespace CORE
                 return estado.ToList<ESTADO>();
             }
         }
-
         public static void Create(ESTADO estado_new)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -27,7 +26,6 @@ namespace CORE
                 ctx.SubmitChanges();
             }
         }
-
         public static ESTADO Read(int estado_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -45,7 +43,6 @@ namespace CORE
                 }
             }
         }
-
         public static void Update(ESTADO estado_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -59,7 +56,6 @@ namespace CORE
                 ctx.SubmitChanges();
             }
         }
-
         public static void Delete(ESTADO estado_del)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())

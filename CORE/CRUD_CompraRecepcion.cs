@@ -12,8 +12,8 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var CompraRecepcion = from c_r in ctx.ListaCompraRecepcion
-                             orderby c_r.SC_ID
-                             select c_r;
+                                      orderby c_r.SC_ID, c_r.RM_ID
+                                      select c_r;
                 return CompraRecepcion.ToList<COMPRA_RECEPCION>();
             }
 

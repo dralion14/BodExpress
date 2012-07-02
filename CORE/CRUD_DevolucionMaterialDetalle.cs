@@ -13,13 +13,12 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var DevolucionMaterialDetalle = from d_d_m in ctx.ListaDevolucionMaterialDetalle
-                                                orderby d_d_m.DM_ID
+                                                orderby d_d_m.DM_ID, d_d_m.M_ID
                                                 select d_d_m;
 
                 return DevolucionMaterialDetalle.ToList<DETALLE_DEVOLUCION_MATERIAL>();
             }
         }
-
         public static void Create(DETALLE_DEVOLUCION_MATERIAL d_d_m_new)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -28,7 +27,6 @@ namespace CORE
                 ctx.SubmitChanges();
             }
         }
-
         public static DETALLE_DEVOLUCION_MATERIAL Read(int d_m_id, int m_id )
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -46,7 +44,6 @@ namespace CORE
                 }
             }
         }
-
         public static void Update(DETALLE_DEVOLUCION_MATERIAL d_d_m_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -61,21 +58,17 @@ namespace CORE
                 ctx.SubmitChanges();
             }
         }
-
-        public static void Delete(DETALLE_DEVOLUCION_MATERIAL mat_del)
+        public static void Delete(DETALLE_DEVOLUCION_MATERIAL d_d_m_del)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 DETALLE_DEVOLUCION_MATERIAL borrar = (from d_d_m in ctx.ListaDevolucionMaterialDetalle
-                                                      where (d_d_m.M_ID.Equals(mat_del.M_ID) && d_d_m.DM_ID.Equals(d_d_m.DM_ID))
+                                                      where (d_d_m.M_ID.Equals(d_d_m_del.M_ID) && d_d_m.DM_ID.Equals(d_d_m_del.DM_ID))
                                                       select d_d_m).First<DETALLE_DEVOLUCION_MATERIAL>();
 
                 ctx.ListaDevolucionMaterialDetalle.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
             }
         }
-
-
-
     }
 }
