@@ -119,47 +119,47 @@ namespace CORE
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<MATERIAL> ListaMaterial
+				public System.Data.Linq.Table<MATERIAL> ListaMaterial
 		{
 			get
 			{
 				return this.GetTable<MATERIAL>();
 			}
 		}
-		
-		public System.Data.Linq.Table<MATERIAL_KIT> ListaMaterialKit
+
+        public System.Data.Linq.Table<MATERIAL_KIT> ListaMaterialKit
 		{
 			get
 			{
 				return this.GetTable<MATERIAL_KIT>();
 			}
 		}
-		
-		public System.Data.Linq.Table<DETALLE_DEVOLUCION_A_PROVEEDOR> ListaDevolucionProveedorDetalle
+
+        public System.Data.Linq.Table<DETALLE_DEVOLUCION_A_PROVEEDOR> ListaDevolucionProveedorDetalle
 		{
 			get
 			{
 				return this.GetTable<DETALLE_DEVOLUCION_A_PROVEEDOR>();
 			}
 		}
-		
-		public System.Data.Linq.Table<DETALLE_DEVOLUCION_MATERIAL> ListaDevolucionMaterialDetalle
+
+        public System.Data.Linq.Table<DETALLE_DEVOLUCION_MATERIAL> ListaDevolucionMaterialDetalle
 		{
 			get
 			{
 				return this.GetTable<DETALLE_DEVOLUCION_MATERIAL>();
 			}
 		}
-		
-		public System.Data.Linq.Table<DETALLE_ENTREGA_MATERIAL> ListaEntregaMaterialDetalle
+
+        public System.Data.Linq.Table<DETALLE_ENTREGA_MATERIAL> ListaEntregaMaterialDetalle
 		{
 			get
 			{
 				return this.GetTable<DETALLE_ENTREGA_MATERIAL>();
 			}
 		}
-		
-		public System.Data.Linq.Table<DETALLE_RECEPCION_MATERIAL> ListaRecepcionMaterialDetalle
+
+        public System.Data.Linq.Table<DETALLE_RECEPCION_MATERIAL> ListaRecepcionMaterialDetalle
 		{
 			get
 			{
@@ -174,8 +174,8 @@ namespace CORE
 				return this.GetTable<DETALLE_SOLICITUD_COMPRA>();
 			}
 		}
-		
-		public System.Data.Linq.Table<DETALLE_SOLICITUD_MATERIAL> ListaSolicitudMaterialDetalle
+
+        public System.Data.Linq.Table<DETALLE_SOLICITUD_MATERIAL> ListaSolicitudMaterialDetalle
 		{
 			get
 			{
@@ -270,6 +270,7 @@ namespace CORE
 				return this.GetTable<COMPRA_RECEPCION>();
 			}
 		}
+	
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MATERIAL")]
@@ -295,8 +296,6 @@ namespace CORE
 		private int _M_STOCK_IDEAL;
 		
 		private int _M_STOCK_BAJO;
-		
-		private EntityRef<MATERIAL_KIT> _MATERIAL_KIT;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -324,7 +323,6 @@ namespace CORE
 		
 		public MATERIAL()
 		{
-			this._MATERIAL_KIT = default(EntityRef<MATERIAL_KIT>);
 			OnCreated();
 		}
 		
@@ -348,7 +346,7 @@ namespace CORE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_NOMBRE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_NOMBRE", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
 		public string M_NOMBRE
 		{
 			get
@@ -508,35 +506,6 @@ namespace CORE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MATERIAL_MATERIAL_KIT", Storage="_MATERIAL_KIT", ThisKey="M_ID", OtherKey="M_ID", IsUnique=true, IsForeignKey=false)]
-		public MATERIAL_KIT MATERIAL_KIT
-		{
-			get
-			{
-				return this._MATERIAL_KIT.Entity;
-			}
-			set
-			{
-				MATERIAL_KIT previousValue = this._MATERIAL_KIT.Entity;
-				if (((previousValue != value) 
-							|| (this._MATERIAL_KIT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._MATERIAL_KIT.Entity = null;
-						previousValue.MATERIAL = null;
-					}
-					this._MATERIAL_KIT.Entity = value;
-					if ((value != null))
-					{
-						value.MATERIAL = this;
-					}
-					this.SendPropertyChanged("MATERIAL_KIT");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -570,8 +539,6 @@ namespace CORE
 		
 		private int _MK_CANTIDAD;
 		
-		private EntityRef<MATERIAL> _MATERIAL;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -586,7 +553,6 @@ namespace CORE
 		
 		public MATERIAL_KIT()
 		{
-			this._MATERIAL = default(EntityRef<MATERIAL>);
 			OnCreated();
 		}
 		
@@ -601,10 +567,6 @@ namespace CORE
 			{
 				if ((this._M_ID != value))
 				{
-					if (this._MATERIAL.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnM_IDChanging(value);
 					this.SendPropertyChanging();
 					this._M_ID = value;
@@ -614,7 +576,7 @@ namespace CORE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAT_M_ID", DbType="Decimal(18,0) NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAT_M_ID", DbType="Decimal(18,0) NOT NULL")]
 		public decimal MAT_M_ID
 		{
 			get
@@ -650,40 +612,6 @@ namespace CORE
 					this._MK_CANTIDAD = value;
 					this.SendPropertyChanged("MK_CANTIDAD");
 					this.OnMK_CANTIDADChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MATERIAL_MATERIAL_KIT", Storage="_MATERIAL", ThisKey="M_ID", OtherKey="M_ID", IsForeignKey=true)]
-		public MATERIAL MATERIAL
-		{
-			get
-			{
-				return this._MATERIAL.Entity;
-			}
-			set
-			{
-				MATERIAL previousValue = this._MATERIAL.Entity;
-				if (((previousValue != value) 
-							|| (this._MATERIAL.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._MATERIAL.Entity = null;
-						previousValue.MATERIAL_KIT = null;
-					}
-					this._MATERIAL.Entity = value;
-					if ((value != null))
-					{
-						value.MATERIAL_KIT = this;
-						this._M_ID = value.M_ID;
-					}
-					else
-					{
-						this._M_ID = default(decimal);
-					}
-					this.SendPropertyChanged("MATERIAL");
 				}
 			}
 		}
@@ -1686,7 +1614,7 @@ namespace CORE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EM_ENCARGADO_ENTREGA", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EM_ENCARGADO_ENTREGA", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
 		public string EM_ENCARGADO_ENTREGA
 		{
 			get
@@ -2384,7 +2312,7 @@ namespace CORE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_NOMBRE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_NOMBRE", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
 		public string UC_NOMBRE
 		{
 			get
@@ -2404,7 +2332,7 @@ namespace CORE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_ENCARGADO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UC_ENCARGADO", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
 		public string UC_ENCARGADO
 		{
 			get
@@ -2514,7 +2442,7 @@ namespace CORE
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_NOMBRE", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_NOMBRE", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
 		public string E_NOMBRE
 		{
 			get

@@ -39,8 +39,7 @@
 	padding-right: 10px;
 	background-color: #003d4d;
 	color: white;
-	border: 1px solid white;
-	
+	border: 1px solid white;	
 }
 
 .BarraMenuINLF{
@@ -51,9 +50,9 @@
 	background-color: #fff;
     color: #034af3;
 	cursor: pointer;
-    border-radius: 4px 4px 0 0;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
 }
 
 .BarraMenuOUTLF{
@@ -64,9 +63,9 @@
     background-color: #e8eef4;
     color: #034af3;
 	cursor: pointer;
-    border-radius: 4px 4px 0 0;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px 4px 4px 4px;
 }
 
 .BarraMenuLF2{

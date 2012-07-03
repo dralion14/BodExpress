@@ -8,19 +8,12 @@
         <elementListCompartment Id="f70814b6-5480-4a85-a9ff-ac1df09d8341" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="333f007c-afd8-44da-a772-4ba1c91ee514" absoluteBounds="2.75, 0.5, 2, 1.26050048828125">
+    <classShape Id="333f007c-afd8-44da-a772-4ba1c91ee514" absoluteBounds="3, 0.5, 2, 1.26050048828125">
       <DataClassMoniker Name="/BODEXDataContext/MATERIAL_KIT" />
       <nestedChildShapes>
-        <elementListCompartment Id="163323df-e25c-4b0e-8b4a-1111eaabadde" absoluteBounds="2.7649999999999997, 0.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="163323df-e25c-4b0e-8b4a-1111eaabadde" absoluteBounds="3.0149999999999997, 0.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.5 : 1.13025024414063); (2.75 : 1.13025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BODEXDataContext/MATERIAL/MATERIAL_MATERIAL_KIT" />
-      <nodes>
-        <classShapeMoniker Id="2eab165a-22fe-4973-b135-c884ff04ccda" />
-        <classShapeMoniker Id="333f007c-afd8-44da-a772-4ba1c91ee514" />
-      </nodes>
-    </associationConnector>
     <classShape Id="fa1aef3f-a7a7-4fad-9aa6-9af2e0329d9e" absoluteBounds="0.5, 2.875, 2, 1.4248478190104168">
       <DataClassMoniker Name="/BODEXDataContext/DETALLE_DEVOLUCION_A_PROVEEDOR" />
       <nestedChildShapes>
