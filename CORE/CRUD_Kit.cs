@@ -7,16 +7,30 @@ namespace CORE
 {
     public class CRUD_Kit
     {
-
-        public static List<MATERIAL_KIT> getAll()
+        public static List<MATERIAL> getAll()
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                var material_kit = from mat_kit in ctx.ListaMaterialKit
-                               orderby mat_kit.M_ID,mat_kit.MAT_M_ID
-                               select mat_kit;
+                var material = from mat in ctx.ListaMaterial
+                               where mat.M_TIPO.Equals("Kit")
+                               orderby mat.M_ID
+                               select mat;
 
-                return material_kit.ToList<MATERIAL_KIT>();
+                return material.ToList<MATERIAL>();
+            }
+        }
+
+        public static List<MATERIAL> getAllMaterial(int kit_id)
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                var material = from kit in ctx.ListaMaterialKit
+                               join mat in ctx.ListaMaterial
+                               on kit.MAT_M_ID equals mat.M_ID
+                               where kit.M_ID.Equals(kit_id)
+                               select mat;
+
+                return material.ToList<MATERIAL>();
             }
         }
 
@@ -29,16 +43,16 @@ namespace CORE
             }
         }
 
-        public static MATERIAL_KIT Read(int mat_id, int mat_m_kit)
+        public static MATERIAL Read(int mat_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 try
                 {
-                    var material_kit = from mat_kit in ctx.ListaMaterialKit
-                                   where mat_kit.M_ID.Equals(mat_id) && mat_kit.MAT_M_ID.Equals(mat_m_kit)
-                                   select mat_kit;
-                    return material_kit.First<MATERIAL_KIT>();
+                    var material = from mat in ctx.ListaMaterial
+                                   where mat.M_ID.Equals(mat_id)
+                                   select mat;
+                    return material.First<MATERIAL>();
                 }
                 catch
                 {
@@ -47,35 +61,38 @@ namespace CORE
             }
         }
 
-        public static void Update(MATERIAL_KIT mat_kit_upd)
+        public static void Update(MATERIAL mat_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                MATERIAL_KIT material_kit = (from mat_kit in ctx.ListaMaterialKit
-                                     where mat_kit.M_ID.Equals(mat_kit_upd.M_ID) && mat_kit.MAT_M_ID.Equals(mat_kit_upd.MAT_M_ID)
-                                     select mat_kit).First<MATERIAL_KIT>();
+                MATERIAL material = (from mat in ctx.ListaMaterial
+                                     where mat.M_ID.Equals(mat_upd.M_ID)
+                                     select mat).First<MATERIAL>();
 
-                material_kit.M_ID = mat_kit_upd.M_ID;
-                material_kit.MAT_M_ID = mat_kit_upd.MAT_M_ID;
-                material_kit.MK_CANTIDAD = mat_kit_upd.MK_CANTIDAD;
-              
+                material.M_NOMBRE = mat_upd.M_NOMBRE;
+                material.M_DESCRIPCION = mat_upd.M_DESCRIPCION;
+                material.M_TIPO = mat_upd.M_TIPO;
+                material.M_MEDIDA_DISTRIBUCION = mat_upd.M_MEDIDA_DISTRIBUCION;
+                material.M_MEDIDA_COMPRA = mat_upd.M_MEDIDA_COMPRA;
 
                 ctx.SubmitChanges();
             }
         }
 
-        public static void Delete(MATERIAL_KIT mat_kit_del)
+        public static void Delete(int kit_del)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                MATERIAL_KIT borrar = (from mat_kit in ctx.ListaMaterialKit
-                                   where mat_kit.M_ID.Equals(mat_kit_del.M_ID) && mat_kit.MAT_M_ID.Equals(mat_kit_del.MAT_M_ID)
-                                   select mat_kit).First<MATERIAL_KIT>();
+                var borrar = from mat in ctx.ListaMaterialKit
+                                      where mat.M_ID.Equals(kit_del)
+                                      select mat;
 
-                ctx.ListaMaterialKit.DeleteOnSubmit(borrar);
-                ctx.SubmitChanges();
+                foreach (var del in borrar.ToList<MATERIAL_KIT>())
+                {
+                    ctx.ListaMaterialKit.DeleteOnSubmit(del);
+                    ctx.SubmitChanges();
+                }
             }
         }
     }
-
 }
