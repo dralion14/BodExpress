@@ -30,16 +30,16 @@ namespace CORE
             }
         }
 
-        public static DETALLE_SOLICITUD_MATERIAL Read(int sm_mat_det_id, int m_mat_det_id )
+        public static DETALLE_SOLICITUD_MATERIAL Read(int sol_mat_id, int mat_id )
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 try
                 {
                     var solicitud_mat_det = from sol_mat_det in ctx.ListaSolicitudMaterialDetalle
-                                   where sol_mat_det.SM_ID.Equals(sm_mat_det_id) 
-                                   && sol_mat_det.M_ID.Equals(m_mat_det_id)
-                                   select sol_mat_det;
+                                            where sol_mat_det.SM_ID.Equals(sol_mat_id) && sol_mat_det.M_ID.Equals(mat_id)
+                                            select sol_mat_det;
+
                     return solicitud_mat_det.First<DETALLE_SOLICITUD_MATERIAL>();
                 }
                 catch

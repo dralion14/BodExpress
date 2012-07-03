@@ -51,19 +51,18 @@ namespace CORE
                                      where usu.nombre.Equals(usu_upd.nombre)
                                      select usu).First<USUARIO>();
 
-                usuario.nombre = usu_upd.nombre;
                 usuario.pass = usu_upd.pass;
                 usuario.area = usu_upd.area;
 
                 ctx.SubmitChanges();
             }
         }
-        public static void Delete(USUARIO usuario)
+        public static void Delete(USUARIO usu_del)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 USUARIO borrar = (from u in ctx.ListaUsuario
-                                   where u.nombre.Equals(usuario.nombre)
+                                  where u.nombre.Equals(usu_del.nombre)
                                    select u).First<USUARIO>();
 
                 ctx.ListaUsuario.DeleteOnSubmit(borrar);

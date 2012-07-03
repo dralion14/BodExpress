@@ -56,6 +56,7 @@ namespace CORE
 
                 unidad.UC_NOMBRE = uni_upd.UC_NOMBRE;
                 unidad.UC_ENCARGADO = uni_upd.UC_ENCARGADO;
+                unidad.UC_PRIORIDAD = uni_upd.UC_PRIORIDAD;
                 ctx.SubmitChanges();
             }
         }
