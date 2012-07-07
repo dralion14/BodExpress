@@ -16,7 +16,7 @@
         <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" ClientIDMode="AutoID"
             DataSourceID="ObjectDataSource1">
             <Columns>
-                <dx:GridViewCommandColumn ButtonType="Image" VisibleIndex="0">
+                <dx:GridViewCommandColumn ButtonType="Image" VisibleIndex="0" Caption=" ">
                     <EditButton Visible="True">
                         <Image Url="~/images/edit.png">
                         </Image>
@@ -40,11 +40,14 @@
                 </dx:GridViewCommandColumn>
                 <dx:GridViewDataTextColumn Caption="ID Unidad Clínica" FieldName="UC_ID" VisibleIndex="0">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="UC_NOMBRE" VisibleIndex="1">
+                <dx:GridViewDataTextColumn FieldName="UC_NOMBRE" VisibleIndex="1" 
+                    Caption="Unidad Clínica">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="UC_ENCARGADO" VisibleIndex="2">
+                <dx:GridViewDataTextColumn FieldName="UC_ENCARGADO" VisibleIndex="2" 
+                    Caption="Encargado">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="UC_PRIORIDAD" VisibleIndex="3">
+                <dx:GridViewDataTextColumn FieldName="UC_PRIORIDAD" VisibleIndex="3" 
+                    Visible="False">
                 </dx:GridViewDataTextColumn>
             </Columns>
         </dx:ASPxGridView>
