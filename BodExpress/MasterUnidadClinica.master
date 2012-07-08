@@ -26,6 +26,18 @@
                     Lista de Unidades Clínicas
                 </td>
             </tr>
+             <tr>
+                <td id="4" class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
+                     onclick="location.href='SolicitudMaterial.aspx'">
+                    Solicitud de Material
+                </td>
+            </tr>
+             <tr>
+                <td id="Td1" class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
+                     onclick="location.href='DevolucionMaterial.aspx'">
+                    Devolución de Material
+                </td>
+            </tr>
         </table>
     </asp:ContentPlaceHolder>
 </asp:Content>
