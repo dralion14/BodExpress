@@ -14,11 +14,23 @@
         <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" ClientIDMode="AutoID"
             DataSourceID="ObjectDataSource1">
             <Columns>
-                <dx:GridViewDataTextColumn FieldName="DM_ID" VisibleIndex="0">
+                <dx:GridViewCommandColumn ButtonType="Image" Caption=" " 
+                    ShowInCustomizationForm="True" VisibleIndex="0">
+                    <EditButton Visible="True">
+                    </EditButton>
+                    <NewButton Visible="True">
+                    </NewButton>
+                    <DeleteButton Visible="True">
+                    </DeleteButton>
+                </dx:GridViewCommandColumn>
+                <dx:GridViewDataTextColumn Caption="Id Unidad Clínica" FieldName="DM_ID" 
+                    VisibleIndex="0" ShowInCustomizationForm="True">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="UC_ID" VisibleIndex="1">
+                <dx:GridViewDataTextColumn FieldName="UC_ID" VisibleIndex="1" 
+                    Caption="Unidad Clínica" ShowInCustomizationForm="True">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataDateColumn FieldName="DM_FECHA" VisibleIndex="2">
+                <dx:GridViewDataDateColumn Caption="Fecha de Devolución" FieldName="DM_FECHA" 
+                    ShowInCustomizationForm="True" VisibleIndex="2">
                 </dx:GridViewDataDateColumn>
             </Columns>
         </dx:ASPxGridView>
