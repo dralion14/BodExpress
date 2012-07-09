@@ -8,13 +8,12 @@ namespace CORE
     public class CRUD_SolicitudCompraDetalle
     {
 
-        public static List<DETALLE_SOLICITUD_COMPRA> getAll()
+        public static List<DETALLE_SOLICITUD_COMPRA> getAll(int sc_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var detalle_sol_comp = from det_sol_comp in ctx.ListaSolicitudCompraDetalle
-                               
-                               orderby det_sol_comp.SC_ID,det_sol_comp.M_ID
+                                       where det_sol_comp.SC_ID.Equals(sc_id)
                                select det_sol_comp;
 
                 return detalle_sol_comp.ToList<DETALLE_SOLICITUD_COMPRA>();
@@ -30,14 +29,14 @@ namespace CORE
             }
         }
 
-        public static DETALLE_SOLICITUD_COMPRA Read(int sol_comp_id, int mat_id)
+        public static DETALLE_SOLICITUD_COMPRA Read(int sc_mat_id, int m_mat_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 try
                 {
                     var detalle_sol_comp = from det_sol_comp in ctx.ListaSolicitudCompraDetalle
-                                           where det_sol_comp.SC_ID.Equals(sol_comp_id) && det_sol_comp.M_ID.Equals(mat_id)
+                                           where det_sol_comp.SC_ID.Equals(sc_mat_id) && det_sol_comp.M_ID.Equals(m_mat_id)
                                           select det_sol_comp;
                     return detalle_sol_comp.First<DETALLE_SOLICITUD_COMPRA>();
                 }
@@ -53,7 +52,7 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 DETALLE_SOLICITUD_COMPRA detalle_sol_comp = (from det_sol_comp in ctx.ListaSolicitudCompraDetalle
-                                     where det_sol_comp.M_ID.Equals(det_sol_comp_upd.M_ID) 
+                                                             where det_sol_comp.M_ID.Equals(det_sol_comp_upd.SC_ID)
                                      && det_sol_comp.SC_ID.Equals(det_sol_comp_upd.SC_ID)
                                                      select det_sol_comp).First<DETALLE_SOLICITUD_COMPRA>();
 

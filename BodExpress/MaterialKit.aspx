@@ -5,6 +5,8 @@
     Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Web.ASPxEditors.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxPopupControl" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentMain" runat="server">
@@ -30,6 +32,10 @@
         DataSourceID="odsMaterial" KeyFieldName="M_ID" OnRowInserting="GRID_RowInserting">
         <Columns>
             <dx:GridViewCommandColumn ButtonType="Image" VisibleIndex="0">
+                <EditButton>
+                    <Image Url="~/images/edit.png">
+                    </Image>
+                </EditButton>
                 <NewButton Visible="True">
                     <Image Url="~/images/new.png">
                     </Image>
@@ -81,16 +87,6 @@
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="Tipo" FieldName="M_TIPO" VisibleIndex="3">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="M_MEDIDA_DISTRIBUCION" Visible="False" VisibleIndex="4">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="M_MEDIDA_COMPRA" Visible="False" VisibleIndex="5">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="M_STOCK_REAL" Visible="False" VisibleIndex="6">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="M_STOCK_IDEAL" Visible="False" VisibleIndex="7">
-                        </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="M_STOCK_BAJO" Visible="False" VisibleIndex="8">
-                        </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>
             </DetailRow>
@@ -111,7 +107,7 @@
                         </td>
                         <td>
                             <dx:ASPxGridView ID="ASPxGridView2" ClientInstanceName="grid" runat="server" DataSourceID="odsMat"
-                                KeyFieldName="M_ID" Width="100%">
+                                KeyFieldName="M_ID" Width="100%" AutoGenerateColumns="False" ClientIDMode="AutoID">
                                 <Columns>
                                     <dx:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0">
                                     </dx:GridViewCommandColumn>
@@ -133,7 +129,7 @@
                     <tr>
                         <td>
                         </td>
-                        <td align:"right">
+                        <td>
                             <dx:ASPxGridViewTemplateReplacement ID="ASPxGridViewTemplateReplacement1" runat="server"
                                 ReplacementType="EditFormUpdateButton" />
                             <dx:ASPxGridViewTemplateReplacement ID="ASPxGridViewTemplateReplacement2" runat="server"

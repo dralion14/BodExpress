@@ -14,7 +14,7 @@ namespace CORE
             {
                 var stock_unidad = from stock_un in ctx.ListaStockMaterialUnidad
 
-                                   orderby stock_un.UC_ID, stock_un.M_ID
+                               orderby stock_un.M_ID, stock_un.UC_ID
                                select stock_un;
 
                 return stock_unidad.ToList<STOCK_MATERIAL_UNIDAD>();
@@ -56,11 +56,14 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 STOCK_MATERIAL_UNIDAD stock_unidad = (from stock_un in ctx.ListaStockMaterialUnidad
-                                     where stock_un.M_ID.Equals(stock_mat_unidad_upd.M_ID) && stock_un.UC_ID.Equals(stock_mat_unidad_upd.UC_ID)
+                                     where stock_un.M_ID.Equals(stock_mat_unidad_upd.M_ID) &&
+                                            stock_un.UC_ID.Equals(stock_mat_unidad_upd.UC_ID)
                                      select stock_un).First<STOCK_MATERIAL_UNIDAD>();
 
+                stock_unidad.M_ID = stock_mat_unidad_upd.M_ID;
                 stock_unidad.SMU_STOCK_REAL = stock_mat_unidad_upd.SMU_STOCK_REAL;
                 stock_unidad.SMU_STOCK_IDEAL = stock_mat_unidad_upd.SMU_STOCK_IDEAL;
+                stock_unidad.UC_ID = stock_mat_unidad_upd.UC_ID;
                
 
                 ctx.SubmitChanges();
@@ -73,7 +76,8 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 STOCK_MATERIAL_UNIDAD borrar = (from stock_un in ctx.ListaStockMaterialUnidad
-                                   where  stock_un.M_ID.Equals(stock_mat_unidad_del.M_ID) && stock_un.UC_ID.Equals(stock_mat_unidad_del.UC_ID) 
+                                   where  stock_un.M_ID.Equals(stock_mat_unidad_del.M_ID)
+                                          && stock_un.UC_ID.Equals(stock_mat_unidad_del.UC_ID) 
                                    select stock_un).First<STOCK_MATERIAL_UNIDAD>();
 
                 ctx.ListaStockMaterialUnidad.DeleteOnSubmit(borrar);

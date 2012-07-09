@@ -10,69 +10,60 @@
 namespace BodExpress {
     
     
-    public partial class SiteMaster {
+    public partial class RecepcionMaterialNew {
         
         /// <summary>
-        /// Control Head1.
+        /// Control ASPxComboBox1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::DevExpress.Web.ASPxEditors.ASPxComboBox ASPxComboBox1;
         
         /// <summary>
-        /// Control ContentHead.
+        /// Control ASPxButton1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentHead;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton ASPxButton1;
         
         /// <summary>
-        /// Control form1.
+        /// Control ASPxGridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::DevExpress.Web.ASPxGridView.ASPxGridView ASPxGridView1;
         
         /// <summary>
-        /// Control lblUsuario.
+        /// Control ASPxListBox.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsuario;
+        protected global::DevExpress.Web.ASPxEditors.ASPxListBox ASPxListBox;
         
         /// <summary>
-        /// Control lnkSalir.
+        /// Control odsSolicitud.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkSalir;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsSolicitud;
         
         /// <summary>
-        /// Control ContentMenu.
+        /// Control odsMaterial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentMenu;
-        
-        /// <summary>
-        /// Control ContentMain.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentMain;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsMaterial;
     }
 }

@@ -43,6 +43,23 @@ namespace CORE
                 }
             }
         }
+        public static USUARIO Login(string nombre, string pass)
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                try
+                {
+                    var usuario = from usu in ctx.ListaUsuario
+                                  where usu.nombre.Equals(nombre) && usu.pass.Equals(pass)
+                                  select usu;
+                    return usuario.First<USUARIO>();
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
         public static void Update(USUARIO usu_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -51,18 +68,19 @@ namespace CORE
                                      where usu.nombre.Equals(usu_upd.nombre)
                                      select usu).First<USUARIO>();
 
+                usuario.nombre = usu_upd.nombre;
                 usuario.pass = usu_upd.pass;
                 usuario.area = usu_upd.area;
 
                 ctx.SubmitChanges();
             }
         }
-        public static void Delete(USUARIO usu_del)
+        public static void Delete(USUARIO usuario)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 USUARIO borrar = (from u in ctx.ListaUsuario
-                                  where u.nombre.Equals(usu_del.nombre)
+                                   where u.nombre.Equals(usuario.nombre)
                                    select u).First<USUARIO>();
 
                 ctx.ListaUsuario.DeleteOnSubmit(borrar);

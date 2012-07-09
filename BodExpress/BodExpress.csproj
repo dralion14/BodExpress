@@ -36,6 +36,10 @@
       <HintPath>..\CORE\bin\Debug\CORE.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Data.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Archivos de programa\DevExpress 2010.2\Components\Sources\DevExpress.DLL\DevExpress.Utils.v10.2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Web.ASPxEditors.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxGridView.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -43,6 +47,14 @@
     <Reference Include="DevExpress.Web.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpo.v10.2.Web, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Archivos de programa\DevExpress 2010.2\Components\Sources\DevExpress.DLL\DevExpress.XtraReports.v10.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.2.Web, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Archivos de programa\DevExpress 2010.2\Components\Sources\DevExpress.DLL\DevExpress.XtraReports.v10.2.Web.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -62,8 +74,20 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DefaultBod.aspx" />
+    <Content Include="DefaultUC.aspx" />
+    <Content Include="DevolucionMaterial.aspx" />
+    <Content Include="LogOn.aspx" />
     <Content Include="Material.aspx" />
     <Content Include="MaterialKit.aspx" />
+    <Content Include="RecepcionMaterial.aspx" />
+    <Content Include="RecepcionMaterialNew.aspx" />
+    <Content Include="ReporteBodega.aspx" />
+    <Content Include="ReporteMaterial.aspx" />
+    <Content Include="SinPermiso.aspx" />
+    <Content Include="SolicitudCompra.aspx" />
+    <Content Include="SolicitudCompraNew.aspx" />
+    <Content Include="SolicitudMaterial.aspx" />
     <Content Include="UnidadClinica.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="App_Themes\Office2010Blue\Editors\caChallengeImageBack.png" />
@@ -166,6 +190,46 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>aa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultBod.aspx.cs">
+      <DependentUpon>DefaultBod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultBod.aspx.designer.cs">
+      <DependentUpon>DefaultBod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultUC.aspx.cs">
+      <DependentUpon>DefaultUC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultUC.aspx.designer.cs">
+      <DependentUpon>DefaultUC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DevolucionMaterial.aspx.cs">
+      <DependentUpon>DevolucionMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DevolucionMaterial.aspx.designer.cs">
+      <DependentUpon>DevolucionMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOn.aspx.cs">
+      <DependentUpon>LogOn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOn.aspx.designer.cs">
+      <DependentUpon>LogOn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterBodega.master.cs">
+      <DependentUpon>MasterBodega.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterBodega.master.designer.cs">
+      <DependentUpon>MasterBodega.master</DependentUpon>
+    </Compile>
     <Compile Include="MasterUnidadClinica.master.cs">
       <DependentUpon>MasterUnidadClinica.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -186,6 +250,68 @@
     </Compile>
     <Compile Include="MaterialKit.aspx.designer.cs">
       <DependentUpon>MaterialKit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMaterial.aspx.cs">
+      <DependentUpon>RecepcionMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecepcionMaterial.aspx.designer.cs">
+      <DependentUpon>RecepcionMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionMaterialNew.aspx.cs">
+      <DependentUpon>RecepcionMaterialNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecepcionMaterialNew.aspx.designer.cs">
+      <DependentUpon>RecepcionMaterialNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteBodega.aspx.cs">
+      <DependentUpon>ReporteBodega.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteBodega.aspx.designer.cs">
+      <DependentUpon>ReporteBodega.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMaterial.aspx.cs">
+      <DependentUpon>ReporteMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteMaterial.aspx.designer.cs">
+      <DependentUpon>ReporteMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteMaterial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteMaterial.Designer.cs">
+      <DependentUpon>ReporteMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SinPermiso.aspx.cs">
+      <DependentUpon>SinPermiso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SinPermiso.aspx.designer.cs">
+      <DependentUpon>SinPermiso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudCompra.aspx.cs">
+      <DependentUpon>SolicitudCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudCompra.aspx.designer.cs">
+      <DependentUpon>SolicitudCompra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudCompraNew.aspx.cs">
+      <DependentUpon>SolicitudCompraNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudCompraNew.aspx.designer.cs">
+      <DependentUpon>SolicitudCompraNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudMaterial.aspx.cs">
+      <DependentUpon>SolicitudMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudMaterial.aspx.designer.cs">
+      <DependentUpon>SolicitudMaterial.aspx</DependentUpon>
     </Compile>
     <Compile Include="UnidadClinica.aspx.cs">
       <DependentUpon>UnidadClinica.aspx</DependentUpon>
@@ -273,6 +399,23 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reportes\ReporteMaterial.resx">
+      <DependentUpon>ReporteMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="aa.xsc">
+      <DependentUpon>aa.xsd</DependentUpon>
+    </None>
+    <None Include="aa.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>aa.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="aa.xss">
+      <DependentUpon>aa.xsd</DependentUpon>
+    </None>
+    <Content Include="MasterBodega.master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

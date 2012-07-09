@@ -10,24 +10,24 @@
 namespace BodExpress {
     
     
-    public partial class UnidadClinica {
+    public partial class Reporte {
         
         /// <summary>
-        /// Control ObjectDataSource1.
+        /// Control ReportToolbar1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::DevExpress.XtraReports.Web.ReportToolbar ReportToolbar1;
         
         /// <summary>
-        /// Control ASPxGridView1.
+        /// Control ReportViewer1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView ASPxGridView1;
+        protected global::DevExpress.XtraReports.Web.ReportViewer ReportViewer1;
     }
 }

@@ -91,6 +91,24 @@ namespace CORE
             }
         }
 
+        public static MATERIAL Read(String nombre, int a)
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                try
+                {
+                    MATERIAL material = (from mat in ctx.ListaMaterial
+                                         where mat.M_NOMBRE.Equals(nombre)
+                                         select mat).First<MATERIAL>();
+                    return material;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
         public static void Update(MATERIAL mat_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())

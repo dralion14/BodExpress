@@ -10,24 +10,36 @@
 namespace BodExpress {
     
     
-    public partial class UnidadClinica {
+    public partial class SinPermiso {
         
         /// <summary>
-        /// Control ObjectDataSource1.
+        /// Control lblPaginaSinPermiso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.Label lblPaginaSinPermiso;
         
         /// <summary>
-        /// Control ASPxGridView1.
+        /// Control lnkVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView ASPxGridView1;
+        protected global::System.Web.UI.WebControls.HyperLink lnkVolver;
+        
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new BodExpress.SiteMaster Master {
+            get {
+                return ((BodExpress.SiteMaster)(base.Master));
+            }
+        }
     }
 }

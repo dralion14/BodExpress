@@ -8,13 +8,12 @@ namespace CORE
     public class CRUD_RecepcionMaterialDetalle
     {
 
-        public static List<DETALLE_RECEPCION_MATERIAL> getAll()
+        public static List<DETALLE_RECEPCION_MATERIAL> getAll(int rm_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var recepcion_mat_det = from rec_mat_det in ctx.ListaRecepcionMaterialDetalle
-                               
-                               orderby rec_mat_det.RM_ID, rec_mat_det.M_ID
+                               where rec_mat_det.RM_ID.Equals(rm_id)
                                select rec_mat_det;
 
                 return recepcion_mat_det.ToList<DETALLE_RECEPCION_MATERIAL>();

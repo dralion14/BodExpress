@@ -10,69 +10,54 @@
 namespace BodExpress {
     
     
-    public partial class SiteMaster {
+    public partial class LogOn {
         
         /// <summary>
-        /// Control Head1.
+        /// Control txtUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtUser;
         
         /// <summary>
-        /// Control ContentHead.
+        /// Control txtPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentHead;
+        protected global::DevExpress.Web.ASPxEditors.ASPxTextBox txtPassword;
         
         /// <summary>
-        /// Control form1.
+        /// Control btoIngreso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button btoIngreso;
         
         /// <summary>
-        /// Control lblUsuario.
+        /// Control lblError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsuario;
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// Control lnkSalir.
+        /// Propiedad Master.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Propiedad generada automáticamente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkSalir;
-        
-        /// <summary>
-        /// Control ContentMenu.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentMenu;
-        
-        /// <summary>
-        /// Control ContentMain.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentMain;
+        public new BodExpress.SiteMaster Master {
+            get {
+                return ((BodExpress.SiteMaster)(base.Master));
+            }
+        }
     }
 }

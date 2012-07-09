@@ -10,24 +10,33 @@
 namespace BodExpress {
     
     
-    public partial class UnidadClinica {
+    public partial class MasterBodega {
         
         /// <summary>
-        /// Control ObjectDataSource1.
+        /// Control ContentHead.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentHead;
         
         /// <summary>
-        /// Control ASPxGridView1.
+        /// Control ContentMenu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView ASPxGridView1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentMenu;
+        
+        /// <summary>
+        /// Control ContentMain.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentMain;
     }
 }

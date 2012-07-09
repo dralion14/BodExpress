@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace BodExpress
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class ReporteBodega : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("LogOn.aspx");
+
+        }
+
+        public void ReporteMaterial(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ReporteMaterial.aspx", true);
         }
     }
 }

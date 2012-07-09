@@ -10,6 +10,6 @@
 namespace BodExpress {
     
     
-    public partial class Default {
+    public partial class DefaultUC {
     }
 }

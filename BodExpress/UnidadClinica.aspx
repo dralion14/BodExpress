@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="BodExpress - Home" Language="C#" MasterPageFile="~/MasterUnidadClinica.master"
-    AutoEventWireup="true" CodeBehind="UnidadClinica.aspx.cs" Inherits="BodExpress.AppHome" %>
+    AutoEventWireup="true" CodeBehind="UnidadClinica.aspx.cs" Inherits="BodExpress.UnidadClinica" %>
 
 <%@ Register Assembly="DevExpress.Web.ASPxGridView.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
@@ -16,7 +16,7 @@
         <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" ClientIDMode="AutoID"
             DataSourceID="ObjectDataSource1">
             <Columns>
-                <dx:GridViewCommandColumn ButtonType="Image" VisibleIndex="0" Caption=" ">
+                <dx:GridViewCommandColumn ButtonType="Image" VisibleIndex="0">
                     <EditButton Visible="True">
                         <Image Url="~/images/edit.png">
                         </Image>
@@ -40,14 +40,11 @@
                 </dx:GridViewCommandColumn>
                 <dx:GridViewDataTextColumn Caption="ID Unidad Clínica" FieldName="UC_ID" VisibleIndex="0">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="UC_NOMBRE" VisibleIndex="1" 
-                    Caption="Unidad Clínica">
+                <dx:GridViewDataTextColumn FieldName="UC_NOMBRE" VisibleIndex="1">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="UC_ENCARGADO" VisibleIndex="2" 
-                    Caption="Encargado">
+                <dx:GridViewDataTextColumn FieldName="UC_ENCARGADO" VisibleIndex="2">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="UC_PRIORIDAD" VisibleIndex="3" 
-                    Visible="False">
+                <dx:GridViewDataTextColumn FieldName="UC_PRIORIDAD" VisibleIndex="3">
                 </dx:GridViewDataTextColumn>
             </Columns>
         </dx:ASPxGridView>

@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace BodExpress
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class MasterBodega : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("LogOn.aspx");
+
         }
     }
 }
