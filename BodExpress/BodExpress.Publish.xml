@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="C:\Inetpub\wwwroot\Bodexpress" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="localhost/BodExpress" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Perfil1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+  <publishProfile publishUrl="C:\Inetpub\wwwroot\Bodexpress" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="localhost/BodExpress" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Perfil1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="App_Themes/Office2010Blue/ASPxPager.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxCallbackPanel.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/TreeList/CssImages/TitleBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/nbISBack.png" publishTime="06/09/2012 00:47:48" />
@@ -14,13 +15,12 @@
     <file relUrl="App_Themes/Office2010Blue/Editors/edtDropDownBtnPBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="DefaultBod.aspx" publishTime="07/07/2012 23:45:35" />
     <file relUrl="App_Themes/Office2010Blue/ASPxLoadingPanel.skin" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="images/dollar.jpg" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="LogOn.aspx" publishTime="07/07/2012 23:30:23" />
+    <file relUrl="App_Themes/Office2010Blue/ASPxPageControl.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/TreeList/Loading.gif" publishTime="06/09/2012 00:47:48" />
     <file relUrl="RecepcionMaterialNew.aspx" publishTime="07/10/2012 02:15:58" />
     <file relUrl="App_Themes/Office2010Blue/ASPxNavBar.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/GridView/sprite.gif" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="MasterUnidadClinica.master" publishTime="07/10/2012 03:01:31" />
+    <file relUrl="MasterUnidadClinica.master" publishTime="07/10/2012 18:13:35" />
     <file relUrl="App_Themes/Office2010Blue/ASPxListBox.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/mScrollHBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="images/logo_bodex.png" publishTime="06/09/2012 00:47:48" />
@@ -29,18 +29,18 @@
     <file relUrl="App_Themes/Office2010Blue/Web/splVSepHBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/GridView/gvHeaderBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/mItemHBack.png" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="SolicitudMaterial.aspx" publishTime="07/10/2012 05:21:20" />
+    <file relUrl="SolicitudMaterial.aspx" publishTime="07/10/2012 19:40:03" />
     <file relUrl="App_Themes/Office2010Blue/Editors/edtSpinIncDecBtnHBack.png" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="App_Themes/Office2010Blue/Editors/edtBtnPBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Xaf/opacity50.png" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="App_Themes/Office2010Blue/Editors/edtSpinIncBtnBack.png" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="images/dollar.jpg" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="Master.Master" publishTime="07/10/2012 18:02:00" />
     <file relUrl="MaterialKit.aspx" publishTime="07/09/2012 20:36:08" />
     <file relUrl="App_Themes/Office2010Blue/ASPxRoundPanel.skin" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="bin/CORE.pdb" publishTime="07/10/2012 06:43:10" />
-    <file relUrl="App_Themes/Office2010Blue/ASPxHyperLink.skin" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="bin/CORE.pdb" publishTime="07/10/2012 19:40:07" />
     <file relUrl="App_Themes/Office2010Blue/Web/splResizingPointer.gif" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/mSubItemSepBack.gif" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/pcHBack.png" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="App_Themes/Office2010Blue/Web/mSubItemHBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxCheckBox.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="DevolucionMaterial.aspx" publishTime="07/09/2012 14:34:26" />
     <file relUrl="App_Themes/Office2010Blue/Editors/sprite.gif" publishTime="06/09/2012 00:47:48" />
@@ -51,13 +51,12 @@
     <file relUrl="App_Themes/Office2010Blue/Web/tiFBBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="images/delete.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="MaterialUC.aspx" publishTime="07/09/2012 20:32:07" />
-    <file relUrl="Master.Master" publishTime="07/09/2012 20:00:46" />
     <file relUrl="Material.aspx" publishTime="07/09/2012 20:35:59" />
     <file relUrl="App_Themes/Office2010Blue/Editors/edtDropDownBtnBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/splHSepHBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/styles.css" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/fmSplitterSeparator.gif" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="Web.config" publishTime="07/09/2012 21:04:11" />
+    <file relUrl="Web.config" publishTime="07/10/2012 19:40:52" />
     <file relUrl="RecepcionMaterial.aspx" publishTime="07/10/2012 02:25:35" />
     <file relUrl="App_Themes/Office2010Blue/ASPxComboBox.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxTitleIndex.skin" publishTime="06/09/2012 00:47:48" />
@@ -87,7 +86,7 @@
     <file relUrl="App_Themes/Office2010Blue/ASPxProgressBar.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Xaf/styles.css" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/nbHBack.png" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="UnidadClinica.aspx" publishTime="07/09/2012 14:52:08" />
+    <file relUrl="UnidadClinica.aspx" publishTime="07/10/2012 18:13:58" />
     <file relUrl="App_Themes/Office2010Blue/TreeList/sprite.css" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/styles.css" publishTime="07/02/2012 23:43:35" />
     <file relUrl="SolicitudCompra.aspx" publishTime="07/10/2012 03:57:35" />
@@ -98,15 +97,18 @@
     <file relUrl="App_Themes/Office2010Blue/Xaf/styles_xaf.css" publishTime="06/09/2012 00:47:48" />
     <file relUrl="SolicitudCompraNew.aspx" publishTime="07/10/2012 01:59:56" />
     <file relUrl="App_Themes/Office2010Blue/Web/sprite.gif" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="App_Themes/Office2010Blue/ASPxPageControl.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxGridView.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Editors/styles.css" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxSiteMapControl.skin" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="DevolucionMaterialBod.aspx" publishTime="07/10/2012 19:46:09" />
     <file relUrl="images/yes.png" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="App_Themes/Office2010Blue/Editors/sprite.css" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxTabControl.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="images/tools.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxSplitter.skin" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="SinPermiso.aspx" publishTime="07/08/2012 00:06:56" />
+    <file relUrl="EntregaMaterial.aspx" publishTime="07/10/2012 19:43:44" />
+    <file relUrl="SinPermiso.aspx" publishTime="07/10/2012 17:48:41" />
+    <file relUrl="App_Themes/Office2010Blue/GridView/styles.css" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxMenu.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Xaf/template_xaf.css" publishTime="06/09/2012 00:47:48" />
     <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="06/07/2012 15:09:32" />
@@ -117,11 +119,12 @@
     <file relUrl="App_Themes/Office2010Blue/Editors/edtProgressBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="06/07/2012 15:09:32" />
     <file relUrl="App_Themes/Office2010Blue/Xaf/template.css" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="bin/BodExpress.pdb" publishTime="07/10/2012 07:00:27" />
-    <file relUrl="bin/BodExpress.dll" publishTime="07/10/2012 07:00:27" />
+    <file relUrl="bin/BodExpress.pdb" publishTime="07/10/2012 19:47:13" />
+    <file relUrl="bin/BodExpress.dll" publishTime="07/10/2012 19:47:13" />
+    <file relUrl="App_Themes/Office2010Blue/Editors/edtSpinIncBtnBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/GridView/gvTitleBack.png" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="App_Themes/Office2010Blue/Editors/edtProgressIndicatorBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="images/logo_hrrio.png" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="DefaultAdm.aspx" publishTime="07/10/2012 15:10:58" />
     <file relUrl="App_Themes/Office2010Blue/ASPxDropDownEdit.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/Loading.gif" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxGridLookup.skin" publishTime="06/09/2012 00:47:48" />
@@ -132,34 +135,37 @@
     <file relUrl="App_Themes/Office2010Blue/ASPxHeadline.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Editors/lbHeaderBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxPopupMenu.skin" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="App_Themes/Office2010Blue/ASPxUploadControl.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="ReporteDevolucionMaterial.aspx" publishTime="07/10/2012 06:35:35" />
     <file relUrl="images/new.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxDateEdit.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxNewsControl.skin" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="App_Themes/Office2010Blue/Web/mSubItemHBack.png" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="images/no.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxButtonEdit.skin" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="images/no.png" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="App_Themes/Office2010Blue/Editors/edtBtnPBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Xaf/background.jpg" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="bin/CORE.dll" publishTime="07/10/2012 06:43:10" />
+    <file relUrl="bin/CORE.dll" publishTime="07/10/2012 19:40:07" />
     <file relUrl="App_Themes/Office2010Blue/Editors/edtSpinIncBtnDisabledBack.png" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="LogIn.aspx" publishTime="07/10/2012 15:40:59" />
     <file relUrl="ReporteRecepcionMaterial.aspx" publishTime="07/10/2012 06:35:35" />
     <file relUrl="images/edit.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/pcFBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Editors/edtDropDownBtnDisabledBack.png" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="App_Themes/Office2010Blue/GridView/styles.css" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="App_Themes/Office2010Blue/ASPxUploadControl.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="DefaultUC.aspx" publishTime="07/08/2012 02:45:21" />
+    <file relUrl="MasterAdministrador.master" publishTime="07/10/2012 15:00:29" />
+    <file relUrl="EntregaMaterialBod.aspx" publishTime="07/10/2012 19:43:40" />
     <file relUrl="SolicitudMaterialNew.aspx" publishTime="07/10/2012 06:23:29" />
     <file relUrl="App_Themes/Office2010Blue/ASPxTextBox.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="ReporteBodega.aspx" publishTime="07/10/2012 06:35:35" />
-    <file relUrl="App_Themes/Office2010Blue/Editors/sprite.css" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="Usuarios.aspx" publishTime="07/10/2012 19:00:24" />
+    <file relUrl="App_Themes/Office2010Blue/ASPxHyperLink.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/mItemSBack.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/Web/sprite.css" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxTreeView.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxFileManager.skin" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/GridView/sprite.png" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="App_Themes/Office2010Blue/ASPxPager.skin" publishTime="06/09/2012 00:47:48" />
-    <file relUrl="MasterBodega.master" publishTime="07/09/2012 20:36:30" />
+    <file relUrl="App_Themes/Office2010Blue/Editors/edtProgressIndicatorBack.png" publishTime="06/09/2012 00:47:48" />
+    <file relUrl="MasterBodega.master" publishTime="07/10/2012 18:13:43" />
     <file relUrl="Scripts/jquery-1.4.1.js" publishTime="06/07/2012 15:09:32" />
     <file relUrl="App_Themes/Office2010Blue/Editors/sprite.png" publishTime="06/09/2012 00:47:48" />
     <file relUrl="App_Themes/Office2010Blue/ASPxLabel.skin" publishTime="06/09/2012 00:47:48" />

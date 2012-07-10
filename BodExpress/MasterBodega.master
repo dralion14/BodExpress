@@ -20,6 +20,12 @@
                 </td>
             </tr>
             <tr>
+                <td id="Td2" class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
+                    onclick="location.href='UnidadClinica.aspx'">
+                    Lista de Unidades Clínicas
+                </td>
+            </tr>
+            <tr>
                 <td id="1" class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
                     onclick="location.href='SolicitudCompra.aspx'">
                     Solicitud de Compra

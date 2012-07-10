@@ -91,38 +91,6 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                DETALLE_SOLICITUD_COMPRA material;
-
-                try
-                {
-                    material = (from mat in ctx.ListaSolicitudCompraDetalle
-                                where mat.SC_ID.Equals(sol_comp_del.SC_ID)
-                                select mat).First<DETALLE_SOLICITUD_COMPRA>();
-                }
-                catch (Exception e)
-                {
-                    material = null;
-                }
-
-                while (material != null)
-                {
-                    ctx.ListaSolicitudCompraDetalle.DeleteOnSubmit(material);
-                    ctx.SubmitChanges();
-
-                    try
-                    {
-                        material = (from mat in ctx.ListaSolicitudCompraDetalle
-                                    where mat.SC_ID.Equals(sol_comp_del.SC_ID)
-                                    select mat).First<DETALLE_SOLICITUD_COMPRA>();
-                    }
-                    catch (Exception e)
-                    {
-                        material = null;
-                    }
-
-                }
-
-
                 SOLICITUD_COMPRA borrar = (from sol_comp in ctx.ListaSolicitudCompra
                                            where sol_comp.SC_ID.Equals(sol_comp_del.SC_ID)
                                            select sol_comp).First<SOLICITUD_COMPRA>();

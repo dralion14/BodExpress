@@ -147,4 +147,16 @@
       <Column Name="SC_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.PAGINA" Member="PAGINA">
+    <Type Name="PAGINA">
+      <Column Name="P_ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="P_TEXTO" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="P_NOMBRE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="P_IMAGEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="P_NAVIGATE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="P_TARGET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="P_BASE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="P_PERFIL" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

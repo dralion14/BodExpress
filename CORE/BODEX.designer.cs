@@ -87,6 +87,9 @@ namespace CORE
     partial void InsertCOMPRA_RECEPCION(COMPRA_RECEPCION instance);
     partial void UpdateCOMPRA_RECEPCION(COMPRA_RECEPCION instance);
     partial void DeleteCOMPRA_RECEPCION(COMPRA_RECEPCION instance);
+    partial void InsertPAGINA(PAGINA instance);
+    partial void UpdatePAGINA(PAGINA instance);
+    partial void DeletePAGINA(PAGINA instance);
     #endregion
 		
 		public BODEXDataContext() : 
@@ -126,7 +129,7 @@ namespace CORE
 				return this.GetTable<MATERIAL>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<MATERIAL_KIT> ListaMaterialKit
 		{
 			get
@@ -134,7 +137,7 @@ namespace CORE
 				return this.GetTable<MATERIAL_KIT>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<DETALLE_DEVOLUCION_A_PROVEEDOR> ListaDevolucionProveedorDetalle
 		{
 			get
@@ -142,7 +145,7 @@ namespace CORE
 				return this.GetTable<DETALLE_DEVOLUCION_A_PROVEEDOR>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<DETALLE_DEVOLUCION_MATERIAL> ListaDevolucionMaterialDetalle
 		{
 			get
@@ -150,7 +153,7 @@ namespace CORE
 				return this.GetTable<DETALLE_DEVOLUCION_MATERIAL>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<DETALLE_ENTREGA_MATERIAL> ListaEntregaMaterialDetalle
 		{
 			get
@@ -158,7 +161,7 @@ namespace CORE
 				return this.GetTable<DETALLE_ENTREGA_MATERIAL>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<DETALLE_RECEPCION_MATERIAL> ListaRecepcionMaterialDetalle
 		{
 			get
@@ -166,7 +169,7 @@ namespace CORE
 				return this.GetTable<DETALLE_RECEPCION_MATERIAL>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<DETALLE_SOLICITUD_COMPRA> ListaSolicitudCompraDetalle
 		{
 			get
@@ -174,7 +177,7 @@ namespace CORE
 				return this.GetTable<DETALLE_SOLICITUD_COMPRA>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<DETALLE_SOLICITUD_MATERIAL> ListaSolicitudMaterialDetalle
 		{
 			get
@@ -182,7 +185,7 @@ namespace CORE
 				return this.GetTable<DETALLE_SOLICITUD_MATERIAL>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<DEVOLUCION_A_PROVEEDOR> ListaDevolucionProveedor
 		{
 			get
@@ -190,7 +193,7 @@ namespace CORE
 				return this.GetTable<DEVOLUCION_A_PROVEEDOR>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<DEVOLUCION_MATERIAL> ListaDevolucionMaterial
 		{
 			get
@@ -198,7 +201,7 @@ namespace CORE
 				return this.GetTable<DEVOLUCION_MATERIAL>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<ENTREGA_MATERIAL> ListaEntregaMaterial
 		{
 			get
@@ -206,7 +209,7 @@ namespace CORE
 				return this.GetTable<ENTREGA_MATERIAL>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<RECEPCION_MATERIAL> ListaRecepcionMaterial
 		{
 			get
@@ -214,7 +217,7 @@ namespace CORE
 				return this.GetTable<RECEPCION_MATERIAL>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<SOLICITUD_COMPRA> ListaSolicitudCompra
 		{
 			get
@@ -222,7 +225,7 @@ namespace CORE
 				return this.GetTable<SOLICITUD_COMPRA>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<SOLICITUD_MATERIAL> ListaSolicitudMaterial
 		{
 			get
@@ -230,7 +233,7 @@ namespace CORE
 				return this.GetTable<SOLICITUD_MATERIAL>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<STOCK_MATERIAL_UNIDAD> ListaStockMaterialUnidad
 		{
 			get
@@ -238,7 +241,7 @@ namespace CORE
 				return this.GetTable<STOCK_MATERIAL_UNIDAD>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<UNIDAD_CLINICA> ListaUnidadClinica
 		{
 			get
@@ -246,7 +249,7 @@ namespace CORE
 				return this.GetTable<UNIDAD_CLINICA>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<ESTADO> ListaEstado
 		{
 			get
@@ -254,7 +257,7 @@ namespace CORE
 				return this.GetTable<ESTADO>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<USUARIO> ListaUsuario
 		{
 			get
@@ -262,7 +265,7 @@ namespace CORE
 				return this.GetTable<USUARIO>();
 			}
 		}
-
+		
         public System.Data.Linq.Table<COMPRA_RECEPCION> ListaCompraRecepcion
 		{
 			get
@@ -270,7 +273,14 @@ namespace CORE
 				return this.GetTable<COMPRA_RECEPCION>();
 			}
 		}
-	
+		
+		public System.Data.Linq.Table<PAGINA> ListaPagina
+		{
+			get
+			{
+				return this.GetTable<PAGINA>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MATERIAL")]
@@ -2674,6 +2684,236 @@ namespace CORE
 					this._SC_ID = value;
 					this.SendPropertyChanged("SC_ID");
 					this.OnSC_IDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PAGINA")]
+	public partial class PAGINA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _P_ID;
+		
+		private string _P_TEXTO;
+		
+		private string _P_NOMBRE;
+		
+		private string _P_IMAGEN;
+		
+		private string _P_NAVIGATE;
+		
+		private string _P_TARGET;
+		
+		private bool _P_BASE;
+		
+		private string _P_PERFIL;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnP_IDChanging(long value);
+    partial void OnP_IDChanged();
+    partial void OnP_TEXTOChanging(string value);
+    partial void OnP_TEXTOChanged();
+    partial void OnP_NOMBREChanging(string value);
+    partial void OnP_NOMBREChanged();
+    partial void OnP_IMAGENChanging(string value);
+    partial void OnP_IMAGENChanged();
+    partial void OnP_NAVIGATEChanging(string value);
+    partial void OnP_NAVIGATEChanged();
+    partial void OnP_TARGETChanging(string value);
+    partial void OnP_TARGETChanged();
+    partial void OnP_BASEChanging(bool value);
+    partial void OnP_BASEChanged();
+    partial void OnP_PERFILChanging(string value);
+    partial void OnP_PERFILChanged();
+    #endregion
+		
+		public PAGINA()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_ID", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long P_ID
+		{
+			get
+			{
+				return this._P_ID;
+			}
+			set
+			{
+				if ((this._P_ID != value))
+				{
+					this.OnP_IDChanging(value);
+					this.SendPropertyChanging();
+					this._P_ID = value;
+					this.SendPropertyChanged("P_ID");
+					this.OnP_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_TEXTO", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string P_TEXTO
+		{
+			get
+			{
+				return this._P_TEXTO;
+			}
+			set
+			{
+				if ((this._P_TEXTO != value))
+				{
+					this.OnP_TEXTOChanging(value);
+					this.SendPropertyChanging();
+					this._P_TEXTO = value;
+					this.SendPropertyChanged("P_TEXTO");
+					this.OnP_TEXTOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_NOMBRE", DbType="NVarChar(MAX)")]
+		public string P_NOMBRE
+		{
+			get
+			{
+				return this._P_NOMBRE;
+			}
+			set
+			{
+				if ((this._P_NOMBRE != value))
+				{
+					this.OnP_NOMBREChanging(value);
+					this.SendPropertyChanging();
+					this._P_NOMBRE = value;
+					this.SendPropertyChanged("P_NOMBRE");
+					this.OnP_NOMBREChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_IMAGEN", DbType="NVarChar(MAX)")]
+		public string P_IMAGEN
+		{
+			get
+			{
+				return this._P_IMAGEN;
+			}
+			set
+			{
+				if ((this._P_IMAGEN != value))
+				{
+					this.OnP_IMAGENChanging(value);
+					this.SendPropertyChanging();
+					this._P_IMAGEN = value;
+					this.SendPropertyChanged("P_IMAGEN");
+					this.OnP_IMAGENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_NAVIGATE", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string P_NAVIGATE
+		{
+			get
+			{
+				return this._P_NAVIGATE;
+			}
+			set
+			{
+				if ((this._P_NAVIGATE != value))
+				{
+					this.OnP_NAVIGATEChanging(value);
+					this.SendPropertyChanging();
+					this._P_NAVIGATE = value;
+					this.SendPropertyChanged("P_NAVIGATE");
+					this.OnP_NAVIGATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_TARGET", DbType="NVarChar(MAX)")]
+		public string P_TARGET
+		{
+			get
+			{
+				return this._P_TARGET;
+			}
+			set
+			{
+				if ((this._P_TARGET != value))
+				{
+					this.OnP_TARGETChanging(value);
+					this.SendPropertyChanging();
+					this._P_TARGET = value;
+					this.SendPropertyChanged("P_TARGET");
+					this.OnP_TARGETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_BASE", DbType="Bit NOT NULL")]
+		public bool P_BASE
+		{
+			get
+			{
+				return this._P_BASE;
+			}
+			set
+			{
+				if ((this._P_BASE != value))
+				{
+					this.OnP_BASEChanging(value);
+					this.SendPropertyChanging();
+					this._P_BASE = value;
+					this.SendPropertyChanged("P_BASE");
+					this.OnP_BASEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_P_PERFIL", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string P_PERFIL
+		{
+			get
+			{
+				return this._P_PERFIL;
+			}
+			set
+			{
+				if ((this._P_PERFIL != value))
+				{
+					this.OnP_PERFILChanging(value);
+					this.SendPropertyChanging();
+					this._P_PERFIL = value;
+					this.SendPropertyChanged("P_PERFIL");
+					this.OnP_PERFILChanged();
 				}
 			}
 		}

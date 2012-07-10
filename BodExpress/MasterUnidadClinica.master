@@ -15,12 +15,6 @@
                 </td>
             </tr>
             <tr>
-                <td id="3" class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
-                    onclick="location.href='UnidadClinica.aspx'">
-                    Lista de Unidades Clínicas
-                </td>
-            </tr>
-            <tr>
                 <td id="4" class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
                     onclick="location.href='SolicitudMaterial.aspx'">
                     Solicitud Material

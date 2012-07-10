@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="MasterAdministrador.master.cs" Inherits="BodExpress.MasterAdministrador" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentMenu" runat="server">
+    <asp:ContentPlaceHolder ID="ContentMenu" runat="server">
+        <table width="100%">
+            <tr>
+                <td id="0" class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
+                     onclick="location.href='Usuarios.aspx'">
+                    Gestión Usuarios
+                </td>
+            </tr>
+        </table>
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentMain" runat="server">
+    <asp:ContentPlaceHolder ID="ContentMain" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

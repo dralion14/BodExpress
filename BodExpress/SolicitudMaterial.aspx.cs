@@ -15,8 +15,14 @@ namespace BodExpress
         {
             SiteMaster master = (SiteMaster)this.Master.Master;
             UNIDAD_CLINICA uc = CRUD_UnidadClinica.Read(master.ActiveUser.nombre);
-            Session["S_UC"] = Int32.Parse(uc.UC_ID.ToString());
-            
+            try
+            {
+                Session["S_UC"] = Int32.Parse(uc.UC_ID.ToString());
+            }
+            catch
+            {
+                Session["S_UC"] = 0;
+            }
         }
 
         protected void detailGrid_DataSelect(object sender, EventArgs e)

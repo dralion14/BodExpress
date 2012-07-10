@@ -1,4 +1,4 @@
-﻿<%@ Page Title="BodExpress - Home" Language="C#" MasterPageFile="~/MasterUnidadClinica.master"
+﻿<%@ Page Title="BodExpress - Home" Language="C#" MasterPageFile="~/MasterBodega.master"
     AutoEventWireup="true" CodeBehind="UnidadClinica.aspx.cs" Inherits="BodExpress.UnidadClinica" %>
 
 <%@ Register Assembly="DevExpress.Web.ASPxGridView.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"

@@ -14,20 +14,26 @@
     <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" ClientIDMode="AutoID"
         DataSourceID="odsSolicitud" KeyFieldName="SM_ID">
         <Columns>
+            <dx:GridViewCommandColumn ButtonType="Image" VisibleIndex="0">
+                <DeleteButton Visible="True">
+                    <Image Url="~/images/delete.png">
+                    </Image>
+                </DeleteButton>
+            </dx:GridViewCommandColumn>
             <dx:GridViewDataTextColumn FieldName="SM_ID" VisibleIndex="0">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="S_UC" VisibleIndex="1">
+            <dx:GridViewDataTextColumn FieldName="UC_ID" VisibleIndex="1">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="S_EST" VisibleIndex="2">
+            <dx:GridViewDataTextColumn FieldName="E_ID" VisibleIndex="2">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="S_UC_DEST" VisibleIndex="3">
+            <dx:GridViewDataTextColumn FieldName="UNI_UC_ID" VisibleIndex="3">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="S_TIPO" VisibleIndex="4">
+            <dx:GridViewDataTextColumn FieldName="SM_TIPO" VisibleIndex="4">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="S_SM_REC" VisibleIndex="5">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataDateColumn FieldName="S_FECHA" VisibleIndex="6">
+            <dx:GridViewDataDateColumn FieldName="SM_FECHA" VisibleIndex="5">
             </dx:GridViewDataDateColumn>
+            <dx:GridViewDataTextColumn FieldName="SM_ID_RECTIFICADA" VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
         </Columns>
         <Templates>
             <DetailRow>
@@ -49,7 +55,10 @@
         <Settings ShowFilterRow="True" />
         <SettingsDetail AllowOnlyOneMasterRowExpanded="True" ShowDetailRow="True" />
     </dx:ASPxGridView>
-    <asp:ObjectDataSource ID="odsSolicitud" runat="server" SelectMethod="getAll" TypeName="CORE.CRUD_SolicitudMaterial">
+    <asp:ObjectDataSource ID="odsSolicitud" runat="server" SelectMethod="getAll" 
+        TypeName="CORE.CRUD_SolicitudMaterial" 
+        DataObjectTypeName="CORE.SOLICITUD_MATERIAL" DeleteMethod="Delete" 
+        OldValuesParameterFormatString="original_{0}">
         <SelectParameters>
             <asp:SessionParameter DefaultValue="0" Name="uc_id" SessionField="S_UC" Type="Int32" />
         </SelectParameters>

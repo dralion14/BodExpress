@@ -80,10 +80,14 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DefaultAdm.aspx" />
     <Content Include="DefaultBod.aspx" />
     <Content Include="DefaultUC.aspx" />
     <Content Include="DevolucionMaterial.aspx" />
-    <Content Include="LogOn.aspx" />
+    <Content Include="DevolucionMaterialBod.aspx" />
+    <Content Include="EntregaMaterial.aspx" />
+    <Content Include="EntregaMaterialBod.aspx" />
+    <Content Include="LogIn.aspx" />
     <Content Include="Material.aspx" />
     <Content Include="MaterialKit.aspx" />
     <Content Include="MaterialUC.aspx" />
@@ -190,6 +194,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Usuarios.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -231,6 +236,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_SolicitudMaterial.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DefaultAdm.aspx.cs">
+      <DependentUpon>DefaultAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultAdm.aspx.designer.cs">
+      <DependentUpon>DefaultAdm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DefaultBod.aspx.cs">
       <DependentUpon>DefaultBod.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -252,12 +264,40 @@
     <Compile Include="DevolucionMaterial.aspx.designer.cs">
       <DependentUpon>DevolucionMaterial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LogOn.aspx.cs">
-      <DependentUpon>LogOn.aspx</DependentUpon>
+    <Compile Include="DevolucionMaterialBod.aspx.cs">
+      <DependentUpon>DevolucionMaterialBod.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LogOn.aspx.designer.cs">
-      <DependentUpon>LogOn.aspx</DependentUpon>
+    <Compile Include="DevolucionMaterialBod.aspx.designer.cs">
+      <DependentUpon>DevolucionMaterialBod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EntregaMaterial.aspx.cs">
+      <DependentUpon>EntregaMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EntregaMaterial.aspx.designer.cs">
+      <DependentUpon>EntregaMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EntregaMaterialBod.aspx.cs">
+      <DependentUpon>EntregaMaterialBod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EntregaMaterialBod.aspx.designer.cs">
+      <DependentUpon>EntregaMaterialBod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterAdministrador.master.cs">
+      <DependentUpon>MasterAdministrador.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterAdministrador.master.designer.cs">
+      <DependentUpon>MasterAdministrador.master</DependentUpon>
     </Compile>
     <Compile Include="MasterBodega.master.cs">
       <DependentUpon>MasterBodega.master</DependentUpon>
@@ -443,6 +483,13 @@
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master.Master" />
@@ -586,6 +633,7 @@
     <None Include="db_SolicitudMaterial.xss">
       <DependentUpon>db_SolicitudMaterial.xsd</DependentUpon>
     </None>
+    <Content Include="MasterAdministrador.master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

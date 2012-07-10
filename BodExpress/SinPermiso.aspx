@@ -4,5 +4,5 @@
     <p>Usted no tiene los permisos para acceder a esta funcionalidad.</p>
     <asp:Label ID="lblPaginaSinPermiso" runat="server"></asp:Label>
 &nbsp;
-<asp:HyperLink ID="lnkVolver" runat="server" Text="[Volver]" NavigateUrl="~/LogOn.aspx"></asp:HyperLink>
+<asp:HyperLink ID="lnkVolver" runat="server" Text="[Volver]" NavigateUrl="~/LogIn.aspx"></asp:HyperLink>
 </asp:Content>

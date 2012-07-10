@@ -11,7 +11,7 @@ namespace BodExpress
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("LogOn.aspx");
+            Response.Redirect("LogIn.aspx");
         }
     }
 }

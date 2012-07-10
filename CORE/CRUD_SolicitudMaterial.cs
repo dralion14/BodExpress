@@ -8,24 +8,15 @@ namespace CORE
     public class CRUD_SolicitudMaterial
     {
 
-        public static List<SOLICITUD_UC> getAll(int uc_id)
+        public static List<SOLICITUD_MATERIAL> getAll(int uc_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var solicitud_material = from sol_mat in ctx.ListaSolicitudMaterial
                                          where sol_mat.UC_ID.Equals(uc_id)
-                                         select new SOLICITUD_UC
-                                         {
-                                             SM_ID = sol_mat.SM_ID,
-                                             S_UC = sol_mat.UC_ID,
-                                             S_UC_DEST = sol_mat.UNI_UC_ID,
-                                             S_TIPO = sol_mat.SM_TIPO,
-                                             S_SM_REC = sol_mat.SM_ID_RECTIFICADA,
-                                             S_EST = sol_mat.E_ID,
-                                             S_FECHA = sol_mat.SM_FECHA
-                                         };
+                                         select sol_mat;
 
-                return solicitud_material.ToList<SOLICITUD_UC>();
+                return solicitud_material.ToList<SOLICITUD_MATERIAL>();
             }
         }
 

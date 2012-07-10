@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 8.75" name="BODEX">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 11.25" name="BODEX">
   <DataContextMoniker Name="/BODEXDataContext" />
   <nestedChildShapes>
     <classShape Id="2eab165a-22fe-4973-b135-c884ff04ccda" absoluteBounds="0.5, 0.5, 2, 2.24658447265625">
@@ -114,6 +114,12 @@
       <DataClassMoniker Name="/BODEXDataContext/COMPRA_RECEPCION" />
       <nestedChildShapes>
         <elementListCompartment Id="999a7bfc-44ed-4a0e-aa55-79bf1d2ec662" absoluteBounds="5.015, 7.7100000000000009, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0da4e2f-1ac1-4bdc-bbbd-d0fdb646e278" absoluteBounds="0.5, 8.875, 2, 2.0822371419270831">
+      <DataClassMoniker Name="/BODEXDataContext/PAGINA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="473ed952-f557-4b56-9eef-d0dbf913140c" absoluteBounds="0.51500000000000012, 9.335, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

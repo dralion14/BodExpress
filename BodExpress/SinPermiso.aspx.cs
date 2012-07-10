@@ -11,6 +11,8 @@ namespace BodExpress
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.Master.userName.Visible = false;
+            this.Master.salir.Visible = false;
             lblPaginaSinPermiso.Text = this.Master.PaginaSinPermiso;
         }
     }

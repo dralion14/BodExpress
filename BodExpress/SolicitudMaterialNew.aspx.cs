@@ -14,11 +14,18 @@ namespace BodExpress
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SiteMaster master = (SiteMaster)this.Master.Master;
+            UNIDAD_CLINICA uc = CRUD_UnidadClinica.Read(master.ActiveUser.nombre);
+            try
+            {
+                Session["UC_ID"] = Int32.Parse(uc.UC_ID.ToString());
+            }
+            catch
+            {
+                Session["UC_ID"] = 0;
+            }
             if (!IsPostBack)
             {
-                SiteMaster master = (SiteMaster)this.Master.Master;
-                UNIDAD_CLINICA uc = CRUD_UnidadClinica.Read(master.ActiveUser.nombre);
-                Session["UC_ID"] = Int32.Parse(uc.UC_ID.ToString());
 
                 ASPxComboBox1.Items.Insert(0, new ListEditItem("Bodega"));
                 ASPxComboBox1.DataBound += new EventHandler(addItem_DataBound);
