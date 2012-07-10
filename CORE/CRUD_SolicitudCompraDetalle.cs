@@ -14,7 +14,7 @@ namespace CORE
             {
                 var detalle_sol_comp = from det_sol_comp in ctx.ListaSolicitudCompraDetalle
                                        where det_sol_comp.SC_ID.Equals(sc_id)
-                               select det_sol_comp;
+                                       select det_sol_comp;
 
                 return detalle_sol_comp.ToList<DETALLE_SOLICITUD_COMPRA>();
             }
@@ -37,7 +37,7 @@ namespace CORE
                 {
                     var detalle_sol_comp = from det_sol_comp in ctx.ListaSolicitudCompraDetalle
                                            where det_sol_comp.SC_ID.Equals(sc_mat_id) && det_sol_comp.M_ID.Equals(m_mat_id)
-                                          select det_sol_comp;
+                                           select det_sol_comp;
                     return detalle_sol_comp.First<DETALLE_SOLICITUD_COMPRA>();
                 }
                 catch
@@ -54,10 +54,10 @@ namespace CORE
                 DETALLE_SOLICITUD_COMPRA detalle_sol_comp = (from det_sol_comp in ctx.ListaSolicitudCompraDetalle
                                                              where det_sol_comp.M_ID.Equals(det_sol_comp_upd.SC_ID)
                                      && det_sol_comp.SC_ID.Equals(det_sol_comp_upd.SC_ID)
-                                                     select det_sol_comp).First<DETALLE_SOLICITUD_COMPRA>();
+                                                             select det_sol_comp).First<DETALLE_SOLICITUD_COMPRA>();
 
                 detalle_sol_comp.DSC_CANTIDAD = det_sol_comp_upd.DSC_CANTIDAD;
-                
+
                 ctx.SubmitChanges();
             }
         }
@@ -67,7 +67,7 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 DETALLE_SOLICITUD_COMPRA borrar = (from det_sol_comp in ctx.ListaSolicitudCompraDetalle
-                                                   where det_sol_comp.M_ID.Equals(det_sol_comp_del.M_ID) 
+                                                   where det_sol_comp.M_ID.Equals(det_sol_comp_del.M_ID)
                                                    && det_sol_comp.SC_ID.Equals(det_sol_comp_del.SC_ID)
                                                    select det_sol_comp).First<DETALLE_SOLICITUD_COMPRA>();
 

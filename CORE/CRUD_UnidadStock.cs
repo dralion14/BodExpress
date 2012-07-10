@@ -13,7 +13,6 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var stock_unidad = from stock_un in ctx.ListaStockMaterialUnidad
-
                                orderby stock_un.M_ID, stock_un.UC_ID
                                select stock_un;
 
@@ -21,6 +20,26 @@ namespace CORE
             }
         }
 
+        public static List<MATERIAL_UC> getAll(int uc_id)
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                var stock_unidad = from stock_un in ctx.ListaStockMaterialUnidad
+                                   where stock_un.UC_ID.Equals(uc_id)
+                                   orderby stock_un.M_ID
+                                   select new MATERIAL_UC
+                                   {
+                                       M_ID = Int32.Parse(stock_un.M_ID.ToString()),
+                                       M_NOMBRE = CRUD_Material.ReadNombre(Int32.Parse(stock_un.M_ID.ToString())),
+                                       M_STOCK_IDEAL = stock_un.SMU_STOCK_IDEAL,
+                                       M_STOCK_REAL = stock_un.SMU_STOCK_REAL,
+                                       M_STOCK_BAJO = stock_un.SMU_STOCK_BAJO,
+                                       UC_ID = Int32.Parse(stock_un.UC_ID.ToString())
+                                   };
+
+                return stock_unidad.ToList<MATERIAL_UC>();
+            }
+        }
 
         public static void Create(STOCK_MATERIAL_UNIDAD stockmatunidad_new)
         {
@@ -85,5 +104,27 @@ namespace CORE
             }
         }
 
+    }
+
+    public class MATERIAL_UC
+    {
+        public Int32 M_ID { get; set; }
+        public Int32 UC_ID { get; set; }
+        public string M_NOMBRE { get; set; }
+        public Int32 M_STOCK_REAL { get; set; }
+        public Int32 M_STOCK_IDEAL { get; set; }
+        public Int32 M_STOCK_BAJO { get; set; }
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != this.GetType())
+                return false;
+
+            return (M_ID == ((MATERIAL_UC)obj).M_ID &&
+                UC_ID == ((MATERIAL_UC)obj).UC_ID);
+        }
+        public override int GetHashCode()
+        {
+            return this.M_ID.GetHashCode() ^ this.UC_ID.GetHashCode();
+        }
     }
 }

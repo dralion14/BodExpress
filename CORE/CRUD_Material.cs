@@ -20,6 +20,19 @@ namespace CORE
             }
         }
 
+        public static List<MATERIAL> getAllComprar()
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                var material = from mat in ctx.ListaMaterial
+                               where mat.M_STOCK_REAL < mat.M_STOCK_IDEAL
+                               orderby mat.M_ID
+                               select mat;
+
+                return material.ToList<MATERIAL>();
+            }
+        }
+
         public static List<MATERIAL> getAllKit()
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
@@ -50,6 +63,9 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
+                mat_new.M_STOCK_IDEAL = 100;
+                mat_new.M_STOCK_BAJO = 1;
+                mat_new.M_STOCK_REAL = 0;
                 ctx.ListaMaterial.InsertOnSubmit(mat_new);
                 ctx.SubmitChanges();
             }
@@ -69,6 +85,24 @@ namespace CORE
                 catch
                 {
                     return null;
+                }
+            }
+        }
+
+        public static string ReadNombre(int mat_id)
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                try
+                {
+                    var material = from mat in ctx.ListaMaterial
+                                   where mat.M_ID.Equals(mat_id)
+                                   select mat;
+                    return material.First<MATERIAL>().M_NOMBRE;
+                }
+                catch
+                {
+                    return "";
                 }
             }
         }

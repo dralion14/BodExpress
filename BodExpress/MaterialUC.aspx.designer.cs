@@ -10,7 +10,7 @@
 namespace BodExpress {
     
     
-    public partial class SolicitudCompraNew {
+    public partial class MaterialUC {
         
         /// <summary>
         /// Control ASPxGridView1.
@@ -22,30 +22,12 @@ namespace BodExpress {
         protected global::DevExpress.Web.ASPxGridView.ASPxGridView ASPxGridView1;
         
         /// <summary>
-        /// Control ASPxButton1.
+        /// Control odsMATERIAL.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxButton ASPxButton1;
-        
-        /// <summary>
-        /// Control ASPxListBox1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxListBox ASPxListBox1;
-        
-        /// <summary>
-        /// Control odsMaterial.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsMaterial;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsMATERIAL;
     }
 }

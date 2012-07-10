@@ -31,22 +31,22 @@ namespace BodExpress {
         protected global::DevExpress.Web.ASPxEditors.ASPxButton ASPxButton1;
         
         /// <summary>
-        /// Control ASPxGridView1.
+        /// Control ASPxListBox1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView.ASPxGridView ASPxGridView1;
+        protected global::DevExpress.Web.ASPxEditors.ASPxListBox ASPxListBox1;
         
         /// <summary>
-        /// Control ASPxListBox.
+        /// Control ASPxButton2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxEditors.ASPxListBox ASPxListBox;
+        protected global::DevExpress.Web.ASPxEditors.ASPxButton ASPxButton2;
         
         /// <summary>
         /// Control odsSolicitud.

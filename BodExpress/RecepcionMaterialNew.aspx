@@ -8,50 +8,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentMain" runat="server">
-    <script type="text/javascript">
-    // <![CDATA[
-        function grid_SelectionChanged(s, e) {
-            s.GetSelectedFieldValues("M_NOMBRE", GetSelectedFieldValuesCallback);
-        }
-        function GetSelectedFieldValuesCallback(values) {
-            selList.BeginUpdate();
-            try {
-                selList.ClearItems();
-                for (var i = 0; i < values.length; i++) {
-                    selList.AddItem(values[i]);
-                }
-            } finally {
-                selList.EndUpdate();
-            }
-        }
-      // ]]>
-    </script>
     <dx:ASPxComboBox ID="ASPxComboBox1" runat="server" ClientIDMode="AutoID" DataSourceID="odsSolicitud"
         ValueField="SC_ID" ValueType="System.String" TextField="SC_ID" OnSelectedIndexChanged="ASPxComboBox1_SelectedIndexChanged">
     </dx:ASPxComboBox>
     <dx:ASPxButton ID="ASPxButton1" runat="server" Text="Continuar" OnClick="Continuar">
     </dx:ASPxButton>
-    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" ClientIDMode="AutoID"
-         ClientInstanceName="grid">
+    <dx:ASPxListBox ID="ASPxListBox1" ClientInstanceName="selList" runat="server" 
+        ClientIDMode="AutoID" DataSourceID="odsMaterial">
         <Columns>
-            <dx:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0">
-            </dx:GridViewCommandColumn>
-            <dx:GridViewDataTextColumn FieldName="SC_ID" VisibleIndex="0" Visible="False">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="M_ID" VisibleIndex="1">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="DSC_CANTIDAD" VisibleIndex="2">
-            </dx:GridViewDataTextColumn>
+            <dx:ListBoxColumn Caption="ID Material" FieldName="M_ID" />
+            <dx:ListBoxColumn Caption="Cantidad" FieldName="DSC_CANTIDAD" />
         </Columns>
-        <ClientSideEvents SelectionChanged="grid_SelectionChanged" />
-        <Settings ShowFilterRow="True" />
-    </dx:ASPxGridView>
-    <dx:ASPxListBox ID="ASPxListBox" ClientInstanceName="selList" runat="server" Height="0%"
-        Width="0%" />
-    <asp:ObjectDataSource ID="odsSolicitud" runat="server" SelectMethod="getAll" TypeName="CORE.CRUD_SolicitudCompra">
+    </dx:ASPxListBox>
+    <dx:ASPxButton ID="ASPxButton2" runat="server" Text="Ingresar Recepción" OnClick="Ingresar" ClientInstanceName="b_ingresar">
+    </dx:ASPxButton>
+    <asp:ObjectDataSource ID="odsSolicitud" runat="server" SelectMethod="getPendientes" TypeName="CORE.CRUD_SolicitudCompra">
     </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="odsMaterial" runat="server" SelectMethod="getAll" 
-        TypeName="CORE.CRUD_SolicitudCompraDetalle">
+        TypeName="CORE.CRUD_SolicitudCompraDetalle" 
+        OldValuesParameterFormatString="original_{0}">
         <SelectParameters>
             <asp:SessionParameter DefaultValue="0" Name="sc_id" SessionField="SC_ID" 
                 Type="Int32" />

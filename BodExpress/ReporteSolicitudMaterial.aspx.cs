@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace BodExpress
 {
-    public partial class AppHome : System.Web.UI.Page
+    public partial class ReporteSolicitudMaterial : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

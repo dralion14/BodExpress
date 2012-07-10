@@ -44,7 +44,7 @@
                 <td class="style3" style="margin-left: 40px;" onclick="location.href=''" align="left">
                 </td>
                 <td class="style3" style="margin-left: 40px;" onclick="location.href=''" align="right">
-                    <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>&nbsp;&nbsp;
+                    [<asp:Label ID="lblUsuario" runat="server" Text="usuario"></asp:Label>]&nbsp;&nbsp;
                     <asp:LinkButton ID="lnkSalir" runat="server" onclick="lnkSalir_Click" ForeColor="Red">[SALIR]</asp:LinkButton>
                 </td>
                 <td class="style3">

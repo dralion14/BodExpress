@@ -30,7 +30,7 @@ namespace BodExpress
         {
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.materialAdapter1 = new BodExpress.aaTableAdapters.MATERIALAdapter();
-            this.aa1 = new BodExpress.aa();
+            this.aa1 = new BodExpress.bd_material();
             this.Title = new DevExpress.XtraReports.UI.XRControlStyle();
             this.FieldCaption = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -387,7 +387,7 @@ namespace BodExpress
 
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private aaTableAdapters.MATERIALAdapter materialAdapter1;
-        private aa aa1;
+        private bd_material aa1;
         private DevExpress.XtraReports.UI.XRControlStyle Title;
         private DevExpress.XtraReports.UI.XRControlStyle FieldCaption;
         private DevExpress.XtraReports.UI.XRControlStyle PageInfo;

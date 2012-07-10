@@ -8,6 +8,18 @@
     <asp:ContentPlaceHolder ID="ContentMenu" runat="server">
         <table width="100%">
             <tr>
+                <td id="0" class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
+                     onclick="location.href='Material.aspx'">
+                    Lista de Materiales
+                </td>
+            </tr>
+            <tr>
+                <td id="Td1" class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
+                    onclick="location.href='MaterialKit.aspx'">
+                    Lista de Kit de Materiales
+                </td>
+            </tr>
+            <tr>
                 <td id="1" class="BarraMenuOUTLF" onmouseover="this.className='BarraMenuINLF';" onmouseout="this.className='BarraMenuOUTLF';"
                     onclick="location.href='SolicitudCompra.aspx'">
                     Solicitud de Compra

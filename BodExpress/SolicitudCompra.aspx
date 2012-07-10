@@ -25,7 +25,7 @@
             </dx:GridViewCommandColumn>
             <dx:GridViewDataTextColumn Caption="ID" FieldName="SC_ID" VisibleIndex="0">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="E_ID" VisibleIndex="1" Visible="False">
+            <dx:GridViewDataTextColumn FieldName="E_ID" VisibleIndex="1">
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataDateColumn Caption="Fecha" FieldName="SC_FECHA" VisibleIndex="2">
             </dx:GridViewDataDateColumn>

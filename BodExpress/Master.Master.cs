@@ -16,7 +16,6 @@ namespace BodExpress
         {
             if (!Page.IsPostBack && !Page.IsCallback)
             {
-                lblUsuario.Visible = false;
                 lnkSalir.Visible = false;
 
                 //Si hay un usuario activo pero no se debe redireccionar
@@ -38,9 +37,8 @@ namespace BodExpress
                         return;
                     }
                     //Usuario con permiso y logueado
-                    lblUsuario.Visible = true;
                     lnkSalir.Visible = true;
-                    this.lblUsuario.Text = String.Format("[{0}]", ActiveUser.nombre);
+                    this.lblUsuario.Text = String.Format("{0}", ActiveUser.nombre);
                     Session["SessionIDActiveUser"] = ActiveUser.nombre;
                 }
                 else  //Usuario no logueado

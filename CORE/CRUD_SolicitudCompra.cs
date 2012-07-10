@@ -12,9 +12,21 @@ namespace CORE
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var solicitud_compra = from sol_comp in ctx.ListaSolicitudCompra
+                                       orderby sol_comp.SC_ID
+                                       select sol_comp;
+
+                return solicitud_compra.ToList<SOLICITUD_COMPRA>();
+            }
+        }
+
+        public static List<SOLICITUD_COMPRA> getPendientes()
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                var solicitud_compra = from sol_comp in ctx.ListaSolicitudCompra
                                        where sol_comp.E_ID.Equals(1)
-                               orderby sol_comp.SC_ID
-                               select sol_comp;
+                                       orderby sol_comp.SC_ID
+                                       select sol_comp;
 
                 return solicitud_compra.ToList<SOLICITUD_COMPRA>();
             }
@@ -48,9 +60,9 @@ namespace CORE
             {
                 try
                 {
-                    var solicitud_compra= from sol_comp in ctx.ListaSolicitudCompra
-                                   where sol_comp.SC_ID.Equals(sol_comp_id)
-                                   select sol_comp;
+                    var solicitud_compra = from sol_comp in ctx.ListaSolicitudCompra
+                                           where sol_comp.SC_ID.Equals(sol_comp_id)
+                                           select sol_comp;
                     return solicitud_compra.First<SOLICITUD_COMPRA>();
                 }
                 catch
@@ -70,7 +82,7 @@ namespace CORE
 
                 solicitud_compra.SC_FECHA = sol_comp_upd.SC_FECHA;
                 solicitud_compra.E_ID = sol_comp_upd.E_ID;
-               
+
                 ctx.SubmitChanges();
             }
         }
@@ -79,6 +91,9 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
+                if (!sol_comp_del.E_ID.Equals(1))
+                    return;
+
                 DETALLE_SOLICITUD_COMPRA material;
 
                 try

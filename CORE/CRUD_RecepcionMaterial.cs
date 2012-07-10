@@ -19,6 +19,18 @@ namespace CORE
             }
         }
 
+        public static RECEPCION_MATERIAL getEnd()
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                List<RECEPCION_MATERIAL> recep = (from rec in ctx.ListaRecepcionMaterial
+                                                  orderby rec.RM_ID
+                                                  select rec).ToList<RECEPCION_MATERIAL>();
+
+                return recep.Last<RECEPCION_MATERIAL>();
+            }
+        }
+
         public static void Create(RECEPCION_MATERIAL recep_mat_new)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())

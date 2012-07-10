@@ -34,8 +34,8 @@ namespace BodExpress
             newKit.M_MEDIDA_COMPRA = 1;
             newKit.M_MEDIDA_DISTRIBUCION = 1;
             newKit.M_STOCK_BAJO = 1;
-            newKit.M_STOCK_IDEAL = 1;
-            newKit.M_STOCK_REAL = 1;
+            newKit.M_STOCK_IDEAL = 100;
+            newKit.M_STOCK_REAL = 0;
 
             CRUD_Material.Create(newKit);
             int kit_id = CRUD_Material.Read(newKit.M_NOMBRE);

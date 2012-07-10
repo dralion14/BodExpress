@@ -55,10 +55,10 @@
         <ClientSideEvents SelectionChanged="grid_SelectionChanged" />
         <Settings ShowFilterRow="True" />
     </dx:ASPxGridView>
-    <dx:ASPxListBox ID="ASPxListBox" ClientInstanceName="selList" runat="server" Height="0%"
-        Width="0%" />
-    <dx:ASPxButton ID="ASPxButton1" runat="server" Text="Continuar" OnClick="Continuar">
+    <dx:ASPxButton ID="ASPxButton1" runat="server" Text="Enviar Solicitud de Compra" OnClick="Continuar" ClientInstanceName="boton">
     </dx:ASPxButton>
+    <dx:ASPxListBox ID="ASPxListBox1" ClientInstanceName="selList" runat="server" Height="0%"
+        Width="0%" />
     <asp:ObjectDataSource ID="odsMaterial" runat="server" SelectMethod="getAll" TypeName="CORE.CRUD_Material">
     </asp:ObjectDataSource>
 </asp:Content>

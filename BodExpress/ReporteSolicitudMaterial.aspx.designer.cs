@@ -10,6 +10,6 @@
 namespace BodExpress {
     
     
-    public partial class AppHome {
+    public partial class ReporteSolicitudMaterial {
     }
 }

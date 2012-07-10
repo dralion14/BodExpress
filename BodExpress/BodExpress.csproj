@@ -35,7 +35,10 @@
     <Reference Include="CORE">
       <HintPath>..\CORE\bin\Debug\CORE.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Charts.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.2.Core, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Archivos de programa\DevExpress 2010.2\Components\Sources\DevExpress.DLL\DevExpress.Utils.v10.2.dll</HintPath>
@@ -48,6 +51,8 @@
     <Reference Include="DevExpress.Xpo.v10.2.Web, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Archivos de programa\DevExpress 2010.2\Components\Sources\DevExpress.DLL\DevExpress.XtraReports.v10.2.dll</HintPath>
@@ -56,6 +61,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Archivos de programa\DevExpress 2010.2\Components\Sources\DevExpress.DLL\DevExpress.XtraReports.v10.2.Web.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.2, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -80,16 +86,17 @@
     <Content Include="LogOn.aspx" />
     <Content Include="Material.aspx" />
     <Content Include="MaterialKit.aspx" />
+    <Content Include="MaterialUC.aspx" />
     <Content Include="RecepcionMaterial.aspx" />
     <Content Include="RecepcionMaterialNew.aspx" />
     <Content Include="ReporteBodega.aspx" />
     <Content Include="ReporteMaterial.aspx" />
+    <Content Include="ReporteSolicitudMaterial.aspx" />
     <Content Include="SinPermiso.aspx" />
     <Content Include="SolicitudCompra.aspx" />
     <Content Include="SolicitudCompraNew.aspx" />
     <Content Include="SolicitudMaterial.aspx" />
     <Content Include="UnidadClinica.aspx" />
-    <Content Include="Home.aspx" />
     <Content Include="App_Themes\Office2010Blue\Editors\caChallengeImageBack.png" />
     <Content Include="App_Themes\Office2010Blue\Editors\edtBtnBack.png" />
     <Content Include="App_Themes\Office2010Blue\Editors\edtBtnHBack.png" />
@@ -190,10 +197,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="aa.Designer.cs">
+    <Compile Include="bd_material.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>aa.xsd</DependentUpon>
+      <DependentUpon>bd_material.xsd</DependentUpon>
     </Compile>
     <Compile Include="DefaultBod.aspx.cs">
       <DependentUpon>DefaultBod.aspx</DependentUpon>
@@ -251,6 +258,13 @@
     <Compile Include="MaterialKit.aspx.designer.cs">
       <DependentUpon>MaterialKit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MaterialUC.aspx.cs">
+      <DependentUpon>MaterialUC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaterialUC.aspx.designer.cs">
+      <DependentUpon>MaterialUC.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionMaterial.aspx.cs">
       <DependentUpon>RecepcionMaterial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,6 +292,13 @@
     </Compile>
     <Compile Include="ReporteMaterial.aspx.designer.cs">
       <DependentUpon>ReporteMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSolicitudMaterial.aspx.cs">
+      <DependentUpon>ReporteSolicitudMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSolicitudMaterial.aspx.designer.cs">
+      <DependentUpon>ReporteSolicitudMaterial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReporteMaterial.cs">
       <SubType>Component</SubType>
@@ -319,13 +340,6 @@
     </Compile>
     <Compile Include="UnidadClinica.aspx.designer.cs">
       <DependentUpon>UnidadClinica.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -404,16 +418,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="aa.xsc">
-      <DependentUpon>aa.xsd</DependentUpon>
+    <None Include="bd_material.xsc">
+      <DependentUpon>bd_material.xsd</DependentUpon>
     </None>
-    <None Include="aa.xsd">
+    <None Include="bd_material.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>aa.Designer.cs</LastGenOutput>
+      <LastGenOutput>bd_material.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="aa.xss">
-      <DependentUpon>aa.xsd</DependentUpon>
+    <None Include="bd_material.xss">
+      <DependentUpon>bd_material.xsd</DependentUpon>
     </None>
     <Content Include="MasterBodega.master" />
   </ItemGroup>

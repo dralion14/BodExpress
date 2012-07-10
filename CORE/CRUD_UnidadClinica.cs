@@ -46,6 +46,24 @@ namespace CORE
             }
         }
 
+        public static UNIDAD_CLINICA Read(string uni_nom)
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                try
+                {
+                    var unidad = from uni in ctx.ListaUnidadClinica
+                                 where uni.UC_NOMBRE.Equals(uni_nom)
+                                 select uni;
+                    return unidad.First<UNIDAD_CLINICA>();
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
+
         public static void Update(UNIDAD_CLINICA uni_upd)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
