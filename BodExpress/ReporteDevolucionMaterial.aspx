@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterBodega.master" AutoEventWireup="true" CodeBehind="ReporteSolicitudMaterial.aspx.cs" Inherits="BodExpress.ReporteSolicitudMaterial" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterBodega.master" AutoEventWireup="true" CodeBehind="ReporteDevolucionMaterial.aspx.cs" Inherits="BodExpress.ReporteDevolucionMaterial" %>
 <%@ Register assembly="DevExpress.XtraReports.v10.2.Web, Version=10.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraReports.Web" tagprefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
 </asp:Content>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentMain" runat="server">
     <dx:ReportToolbar ID="ReportToolbar1" runat="server" 
         ReportViewer="<%# ReportViewer1 %>" ShowDefaultButtons="False">
@@ -45,7 +44,7 @@
         </styles>
     </dx:ReportToolbar>
     <dx:ReportViewer ID="ReportViewer1" runat="server" 
-        Report="<%# new BodExpress.Reportes.ReporteSolicitudMaterial() %>" 
-        ReportName="BodExpress.Reportes.ReporteSolicitudMaterial">
+        Report="<%# new BodExpress.Reportes.ReporteDevolucionMaterial() %>" 
+        ReportName="BodExpress.Reportes.ReporteDevolucionMaterial">
     </dx:ReportViewer>
 </asp:Content>

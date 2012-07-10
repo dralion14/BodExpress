@@ -18,5 +18,23 @@ namespace BodExpress
         {
             Response.Redirect("~/ReporteMaterial.aspx", true);
         }
+ 
+        public void ReporteSolicitudCompra(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ReporteSolicitudCompra.aspx", true);
+        }
+
+        public void ReporteDevolucionMaterial(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ReporteDevolucionMaterial.aspx", true);
+        }
+        public void ReporteSolicitudMaterial(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ReporteSolicitudMaterial.aspx", true);
+        }
+        public void ReporteRecepcionMaterial(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ReporteRecepcionMaterial.aspx", true);
+        }
     }
 }

@@ -5,4 +5,12 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentMain" runat="server">
     <dx:ASPxButton ID="ASPxButton1" runat="server" Text="Lista de Materiales Bodega" OnClick="ReporteMaterial">
     </dx:ASPxButton>
+    <dx:ASPxButton ID="ASPxButton2" runat="server" Text="Lista de Devoluciones de Material" OnClick="ReporteDevolucionMaterial">
+    </dx:ASPxButton>
+    <dx:ASPxButton ID="ASPxButton3" runat="server" Text="Lista de Solicitudes de Material" OnClick="ReporteSolicitudMaterial">
+    </dx:ASPxButton>
+    <dx:ASPxButton ID="ASPxButton4" runat="server" Text="Lista de Solicitudes de Compra" OnClick="ReporteSolicitudCompra">
+    </dx:ASPxButton>
+    <dx:ASPxButton ID="ASPxButton5" runat="server" Text="Lista de Recepciones de Material" OnClick="ReporteRecepcionMaterial">
+    </dx:ASPxButton>
 </asp:Content>

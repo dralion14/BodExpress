@@ -10,7 +10,7 @@
 namespace BodExpress {
     
     
-    public partial class ReporteSolicitudMaterial {
+    public partial class ReporteSolicitudCompra {
         
         /// <summary>
         /// Control ReportToolbar1.
