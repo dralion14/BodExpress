@@ -90,7 +90,11 @@
     <Content Include="RecepcionMaterial.aspx" />
     <Content Include="RecepcionMaterialNew.aspx" />
     <Content Include="ReporteBodega.aspx" />
+    <Content Include="ReporteDevolucionMaterial.aspx" />
     <Content Include="ReporteMaterial.aspx" />
+    <Content Include="ReporteRecepcionMaterial.aspx" />
+    <Content Include="ReporteSolicitudCompra.aspx" />
+    <Content Include="ReporteSolicitudMaterial.aspx" />
     <Content Include="SinPermiso.aspx" />
     <Content Include="SolicitudCompra.aspx" />
     <Content Include="SolicitudCompraNew.aspx" />
@@ -206,6 +210,25 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_materialUC.xsd</DependentUpon>
+    <Compile Include="db_DevolucionMaterial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_DevolucionMaterial.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_RecepcionMaterial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_RecepcionMaterial.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_SolicitudCompra.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_SolicitudCompra.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_SolicitudMaterial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_SolicitudMaterial.xsd</DependentUpon>
     </Compile>
     <Compile Include="DefaultBod.aspx.cs">
       <DependentUpon>DefaultBod.aspx</DependentUpon>
@@ -291,12 +314,46 @@
     <Compile Include="ReporteBodega.aspx.designer.cs">
       <DependentUpon>ReporteBodega.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReporteDevolucionMaterial.aspx.cs">
+      <DependentUpon>ReporteDevolucionMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteDevolucionMaterial.aspx.designer.cs">
+      <DependentUpon>ReporteDevolucionMaterial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReporteMaterial.aspx.cs">
       <DependentUpon>ReporteMaterial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReporteMaterial.aspx.designer.cs">
       <DependentUpon>ReporteMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRecepcionMaterial.aspx.cs">
+      <DependentUpon>ReporteRecepcionMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteRecepcionMaterial.aspx.designer.cs">
+      <DependentUpon>ReporteRecepcionMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSolicitudCompra.aspx.cs">
+      <DependentUpon>ReporteSolicitudCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSolicitudCompra.aspx.designer.cs">
+      <DependentUpon>ReporteSolicitudCompra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSolicitudMaterial.aspx.cs">
+      <DependentUpon>ReporteSolicitudMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSolicitudMaterial.aspx.designer.cs">
+      <DependentUpon>ReporteSolicitudMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteDevolucionMaterial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteDevolucionMaterial.Designer.cs">
+      <DependentUpon>ReporteDevolucionMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReporteMaterial.cs">
       <SubType>Component</SubType>
@@ -309,6 +366,23 @@
     </Compile>
     <Compile Include="Reportes\ReporteMaterialUC.Designer.cs">
       <DependentUpon>ReporteMaterialUC.cs</DependentUpon>
+    <Compile Include="Reportes\ReporteRecepcionMaterial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteRecepcionMaterial.Designer.cs">
+      <DependentUpon>ReporteRecepcionMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteSolicitudCompra.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteSolicitudCompra.Designer.cs">
+      <DependentUpon>ReporteSolicitudCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteSolicitudMaterial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteSolicitudMaterial.Designer.cs">
+      <DependentUpon>ReporteSolicitudMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="SinPermiso.aspx.cs">
       <DependentUpon>SinPermiso.aspx</DependentUpon>
@@ -424,11 +498,22 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reportes\ReporteDevolucionMaterial.resx">
+      <DependentUpon>ReporteDevolucionMaterial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteMaterial.resx">
       <DependentUpon>ReporteMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteMaterialUC.resx">
       <DependentUpon>ReporteMaterialUC.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\ReporteRecepcionMaterial.resx">
+      <DependentUpon>ReporteRecepcionMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteSolicitudCompra.resx">
+      <DependentUpon>ReporteSolicitudCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteSolicitudMaterial.resx">
+      <DependentUpon>ReporteSolicitudMaterial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -453,6 +538,45 @@
     </None>
     <None Include="db_materialUC.xss">
       <DependentUpon>db_materialUC.xsd</DependentUpon>
+    <None Include="db_DevolucionMaterial.xsc">
+      <DependentUpon>db_DevolucionMaterial.xsd</DependentUpon>
+    </None>
+    <None Include="db_DevolucionMaterial.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_DevolucionMaterial.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="db_DevolucionMaterial.xss">
+      <DependentUpon>db_DevolucionMaterial.xsd</DependentUpon>
+    </None>
+    <None Include="db_RecepcionMaterial.xsc">
+      <DependentUpon>db_RecepcionMaterial.xsd</DependentUpon>
+    </None>
+    <None Include="db_RecepcionMaterial.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_RecepcionMaterial.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="db_RecepcionMaterial.xss">
+      <DependentUpon>db_RecepcionMaterial.xsd</DependentUpon>
+    </None>
+    <None Include="db_SolicitudCompra.xsc">
+      <DependentUpon>db_SolicitudCompra.xsd</DependentUpon>
+    </None>
+    <None Include="db_SolicitudCompra.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_SolicitudCompra.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="db_SolicitudCompra.xss">
+      <DependentUpon>db_SolicitudCompra.xsd</DependentUpon>
+    </None>
+    <None Include="db_SolicitudMaterial.xsc">
+      <DependentUpon>db_SolicitudMaterial.xsd</DependentUpon>
+    </None>
+    <None Include="db_SolicitudMaterial.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_SolicitudMaterial.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="db_SolicitudMaterial.xss">
+      <DependentUpon>db_SolicitudMaterial.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -463,7 +587,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>4909</DevelopmentServerPort>
+          <DevelopmentServerPort>47613</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

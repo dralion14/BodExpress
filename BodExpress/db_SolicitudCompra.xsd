@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="db_SolicitudCompra" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=BODEXPRESS.mssql.somee.com;Initial Catalog=BODEXPRESS;User ID=bodex;Password=bodexpress" IsAppSettingsProperty="false" Modifier="Assembly" Name="Connection" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SOLICITUD_COMPRAAdapter" GeneratorDataComponentClassName="SOLICITUD_COMPRAAdapter" Name="SOLICITUD_COMPRA" UserDataComponentName="SOLICITUD_COMPRAAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Connection" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SOLICITUD_COMPRA.SC_ID, SOLICITUD_COMPRA.SC_FECHA, ESTADO.E_NOMBRE, SOLICITUD_COMPRA.E_ID
+FROM            SOLICITUD_COMPRA INNER JOIN
+                         ESTADO ON SOLICITUD_COMPRA.E_ID = ESTADO.E_ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SC_ID" DataSetColumn="SC_ID" />
+              <Mapping SourceColumn="E_ID" DataSetColumn="E_ID" />
+              <Mapping SourceColumn="SC_FECHA" DataSetColumn="SC_FECHA" />
+              <Mapping SourceColumn="E_NOMBRE" DataSetColumn="E_NOMBRE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="db_SolicitudCompra" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="db_SolicitudCompra" msprop:Generator_UserDSName="db_SolicitudCompra">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SOLICITUD_COMPRA" msprop:Generator_TableClassName="SOLICITUD_COMPRADataTable" msprop:Generator_TableVarName="tableSOLICITUD_COMPRA" msprop:Generator_TablePropName="SOLICITUD_COMPRA" msprop:Generator_RowDeletingName="SOLICITUD_COMPRARowDeleting" msprop:Generator_UserTableName="SOLICITUD_COMPRA" msprop:Generator_RowChangingName="SOLICITUD_COMPRARowChanging" msprop:Generator_RowEvHandlerName="SOLICITUD_COMPRARowChangeEventHandler" msprop:Generator_RowDeletedName="SOLICITUD_COMPRARowDeleted" msprop:Generator_RowEvArgName="SOLICITUD_COMPRARowChangeEvent" msprop:Generator_RowChangedName="SOLICITUD_COMPRARowChanged" msprop:Generator_RowClassName="SOLICITUD_COMPRARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SC_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnSC_ID" msprop:Generator_ColumnPropNameInRow="SC_ID" msprop:Generator_ColumnPropNameInTable="SC_IDColumn" msprop:Generator_UserColumnName="SC_ID" type="xs:decimal" />
+              <xs:element name="E_ID" msprop:Generator_ColumnVarNameInTable="columnE_ID" msprop:Generator_ColumnPropNameInRow="E_ID" msprop:Generator_ColumnPropNameInTable="E_IDColumn" msprop:Generator_UserColumnName="E_ID" type="xs:decimal" />
+              <xs:element name="SC_FECHA" msprop:Generator_ColumnVarNameInTable="columnSC_FECHA" msprop:Generator_ColumnPropNameInRow="SC_FECHA" msprop:Generator_ColumnPropNameInTable="SC_FECHAColumn" msprop:Generator_UserColumnName="SC_FECHA" type="xs:dateTime" />
+              <xs:element name="E_NOMBRE" msprop:Generator_ColumnVarNameInTable="columnE_NOMBRE" msprop:Generator_ColumnPropNameInRow="E_NOMBRE" msprop:Generator_ColumnPropNameInTable="E_NOMBREColumn" msprop:Generator_UserColumnName="E_NOMBRE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//SOLICITUD_COMPRA" />
+      <xs:field xpath="SC_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
