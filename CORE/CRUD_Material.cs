@@ -20,16 +20,53 @@ namespace CORE
             }
         }
 
-        public static List<MATERIAL> getAllComprar()
+        public static List<MATERIAL_FALTANTE> getAllComprar()
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var material = from mat in ctx.ListaMaterial
-                               where mat.M_STOCK_REAL < mat.M_STOCK_IDEAL
                                orderby mat.M_ID
-                               select mat;
+                               select new MATERIAL_FALTANTE
+                               {
+                                   M_ID = mat.M_ID,
+                                   M_NOMBRE = mat.M_NOMBRE,
+                                   M_TIPO = mat.M_TIPO,
+                                   M_CANTIDAD = mat.M_STOCK_IDEAL - mat.M_STOCK_REAL
+                               };
 
-                return material.ToList<MATERIAL>();
+                return material.ToList<MATERIAL_FALTANTE>();
+            }
+        }
+
+        public static List<MATERIAL_FALTANTE> getAllUC(int uc_id)
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                var material = from mat in ctx.ListaStockMaterialUnidad
+                               where mat.UC_ID.Equals(uc_id)
+                               orderby mat.M_ID
+                               select new MATERIAL_FALTANTE
+                               {
+                                   M_ID = mat.M_ID,
+                                   M_NOMBRE = CRUD_Material.Read(Int32.Parse(mat.M_ID.ToString())).M_NOMBRE,
+                                   M_TIPO = CRUD_Material.Read(Int32.Parse(mat.M_ID.ToString())).M_TIPO,
+                                   M_CANTIDAD = mat.SMU_STOCK_IDEAL - mat.SMU_STOCK_REAL
+                               };
+
+                return material.ToList<MATERIAL_FALTANTE>();
+            }
+        }
+
+        public static void updateComprar(MATERIAL_FALTANTE mat_upd)
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                MATERIAL_FALTANTE material = (from mat in CRUD_Material.getAllComprar()
+                               where mat.M_ID.Equals(mat_upd.M_ID)
+                               select mat).First<MATERIAL_FALTANTE>();
+
+                material.M_CANTIDAD = mat_upd.M_CANTIDAD;
+                ctx.SubmitChanges();
             }
         }
 
@@ -209,13 +246,31 @@ namespace CORE
                     
                 }
 
-
                 MATERIAL borrar = (from mat in ctx.ListaMaterial
                                    where mat.M_ID.Equals(mat_del.M_ID)
                                    select mat).First<MATERIAL>();
 
                 ctx.ListaMaterial.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
+            }
+        }
+
+        public class MATERIAL_FALTANTE
+        {
+            public decimal M_ID { get; set; }
+            public string M_NOMBRE { get; set; }
+            public string M_TIPO { get; set; }
+            public Int32 M_CANTIDAD { get; set; }
+            public override bool Equals(object obj)
+            {
+                if (obj.GetType() != this.GetType())
+                    return false;
+
+                return (M_ID == ((MATERIAL_FALTANTE)obj).M_ID);
+            }
+            public override int GetHashCode()
+            {
+                return this.M_ID.GetHashCode();
             }
         }
     }

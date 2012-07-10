@@ -8,16 +8,21 @@ namespace CORE
     public class CRUD_SolicitudMaterialDetalle
     {
 
-        public static List<DETALLE_SOLICITUD_MATERIAL> getAll()
+        public static List<DETALLE_SOLICITUD> getAll(int sm_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                var solicitud_mat_det = from sol_mat_det in ctx.ListaSolicitudMaterialDetalle
-                               
-                               orderby sol_mat_det.SM_ID,sol_mat_det.M_ID
-                               select sol_mat_det;
+                var solicitud_mat_det = from sol_mat_det in ctx.ListaSolicitudMaterialDetalle 
+                                        where sol_mat_det.SM_ID.Equals(sm_id)
+                                        select new DETALLE_SOLICITUD
+                                        {
+                                            SM_ID = sol_mat_det.SM_ID,
+                                            M_ID = sol_mat_det.M_ID,
+                                            M_NOMBRE = CRUD_Material.ReadNombre(Int32.Parse(sol_mat_det.M_ID.ToString())),
+                                            D_CANTIDAD = sol_mat_det.DSM_CANTIDAD
+                                        };
 
-                return solicitud_mat_det.ToList<DETALLE_SOLICITUD_MATERIAL>();
+                return solicitud_mat_det.ToList<DETALLE_SOLICITUD>();
             }
         }
 
@@ -75,6 +80,25 @@ namespace CORE
 
                 ctx.ListaSolicitudMaterialDetalle.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
+            }
+        }
+
+        public class DETALLE_SOLICITUD
+        {
+            public decimal SM_ID { get; set; }
+            public decimal M_ID { get; set; }
+            public string M_NOMBRE { get; set; }
+            public Int32 D_CANTIDAD { get; set; }
+            public override bool Equals(object obj)
+            {
+                if (obj.GetType() != this.GetType())
+                    return false;
+
+                return (SM_ID == ((DETALLE_SOLICITUD)obj).SM_ID && M_ID == ((DETALLE_SOLICITUD)obj).M_ID);
+            }
+            public override int GetHashCode()
+            {
+                return this.SM_ID.GetHashCode() ^ this.M_ID.GetHashCode();
             }
         }
     }

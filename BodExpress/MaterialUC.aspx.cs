@@ -14,9 +14,6 @@ namespace BodExpress
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label usuario = (Label)this.FindControl("lblUsuario");
-            UNIDAD_CLINICA uc = CRUD_UnidadClinica.Read(usuario.Text);
-            Session["UC_ID"] = Int32.Parse(uc.UC_ID.ToString());
         }
     }
 }

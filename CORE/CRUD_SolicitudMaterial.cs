@@ -8,16 +8,36 @@ namespace CORE
     public class CRUD_SolicitudMaterial
     {
 
-        public static List<SOLICITUD_MATERIAL> getAll()
+        public static List<SOLICITUD_UC> getAll(int uc_id)
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
                 var solicitud_material = from sol_mat in ctx.ListaSolicitudMaterial
-                               
-                               orderby sol_mat.SM_ID
-                               select sol_mat;
+                                         where sol_mat.UC_ID.Equals(uc_id)
+                                         select new SOLICITUD_UC
+                                         {
+                                             SM_ID = sol_mat.SM_ID,
+                                             S_UC = sol_mat.UC_ID,
+                                             S_UC_DEST = sol_mat.UNI_UC_ID,
+                                             S_TIPO = sol_mat.SM_TIPO,
+                                             S_SM_REC = sol_mat.SM_ID_RECTIFICADA,
+                                             S_EST = sol_mat.E_ID,
+                                             S_FECHA = sol_mat.SM_FECHA
+                                         };
 
-                return solicitud_material.ToList<SOLICITUD_MATERIAL>();
+                return solicitud_material.ToList<SOLICITUD_UC>();
+            }
+        }
+
+        public static SOLICITUD_MATERIAL getEnd()
+        {
+            using (BODEXDataContext ctx = new BODEXDataContext())
+            {
+                List<SOLICITUD_MATERIAL> solicitud_compra = (from sol_comp in ctx.ListaSolicitudMaterial
+                                                           orderby sol_comp.SM_ID
+                                                           select sol_comp).ToList<SOLICITUD_MATERIAL>();
+
+                return solicitud_compra.Last<SOLICITUD_MATERIAL>();
             }
         }
 
@@ -77,6 +97,28 @@ namespace CORE
 
                 ctx.ListaSolicitudMaterial.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
+            }
+        }
+
+        public class SOLICITUD_UC
+        {
+            public decimal S_UC { get; set; }
+            public decimal SM_ID { get; set; }
+            public decimal S_EST { get; set; }
+            public decimal S_UC_DEST { get; set; }
+            public string S_TIPO { get; set; }
+            public int? S_SM_REC { get; set; }
+            public DateTime S_FECHA { get; set; }
+            public override bool Equals(object obj)
+            {
+                if (obj.GetType() != this.GetType())
+                    return false;
+
+                return (S_UC == ((SOLICITUD_UC)obj).S_UC && SM_ID == ((SOLICITUD_UC)obj).SM_ID);
+            }
+            public override int GetHashCode()
+            {
+                return this.S_UC.GetHashCode() ^ this.SM_ID.GetHashCode();
             }
         }
     }

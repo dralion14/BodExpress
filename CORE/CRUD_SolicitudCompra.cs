@@ -91,9 +91,6 @@ namespace CORE
         {
             using (BODEXDataContext ctx = new BODEXDataContext())
             {
-                if (!sol_comp_del.E_ID.Equals(1))
-                    return;
-
                 DETALLE_SOLICITUD_COMPRA material;
 
                 try
@@ -133,6 +130,7 @@ namespace CORE
                 ctx.ListaSolicitudCompra.DeleteOnSubmit(borrar);
                 ctx.SubmitChanges();
             }
+
         }
     }
 }

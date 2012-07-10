@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="db_materialUC" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=BODEXPRESS.mssql.somee.com;Initial Catalog=BODEXPRESS;User ID=bodex;Password=bodexpress" IsAppSettingsProperty="false" Modifier="Assembly" Name="Connection" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="STOCK_MATERIAL_UNIDADAdapter" GeneratorDataComponentClassName="STOCK_MATERIAL_UNIDADAdapter" Name="STOCK_MATERIAL_UNIDAD" UserDataComponentName="STOCK_MATERIAL_UNIDADAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Connection" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     STOCK_MATERIAL_UNIDAD.UC_ID, STOCK_MATERIAL_UNIDAD.M_ID, STOCK_MATERIAL_UNIDAD.SMU_STOCK_REAL, 
+                      STOCK_MATERIAL_UNIDAD.SMU_STOCK_IDEAL, STOCK_MATERIAL_UNIDAD.SMU_STOCK_BAJO, UNIDAD_CLINICA.UC_NOMBRE, 
+                      MATERIAL.M_NOMBRE, UNIDAD_CLINICA.UC_ENCARGADO
+FROM         STOCK_MATERIAL_UNIDAD INNER JOIN
+                      UNIDAD_CLINICA ON STOCK_MATERIAL_UNIDAD.UC_ID = UNIDAD_CLINICA.UC_ID INNER JOIN
+                      MATERIAL ON STOCK_MATERIAL_UNIDAD.M_ID = MATERIAL.M_ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UC_ID" DataSetColumn="UC_ID" />
+              <Mapping SourceColumn="M_ID" DataSetColumn="M_ID" />
+              <Mapping SourceColumn="SMU_STOCK_REAL" DataSetColumn="SMU_STOCK_REAL" />
+              <Mapping SourceColumn="SMU_STOCK_IDEAL" DataSetColumn="SMU_STOCK_IDEAL" />
+              <Mapping SourceColumn="SMU_STOCK_BAJO" DataSetColumn="SMU_STOCK_BAJO" />
+              <Mapping SourceColumn="UC_NOMBRE" DataSetColumn="UC_NOMBRE" />
+              <Mapping SourceColumn="M_NOMBRE" DataSetColumn="M_NOMBRE" />
+              <Mapping SourceColumn="UC_ENCARGADO" DataSetColumn="UC_ENCARGADO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="db_materialUC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="db_materialUC" msprop:Generator_UserDSName="db_materialUC">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="STOCK_MATERIAL_UNIDAD" msprop:Generator_TableClassName="STOCK_MATERIAL_UNIDADDataTable" msprop:Generator_TableVarName="tableSTOCK_MATERIAL_UNIDAD" msprop:Generator_TablePropName="STOCK_MATERIAL_UNIDAD" msprop:Generator_RowDeletingName="STOCK_MATERIAL_UNIDADRowDeleting" msprop:Generator_UserTableName="STOCK_MATERIAL_UNIDAD" msprop:Generator_RowChangingName="STOCK_MATERIAL_UNIDADRowChanging" msprop:Generator_RowEvHandlerName="STOCK_MATERIAL_UNIDADRowChangeEventHandler" msprop:Generator_RowDeletedName="STOCK_MATERIAL_UNIDADRowDeleted" msprop:Generator_RowEvArgName="STOCK_MATERIAL_UNIDADRowChangeEvent" msprop:Generator_RowChangedName="STOCK_MATERIAL_UNIDADRowChanged" msprop:Generator_RowClassName="STOCK_MATERIAL_UNIDADRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UC_ID" msprop:Generator_ColumnVarNameInTable="columnUC_ID" msprop:Generator_ColumnPropNameInRow="UC_ID" msprop:Generator_ColumnPropNameInTable="UC_IDColumn" msprop:Generator_UserColumnName="UC_ID" type="xs:decimal" />
+              <xs:element name="M_ID" msprop:Generator_ColumnVarNameInTable="columnM_ID" msprop:Generator_ColumnPropNameInRow="M_ID" msprop:Generator_ColumnPropNameInTable="M_IDColumn" msprop:Generator_UserColumnName="M_ID" type="xs:decimal" />
+              <xs:element name="SMU_STOCK_REAL" msprop:Generator_ColumnVarNameInTable="columnSMU_STOCK_REAL" msprop:Generator_ColumnPropNameInRow="SMU_STOCK_REAL" msprop:Generator_ColumnPropNameInTable="SMU_STOCK_REALColumn" msprop:Generator_UserColumnName="SMU_STOCK_REAL" type="xs:int" />
+              <xs:element name="SMU_STOCK_IDEAL" msprop:Generator_ColumnVarNameInTable="columnSMU_STOCK_IDEAL" msprop:Generator_ColumnPropNameInRow="SMU_STOCK_IDEAL" msprop:Generator_ColumnPropNameInTable="SMU_STOCK_IDEALColumn" msprop:Generator_UserColumnName="SMU_STOCK_IDEAL" type="xs:int" />
+              <xs:element name="SMU_STOCK_BAJO" msprop:Generator_ColumnVarNameInTable="columnSMU_STOCK_BAJO" msprop:Generator_ColumnPropNameInRow="SMU_STOCK_BAJO" msprop:Generator_ColumnPropNameInTable="SMU_STOCK_BAJOColumn" msprop:Generator_UserColumnName="SMU_STOCK_BAJO" type="xs:int" />
+              <xs:element name="UC_NOMBRE" msprop:Generator_ColumnVarNameInTable="columnUC_NOMBRE" msprop:Generator_ColumnPropNameInRow="UC_NOMBRE" msprop:Generator_ColumnPropNameInTable="UC_NOMBREColumn" msprop:Generator_UserColumnName="UC_NOMBRE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="M_NOMBRE" msprop:Generator_ColumnVarNameInTable="columnM_NOMBRE" msprop:Generator_ColumnPropNameInRow="M_NOMBRE" msprop:Generator_ColumnPropNameInTable="M_NOMBREColumn" msprop:Generator_UserColumnName="M_NOMBRE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UC_ENCARGADO" msprop:Generator_ColumnVarNameInTable="columnUC_ENCARGADO" msprop:Generator_ColumnPropNameInRow="UC_ENCARGADO" msprop:Generator_ColumnPropNameInTable="UC_ENCARGADOColumn" msprop:Generator_UserColumnName="UC_ENCARGADO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//STOCK_MATERIAL_UNIDAD" />
+      <xs:field xpath="UC_ID" />
+      <xs:field xpath="M_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

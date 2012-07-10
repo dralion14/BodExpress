@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DevExpress.Web.ASPxGridView;
+using CORE;
 
 namespace BodExpress
 {
@@ -11,7 +13,20 @@ namespace BodExpress
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SiteMaster master = (SiteMaster)this.Master.Master;
+            UNIDAD_CLINICA uc = CRUD_UnidadClinica.Read(master.ActiveUser.nombre);
+            Session["S_UC"] = Int32.Parse(uc.UC_ID.ToString());
+            
+        }
 
+        protected void detailGrid_DataSelect(object sender, EventArgs e)
+        {
+            Session["SM_ID"] = (sender as ASPxGridView).GetMasterRowKeyValue();
+        }
+
+        protected void Nuevo(object sender, EventArgs e)
+        {
+            Response.Redirect("SolicitudMaterialNew.aspx", true);
         }
     }
 }

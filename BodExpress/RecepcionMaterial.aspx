@@ -37,7 +37,9 @@
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn Caption="ID Material" FieldName="M_ID" VisibleIndex="1">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn Caption="Cantidad" FieldName="DRM_CANTIDAD" VisibleIndex="2">
+                        <dx:GridViewDataTextColumn Caption="Nombre Material" FieldName="M_NOMBRE" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Cantidad" FieldName="D_CANTIDAD" VisibleIndex="3">
                         </dx:GridViewDataTextColumn>
                     </Columns>
                 </dx:ASPxGridView>

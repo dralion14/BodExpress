@@ -91,11 +91,11 @@
     <Content Include="RecepcionMaterialNew.aspx" />
     <Content Include="ReporteBodega.aspx" />
     <Content Include="ReporteMaterial.aspx" />
-    <Content Include="ReporteSolicitudMaterial.aspx" />
     <Content Include="SinPermiso.aspx" />
     <Content Include="SolicitudCompra.aspx" />
     <Content Include="SolicitudCompraNew.aspx" />
     <Content Include="SolicitudMaterial.aspx" />
+    <Content Include="SolicitudMaterialNew.aspx" />
     <Content Include="UnidadClinica.aspx" />
     <Content Include="App_Themes\Office2010Blue\Editors\caChallengeImageBack.png" />
     <Content Include="App_Themes\Office2010Blue\Editors\edtBtnBack.png" />
@@ -202,6 +202,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bd_material.xsd</DependentUpon>
     </Compile>
+    <Compile Include="db_materialUC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_materialUC.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DefaultBod.aspx.cs">
       <DependentUpon>DefaultBod.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,18 +298,17 @@
     <Compile Include="ReporteMaterial.aspx.designer.cs">
       <DependentUpon>ReporteMaterial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ReporteSolicitudMaterial.aspx.cs">
-      <DependentUpon>ReporteSolicitudMaterial.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReporteSolicitudMaterial.aspx.designer.cs">
-      <DependentUpon>ReporteSolicitudMaterial.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\ReporteMaterial.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\ReporteMaterial.Designer.cs">
       <DependentUpon>ReporteMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteMaterialUC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteMaterialUC.Designer.cs">
+      <DependentUpon>ReporteMaterialUC.cs</DependentUpon>
     </Compile>
     <Compile Include="SinPermiso.aspx.cs">
       <DependentUpon>SinPermiso.aspx</DependentUpon>
@@ -333,6 +337,13 @@
     </Compile>
     <Compile Include="SolicitudMaterial.aspx.designer.cs">
       <DependentUpon>SolicitudMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudMaterialNew.aspx.cs">
+      <DependentUpon>SolicitudMaterialNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudMaterialNew.aspx.designer.cs">
+      <DependentUpon>SolicitudMaterialNew.aspx</DependentUpon>
     </Compile>
     <Compile Include="UnidadClinica.aspx.cs">
       <DependentUpon>UnidadClinica.aspx</DependentUpon>
@@ -416,6 +427,9 @@
     <EmbeddedResource Include="Reportes\ReporteMaterial.resx">
       <DependentUpon>ReporteMaterial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteMaterialUC.resx">
+      <DependentUpon>ReporteMaterialUC.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="bd_material.xsc">
@@ -430,6 +444,16 @@
       <DependentUpon>bd_material.xsd</DependentUpon>
     </None>
     <Content Include="MasterBodega.master" />
+    <None Include="db_materialUC.xsc">
+      <DependentUpon>db_materialUC.xsd</DependentUpon>
+    </None>
+    <None Include="db_materialUC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_materialUC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="db_materialUC.xss">
+      <DependentUpon>db_materialUC.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

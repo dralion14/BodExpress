@@ -61,7 +61,7 @@ namespace BodExpress
                 DETALLE_RECEPCION_MATERIAL detalle = new DETALLE_RECEPCION_MATERIAL();
                 detalle.RM_ID = id_recep;
                 detalle.M_ID = material.M_ID;
-                detalle.DRM_CANTIDAD = Int32.Parse(item.GetValue("DSC_CANTIDAD").ToString());
+                detalle.DRM_CANTIDAD = Int32.Parse(item.GetValue("D_CANTIDAD").ToString());
 
                 CRUD_RecepcionMaterialDetalle.Create(detalle);
             }

@@ -18,6 +18,19 @@ namespace CORE
                 return unidades.ToList<UNIDAD_CLINICA>();
             }
         }
+
+         public static List<string> getNombres(int uc_id)
+         {
+             using (BODEXDataContext ctx = new BODEXDataContext())
+             {
+                 var unidades = from uni in ctx.ListaUnidadClinica
+                                where !uni.UC_ID.Equals(uc_id)
+                                orderby uni.UC_ID
+                                select uni.UC_NOMBRE;
+
+                 return unidades.ToList<string>();
+             }
+         }
         
         public static void Create(UNIDAD_CLINICA uni_new)
         {

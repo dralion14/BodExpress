@@ -27,38 +27,51 @@
       // ]]>
     </script>
     <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" ClientIDMode="AutoID"
-        DataSourceID="odsMaterial" KeyFieldName="M_ID" ClientInstanceName="grid">
+        DataSourceID="odsMaterial" ClientInstanceName="grid" KeyFieldName="M_ID">
         <Columns>
-            <dx:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0">
-                <ClearFilterButton Visible="True">
-                </ClearFilterButton>
+            <dx:GridViewCommandColumn VisibleIndex="0" ShowSelectCheckbox="True" 
+                ButtonType="Image" Width="10%">
+                <EditButton>
+                    <Image Url="~/images/edit.png">
+                    </Image>
+                </EditButton>
+                <CancelButton>
+                    <Image Url="~/images/no.png">
+                    </Image>
+                </CancelButton>
+                <UpdateButton>
+                    <Image Url="~/images/yes.png">
+                    </Image>
+                </UpdateButton>
             </dx:GridViewCommandColumn>
-            <dx:GridViewDataTextColumn FieldName="M_ID" VisibleIndex="0">
+            <dx:GridViewDataTextColumn FieldName="M_ID" VisibleIndex="0" 
+                ShowInCustomizationForm="True" Width="15%">
+                <EditFormSettings Visible="False" />
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="M_NOMBRE" VisibleIndex="1">
+            <dx:GridViewDataTextColumn FieldName="M_NOMBRE" VisibleIndex="1" 
+                ShowInCustomizationForm="True" Width="40%">
+                <EditFormSettings Visible="False" />
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="M_DESCRIPCION" VisibleIndex="2">
+            <dx:GridViewDataTextColumn FieldName="M_TIPO" VisibleIndex="2" Width="20%">
+                <EditFormSettings Visible="False" />
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="M_TIPO" VisibleIndex="3">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="M_MEDIDA_DISTRIBUCION" Visible="False" VisibleIndex="4">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="M_MEDIDA_COMPRA" Visible="False" VisibleIndex="5">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="M_STOCK_REAL" Visible="False" VisibleIndex="6">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="M_STOCK_IDEAL" Visible="False" VisibleIndex="7">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="M_STOCK_BAJO" Visible="False" VisibleIndex="8">
-            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataSpinEditColumn FieldName="M_CANTIDAD" VisibleIndex="3" 
+                Width="15%">
+                <PropertiesSpinEdit DisplayFormatString="g" MaxValue="9999" MinValue="1" 
+                    NumberType="Integer">
+                </PropertiesSpinEdit>
+            </dx:GridViewDataSpinEditColumn>
         </Columns>
         <ClientSideEvents SelectionChanged="grid_SelectionChanged" />
         <Settings ShowFilterRow="True" />
     </dx:ASPxGridView>
     <dx:ASPxButton ID="ASPxButton1" runat="server" Text="Enviar Solicitud de Compra" OnClick="Continuar" ClientInstanceName="boton">
     </dx:ASPxButton>
-    <dx:ASPxListBox ID="ASPxListBox1" ClientInstanceName="selList" runat="server" Height="0%"
-        Width="0%" />
-    <asp:ObjectDataSource ID="odsMaterial" runat="server" SelectMethod="getAll" TypeName="CORE.CRUD_Material">
+    <dx:ASPxListBox ID="ASPxListBox1" ClientInstanceName="selList" runat="server" Height="0%" Width="0%"/>
+    <asp:ObjectDataSource ID="odsMaterial" runat="server" 
+        SelectMethod="getAllComprar" TypeName="CORE.CRUD_Material" 
+        OldValuesParameterFormatString="original_{0}" 
+        DataObjectTypeName="CORE.CRUD_Material+MATERIAL_FALTANTE" 
+        UpdateMethod="updateComprar">
     </asp:ObjectDataSource>
 </asp:Content>

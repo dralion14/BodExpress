@@ -17,7 +17,8 @@
         ClientIDMode="AutoID" DataSourceID="odsMaterial">
         <Columns>
             <dx:ListBoxColumn Caption="ID Material" FieldName="M_ID" />
-            <dx:ListBoxColumn Caption="Cantidad" FieldName="DSC_CANTIDAD" />
+            <dx:ListBoxColumn Caption="Nombre Material" FieldName="M_NOMBRE" />
+            <dx:ListBoxColumn Caption="Cantidad" FieldName="D_CANTIDAD" />
         </Columns>
     </dx:ASPxListBox>
     <dx:ASPxButton ID="ASPxButton2" runat="server" Text="Ingresar Recepción" OnClick="Ingresar" ClientInstanceName="b_ingresar">
