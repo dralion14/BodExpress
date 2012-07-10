@@ -206,14 +206,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bd_material.xsd</DependentUpon>
     </Compile>
-    <Compile Include="db_materialUC.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_materialUC.xsd</DependentUpon>
     <Compile Include="db_DevolucionMaterial.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_DevolucionMaterial.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_materialUC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_materialUC.xsd</DependentUpon>
     </Compile>
     <Compile Include="db_RecepcionMaterial.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -366,6 +367,7 @@
     </Compile>
     <Compile Include="Reportes\ReporteMaterialUC.Designer.cs">
       <DependentUpon>ReporteMaterialUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReporteRecepcionMaterial.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -506,6 +508,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteMaterialUC.resx">
       <DependentUpon>ReporteMaterialUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReporteRecepcionMaterial.resx">
       <DependentUpon>ReporteRecepcionMaterial.cs</DependentUpon>
     </EmbeddedResource>
@@ -529,6 +532,17 @@
       <DependentUpon>bd_material.xsd</DependentUpon>
     </None>
     <Content Include="MasterBodega.master" />
+    <None Include="db_DevolucionMaterial.xsc">
+      <DependentUpon>db_DevolucionMaterial.xsd</DependentUpon>
+    </None>
+    <None Include="db_DevolucionMaterial.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_DevolucionMaterial.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_DevolucionMaterial.xss">
+      <DependentUpon>db_DevolucionMaterial.xsd</DependentUpon>
+    </None>
     <None Include="db_materialUC.xsc">
       <DependentUpon>db_materialUC.xsd</DependentUpon>
     </None>
@@ -538,15 +552,6 @@
     </None>
     <None Include="db_materialUC.xss">
       <DependentUpon>db_materialUC.xsd</DependentUpon>
-    <None Include="db_DevolucionMaterial.xsc">
-      <DependentUpon>db_DevolucionMaterial.xsd</DependentUpon>
-    </None>
-    <None Include="db_DevolucionMaterial.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_DevolucionMaterial.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="db_DevolucionMaterial.xss">
-      <DependentUpon>db_DevolucionMaterial.xsd</DependentUpon>
     </None>
     <None Include="db_RecepcionMaterial.xsc">
       <DependentUpon>db_RecepcionMaterial.xsd</DependentUpon>
@@ -554,6 +559,7 @@
     <None Include="db_RecepcionMaterial.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>db_RecepcionMaterial.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="db_RecepcionMaterial.xss">
       <DependentUpon>db_RecepcionMaterial.xsd</DependentUpon>
@@ -564,6 +570,7 @@
     <None Include="db_SolicitudCompra.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>db_SolicitudCompra.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="db_SolicitudCompra.xss">
       <DependentUpon>db_SolicitudCompra.xsd</DependentUpon>
@@ -574,6 +581,7 @@
     <None Include="db_SolicitudMaterial.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>db_SolicitudMaterial.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="db_SolicitudMaterial.xss">
       <DependentUpon>db_SolicitudMaterial.xsd</DependentUpon>
@@ -587,7 +595,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>47613</DevelopmentServerPort>
+          <DevelopmentServerPort>4909</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
